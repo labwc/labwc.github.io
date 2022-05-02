@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# This script depends on pandoc and groff
+# This script depends on pandoc
 #
 
 die () {
@@ -8,33 +8,17 @@ die () {
 	exit 1
 }
 
-first_line_of_file () {
-	mapfile -tn 1 line < "$1"
-	printf '%s\n' "${line[@]}"
-}
-
-build_page () {
-	filename=${1##*/}
-	html="${filename/%.md/.html}"
-	[[ $html -ot $1 ]] || return
-	printf '%s\n' "    GEN         ${html}"
-
-	if [[ $html != index.html ]]; then
-		header="<a href='index.html'>Home</a>"
-	fi
-
-	first_line="$(first_line_of_file $1)"
-	# The first line of a man page in markdown starts with a % character
-	[[ $first_line == *%* ]] && header="${header}<br>${first_line#%}"
-
-	printf '%b' "${template/'{{content}}'/$header$(pandoc "$1")}" >"${html}"
-	header=
-}
-
 build_src_pages () {
 	template="$(<"src/template.html")"
 	for md in src/*.md; do
-		build_page "${md}"
+		filename=${md##*/}
+		html="${filename/%.md/.html}"
+		printf '%s\n' "    GEN         ${html}"
+		if [[ $html != index.html ]]; then
+			header="<a href='index.html'>Home</a>"
+		fi
+		printf '%b' "${template/'{{content}}'/$header$(pandoc "$md")}" >"${html}"
+		header=
 	done
 }
 
@@ -43,10 +27,14 @@ build_man_pages () {
 		printf 'warn: %b\n' "Need labwc next to labwc.github.io with man pages built" >&2
 		return
 	fi
+	template="$(sed -e 's/sans-serif/monospace/' src/template.html)"
 	for manual in ../labwc/build/docs/*; do
+		filename=${manual##*/}
 		out=$(basename ${manual}).html
 		printf '%s\n' "    GEN         ${out}"
-		cat "${manual}" | groff -mandoc -Thtml >"${out}"
+		header="<a href='index.html'>Home</a>"
+		printf '%b' "${template/'{{content}}'/$header$(pandoc --from man "$manual")}" >"${out}"
+		./fix-bullet-formatting.py "${out}"
 	done
 }
 
