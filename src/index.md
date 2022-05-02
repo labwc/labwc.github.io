@@ -1,8 +1,9 @@
-<h1><img src="img/labwc.png" alt="labwc" height="64px"><br />labwc</h1>
+<h1>
+	<img src="img/labwc.png" alt="labwc" height="64px"> <br />
+	Labwc Documentation
+</h1>
 
-A simple Wayland stacking compositor
-
-- [Manual](manual.html)
-- [Integration](integration.html)
-- [Source Code](https://github.com/labwc/labwc)
+- [labwc#readme](https://github.com/labwc/labwc#readme)
+- [integration](integration.html)
+- [man pages](manual.html)
 
