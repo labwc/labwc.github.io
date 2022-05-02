@@ -1,0 +1,114 @@
+<!-- Creator     : groff version 1.22.4 -->
+<!-- CreationDate: Mon May  2 11:16:00 2022 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title>labwc-menu</title>
+
+</head>
+<body>
+
+<h1 align="center">labwc-menu</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#SYNTAX">SYNTAX</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+
+<hr>
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">labwc -
+menu</p>
+
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Static menus
+are built based on content of XML files located at
+&quot;~/.config/labwc&quot; and equivalent XDG Base
+Directories.</p>
+
+<h2>SYNTAX
+<a name="SYNTAX"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">A menu file
+must be entirely enclosed within &lt;openbox_menu&gt; and
+&lt;/openbox_menu&gt; tags. Inside these tags, menus are
+specified as follows:</p>
+
+<p style="margin-left:17%; margin-top: 1em">&lt;menu
+id=&quot;&quot; label=&quot;&quot;&gt;</p>
+
+<p style="margin-left:17%; margin-top: 1em">&lt;!-- This is
+a menu item, such as a program --&gt; <br>
+&lt;item label=&quot;&quot;&gt; <br>
+&lt;action&gt;&lt;/action&gt; <br>
+&lt;/item&gt;</p>
+
+<p style="margin-left:17%; margin-top: 1em">&lt;!-- This
+links to a submenu defined else where --&gt; <br>
+&lt;menu id=&quot;&quot; /&gt;</p>
+
+<p style="margin-left:17%; margin-top: 1em">&lt;!-- This
+links to a submenu defined inline --&gt; <br>
+&lt;menu id=&quot;&quot; label=&quot;&quot;&gt; <br>
+...some content... <br>
+&lt;/menu&gt;</p>
+
+
+<p style="margin-left:17%; margin-top: 1em">&lt;/menu&gt;</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.id</b></p>
+
+<p style="margin-left:17%;">Each menu must be given an id,
+which is a unique identifier of the menu. This id is used to
+refer to the menu in a ShowMenu action.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.label</b></p>
+
+<p style="margin-left:17%;">The title of the menu, shown in
+its parent.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.item.label</b></p>
+
+<p style="margin-left:17%;">The visible name of the menu
+item.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.item.action</b></p>
+
+<p style="margin-left:17%;">See labwc-action(5)</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">labwc(1),
+labwc-action(5), labwc-config(5), labwc-theme(5)</p>
+<hr>
+</body>
+</html>

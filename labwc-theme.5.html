@@ -1,0 +1,281 @@
+<!-- Creator     : groff version 1.22.4 -->
+<!-- CreationDate: Mon May  2 11:16:00 2022 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title>labwc-theme</title>
+
+</head>
+<body>
+
+<h1 align="center">labwc-theme</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#THEME">THEME</a><br>
+<a href="#DATA TYPES">DATA TYPES</a><br>
+<a href="#THEME ELEMENTS">THEME ELEMENTS</a><br>
+<a href="#BUTTONS">BUTTONS</a><br>
+<a href="#DEFINITIONS">DEFINITIONS</a><br>
+<a href="#DERIVED DIMENSIONS">DERIVED DIMENSIONS</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+
+<hr>
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">labwc - Theme
+specification</p>
+
+<h2>THEME
+<a name="THEME"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The theme
+engine aims to be compatible with openbox and themes will be
+searched for in the following order:</p>
+
+<p style="margin-left:17%; margin-top: 1em">&bull;
+${XDG_DATA_HOME:-$HOME/.local/share}/themes/&lt;theme-name&gt;/openbox-3/
+<br>
+&bull; $HOME/.themes/&lt;theme-name&gt;/openbox-3/ <br>
+&bull; /usr/share/themes/&lt;theme-name&gt;/openbox-3/ <br>
+&bull; /usr/local/share/themes/&lt;theme-name&gt;/openbox-3/
+<br>
+&bull; /opt/share/themes/&lt;theme-name&gt;/openbox-3/</p>
+
+<p style="margin-left:11%; margin-top: 1em">Choosing a
+theme is done by editing the &lt;name&gt; key in the
+&lt;theme&gt; section of the rc.xml configuration file
+(labwc-config(5)).</p>
+
+<p style="margin-left:11%; margin-top: 1em">A theme
+consists of a themerc file and optionally some xbm
+icons.</p>
+
+<h2>DATA TYPES
+<a name="DATA TYPES"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>color RGB
+values</b></p>
+
+<p style="margin-left:17%;">Colors can be specified by
+hexadecimal RGB values in the format #rrggbb. Other formats
+will be supported later for better openbox theme
+compatibility.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>justification</b></p>
+
+<p style="margin-left:17%;">Justification determines the
+horizontal alignment of text. Valid options are Left, Center
+and Right.</p>
+
+<h2>THEME ELEMENTS
+<a name="THEME ELEMENTS"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>border.width</b></p>
+
+<p style="margin-left:17%;">Line width (integer) of border
+border drawn around window frames. Default is 1.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>padding.height</b></p>
+
+<p style="margin-left:17%;">Vertical padding size, used for
+spacing out elements in the window decorations. Default is
+3.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.overlap.x</b></p>
+
+<p style="margin-left:17%;">Horizontal overlap in pixels
+between submenus and their parents. A positive value move
+submenus over the top of their parents, whereas a negative
+value creates a gap between submenus and their parents.
+Default is 0.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.overlap.y</b></p>
+
+<p style="margin-left:17%;">Vertical offset in pixels
+between submenus and their parents. Positive values for
+downwards and negative for upwards. Default is 0.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.active.border.color</b></p>
+
+<p style="margin-left:17%;">Border color of active
+window</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.inactive.border.color</b></p>
+
+<p style="margin-left:17%;">Border color of inactive
+window</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.active.title.bg.color</b></p>
+
+<p style="margin-left:17%;">Background color for the
+focussed window&rsquo;s titlebar</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.inactive.title.bg.color</b></p>
+
+<p style="margin-left:17%;">Background color for
+non-focussed windows&rsquo; titlebars</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.active.label.text.color</b></p>
+
+<p style="margin-left:17%;">Text color for the focussed
+window&rsquo;s titlebar</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.inactive.label.text.color</b></p>
+
+<p style="margin-left:17%;">Text color non-focussed
+windows&rsquo; titlebars</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.label.text.justify</b></p>
+
+<p style="margin-left:17%;">Specifies how window titles are
+aligned in the titlebar for both focused and unfocused
+windows. Type justification. Default Left.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.active.button.unpressed.image.color</b></p>
+
+<p style="margin-left:17%;">Color of the images in titlebar
+buttons in their default, unpressed, state. This element is
+for the focused window.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>window.inactive.button.unpressed.image.color</b></p>
+
+<p style="margin-left:17%;">Color of the images in titlebar
+buttons in their default, unpressed, state. This element is
+for non-focused windows.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Note: The
+button elements (i.e. window.[in]active.button.*) support
+defining different types of buttons individually by
+inserting the type (&quot;iconify&quot;, &quot;max&quot; and
+&quot;close&quot;) after the button node. For example:
+window.active.button.iconify.unpressed.image.color This
+syntax is not not documented on the openbox.org wiki, but is
+supported by openbox and is used by many popular themes. For
+the sake of brevity, these elements are not listed here, but
+are supported.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.items.bg.color</b></p>
+
+<p style="margin-left:17%;">Background color of inactive
+menu items</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.items.text.color</b></p>
+
+<p style="margin-left:17%;">Text color of inactive menu
+item</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.items.active.bg.color</b></p>
+
+<p style="margin-left:17%;">Background color of active menu
+items</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>menu.items.active.text.color</b></p>
+
+<p style="margin-left:17%;">Text color of active menu
+item</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>osd.bg.color</b></p>
+
+<p style="margin-left:17%;">Background color of
+on-screen-display</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>osd.label.text.color</b></p>
+
+<p style="margin-left:17%;">Text color of
+on-screen-display</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>border.color</b></p>
+
+<p style="margin-left:17%;">Set all border colors. This is
+obsolete, but supported for backward compatibility as some
+themes still contain it.</p>
+
+<h2>BUTTONS
+<a name="BUTTONS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The images used
+for the titlebar buttons are 1-bit xbm (X Bitmaps). These
+are masks where 0=clear and 1=colored. The xbm image files
+are placed in the same directory within your theme as the
+themerc file. Here are all the possible xbm files looked
+for:</p>
+
+<p style="margin-left:17%; margin-top: 1em">&bull; max.xbm
+<br>
+&bull; iconify.xbm <br>
+&bull; close.xbm</p>
+
+<p style="margin-left:11%; margin-top: 1em">More will be
+supported later.</p>
+
+<h2>DEFINITIONS
+<a name="DEFINITIONS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The handle is
+the window edge decoration at the bottom of the window.</p>
+
+<h2>DERIVED DIMENSIONS
+<a name="DERIVED DIMENSIONS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The window
+title bar height is equal to the vertical font extents of
+the title. Padding will be added to this later.</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">labwc(1),
+labwc-config(5), labwc-actions(5)</p>
+<hr>
+</body>
+</html>

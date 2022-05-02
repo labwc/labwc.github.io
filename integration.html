@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<title>labwc</title>
+<meta charset="utf-8" />
+<meta name="description" content="labwc"/>
+<meta name="viewport" content="width=device-width">
+<style>
+body {
+	overflow-y: scroll;
+	font-family: sans-serif;
+	background-color: #fff;
+	color: black;
+	max-width: 600px;
+	padding: 20px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	margin: auto;
+}
+
+pre {
+	padding: 20px;
+	white-space: pre-wrap;
+	border: 1px dotted gray;
+	display: block;
+	margin: 20px auto;
+	background-color: #eee;
+	color: #111;
+}
+
+code {
+	font-family: monospace;
+	background-color: #eee;
+	color: #111;
+}
+
+img {
+	margin: 20px auto;
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table,th,td {
+	border: 1px solid black;
+}
+
+th,td {
+	padding: 15px;
+	text-align: left;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 130%;
+}
+
+h2 {
+	font-size: 110%;
+}
+
+h3 {
+	font-size: 95%;
+}
+
+h4 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+h5 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+dt code {
+	font-weight: bold;
+}
+
+dd p {
+	margin-top: 0;
+}
+</style>
+</head>
+<body>
+<main>
+<a href='index.html'>Home</a><h1 id="integration">Integration</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<p>Panels</p>
+<ul>
+<li><a href="#waybar">waybar</a></li>
+</ul>
+<h2 id="panels">Panels</h2>
+<h3 id="waybar">waybar</h3>
+<p>Add these two sections to enable a taskbar through the
+toplevel-foreign protocol:</p>
+<pre><code>&quot;modules-left&quot;: [&quot;wlr/taskbar&quot;],</code></pre>
+<pre><code>    &quot;wlr/taskbar&quot;: {
+        &quot;format&quot;: &quot;{app_id}&quot;,
+       &quot;on-click&quot;: &quot;minimize&quot;,
+       &quot;on-click-right&quot;: &quot;maximize&quot;,
+    }</code></pre>
+</main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+#
+# This script depends on pandoc and groff
+#
+
+die () {
+	printf 'fatal: %b\n' "$@" >&2
+	exit 1
+}
+
+first_line_of_file () {
+	mapfile -tn 1 line < "$1"
+	printf '%s\n' "${line[@]}"
+}
+
+build_page () {
+	filename=${1##*/}
+	html="${filename/%.md/.html}"
+	[[ $html -ot $1 ]] || return
+	printf '%s\n' "    GEN         ${html}"
+
+	if [[ $html != index.html ]]; then
+		header="<a href='index.html'>Home</a>"
+	fi
+
+	first_line="$(first_line_of_file $1)"
+	# The first line of a man page in markdown starts with a % character
+	[[ $first_line == *%* ]] && header="${header}<br>${first_line#%}"
+
+	printf '%b' "${template/'{{content}}'/$header$(pandoc "$1")}" >"${html}"
+	header=
+}
+
+build_src_pages () {
+	template="$(<"src/template.html")"
+	for md in src/*.md; do
+		build_page "${md}"
+	done
+}
+
+build_man_pages () {
+	if ! [[ -d ../labwc/build/docs ]]; then
+		printf 'warn: %b\n' "Need labwc next to labwc.github.io with man pages built" >&2
+		return
+	fi
+	for manual in ../labwc/build/docs/*; do
+		out=$(basename ${manual}).html
+		printf '%s\n' "    GEN         ${out}"
+		cat "${manual}" | groff -mandoc -Thtml >"${out}"
+	done
+}
+
+main () {
+	build_src_pages
+	build_man_pages
+}
+
+main "$@"
+
