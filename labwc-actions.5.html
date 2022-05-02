@@ -1,162 +1,181 @@
-<!-- Creator     : groff version 1.22.4 -->
-<!-- CreationDate: Mon May  2 11:16:00 2022 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang=en>
 <head>
-<meta name="generator" content="groff -Thtml, see www.gnu.org">
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<meta name="Content-Style" content="text/css">
-<style type="text/css">
-       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       h1      { text-align: center }
-</style>
-<title>labwc-actions</title>
+<title>labwc</title>
+<meta charset="utf-8" />
+<meta name="description" content="labwc"/>
+<meta name="viewport" content="width=device-width">
+<style>
+body {
+	overflow-y: scroll;
+	font-family: monospace;
+	background-color: #fff;
+	color: black;
+	max-width: 600px;
+	padding: 20px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	margin: auto;
+}
 
+pre {
+	padding: 20px;
+	white-space: pre-wrap;
+	border: 1px dotted gray;
+	display: block;
+	margin: 20px auto;
+	background-color: #eee;
+	color: #111;
+}
+
+code {
+	font-family: monospace;
+	background-color: #eee;
+	color: #111;
+}
+
+img {
+	margin: 20px auto;
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table,th,td {
+	border: 1px solid black;
+}
+
+th,td {
+	padding: 15px;
+	text-align: left;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: monospace;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 130%;
+}
+
+h2 {
+	font-size: 110%;
+}
+
+h3 {
+	font-size: 95%;
+}
+
+h4 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+h5 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+dt code {
+	font-weight: bold;
+}
+
+dd p {
+	margin-top: 0;
+}
+</style>
 </head>
 <body>
-
-<h1 align="center">labwc-actions</h1>
-
-<a href="#NAME">NAME</a><br>
-<a href="#ACTIONS">ACTIONS</a><br>
-<a href="#SEE ALSO">SEE ALSO</a><br>
-
-<hr>
-
-
-<h2>NAME
-<a name="NAME"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">labwc -
-actions</p>
-
-<h2>ACTIONS
-<a name="ACTIONS"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">Actions are
-used in keyboard bindings.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Close&quot;&gt;&lt;command&gt;</b></p>
-
-<p style="margin-left:17%;">Close top-most view.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Execute&quot;&gt;&lt;command&gt;</b></p>
-
-<p style="margin-left:17%;">Execute command.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Exit&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Exit labwc.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Focus&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Give focus to window under
-cursor.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Raise&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Restack the current window
-above other open windows.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Iconify&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Iconify (minimize) focused
-window.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Move&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Begin interactive move of
-window under cursor</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;MoveToEdge&quot;&gt;&lt;direction&gt;</b></p>
-
-<p style="margin-left:17%;">Move view to edge of outputs.
-Understands directions &quot;left&quot;, &quot;up&quot;,
-&quot;right&quot; and &quot;down&quot;.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Resize&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Begin interactive resize of
-window under cursor</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;SnapToEdge&quot;&gt;&lt;direction&gt;</b></p>
-
-<p style="margin-left:17%;">Resize view to fill half the
-output in the given direction. Supports directions
-&quot;left&quot;, &quot;up&quot;, &quot;right&quot;,
-&quot;down&quot; and &quot;center&quot;.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;NextWindow&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Cycle focus to next window.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;PreviousWindow&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Cycle focus to previous
-window.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;Reconfigure&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Re-load configuration and theme
-files.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;ShowMenu&quot;&gt;&lt;menu&gt;</b></p>
-
-<p style="margin-left:17%;">Show menu. Valid menu names are
-&quot;root-menu&quot; and &quot;client-menu&quot;.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;ToggleDecorations&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Toggle decorations of focused
-window.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;ToggleFullscreen&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Toggle fullscreen state of
-focused window.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;ToggleMaximize&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Toggle maximize state of
-focused window.</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;action
-name=&quot;ToggleAlwaysOnTop&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Toggle always-on-top of focused
-window.</p>
-
-<h2>SEE ALSO
-<a name="SEE ALSO"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">labwc(1),
-labwc-config(5), labwc-theme(5)</p>
-<hr>
+<main>
+<a href='index.html'>Home</a><h1>NAME</h1>
+<p>labwc - actions</p>
+<h1>ACTIONS</h1>
+<p>Actions are used in keyboard bindings.</p>
+<p><strong>&lt;action name="Close"&gt;&lt;command&gt;</strong></p>
+<blockquote>
+<p>Close top-most view.</p>
+</blockquote>
+<p><strong>&lt;action name="Execute"&gt;&lt;command&gt;</strong></p>
+<blockquote>
+<p>Execute command.</p>
+</blockquote>
+<p><strong>&lt;action name="Exit"&gt;</strong></p>
+<blockquote>
+<p>Exit labwc.</p>
+</blockquote>
+<p><strong>&lt;action name="Focus"&gt;</strong></p>
+<blockquote>
+<p>Give focus to window under cursor.</p>
+</blockquote>
+<p><strong>&lt;action name="Raise"&gt;</strong></p>
+<blockquote>
+<p>Restack the current window above other open windows.</p>
+</blockquote>
+<p><strong>&lt;action name="Iconify"&gt;</strong></p>
+<blockquote>
+<p>Iconify (minimize) focused window.</p>
+</blockquote>
+<p><strong>&lt;action name="Move"&gt;</strong></p>
+<blockquote>
+<p>Begin interactive move of window under cursor</p>
+</blockquote>
+<p><strong>&lt;action
+name="MoveToEdge"&gt;&lt;direction&gt;</strong></p>
+<blockquote>
+<p>Move view to edge of outputs. Understands directions "left", "up",
+"right" and "down".</p>
+</blockquote>
+<p><strong>&lt;action name="Resize"&gt;</strong></p>
+<blockquote>
+<p>Begin interactive resize of window under cursor</p>
+</blockquote>
+<p><strong>&lt;action
+name="SnapToEdge"&gt;&lt;direction&gt;</strong></p>
+<blockquote>
+<p>Resize view to fill half the output in the given direction. Supports
+directions "left", "up", "right", "down" and "center".</p>
+</blockquote>
+<p><strong>&lt;action name="NextWindow"&gt;</strong></p>
+<blockquote>
+<p>Cycle focus to next window.</p>
+</blockquote>
+<p><strong>&lt;action name="PreviousWindow"&gt;</strong></p>
+<blockquote>
+<p>Cycle focus to previous window.</p>
+</blockquote>
+<p><strong>&lt;action name="Reconfigure"&gt;</strong></p>
+<blockquote>
+<p>Re-load configuration and theme files.</p>
+</blockquote>
+<p><strong>&lt;action name="ShowMenu"&gt;&lt;menu&gt;</strong></p>
+<blockquote>
+<p>Show menu. Valid menu names are "root-menu" and "client-menu".</p>
+</blockquote>
+<p><strong>&lt;action name="ToggleDecorations"&gt;</strong></p>
+<blockquote>
+<p>Toggle decorations of focused window.</p>
+</blockquote>
+<p><strong>&lt;action name="ToggleFullscreen"&gt;</strong></p>
+<blockquote>
+<p>Toggle fullscreen state of focused window.</p>
+</blockquote>
+<p><strong>&lt;action name="ToggleMaximize"&gt;</strong></p>
+<blockquote>
+<p>Toggle maximize state of focused window.</p>
+</blockquote>
+<p><strong>&lt;action name="ToggleAlwaysOnTop"&gt;</strong></p>
+<blockquote>
+<p>Toggle always-on-top of focused window.</p>
+</blockquote>
+<h1>SEE ALSO</h1>
+<p>labwc(1), labwc-config(5), labwc-theme(5)</p>
+</main>
 </body>
 </html>

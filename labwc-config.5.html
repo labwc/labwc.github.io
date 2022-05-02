@@ -1,445 +1,408 @@
-<!-- Creator     : groff version 1.22.4 -->
-<!-- CreationDate: Mon May  2 11:16:00 2022 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang=en>
 <head>
-<meta name="generator" content="groff -Thtml, see www.gnu.org">
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<meta name="Content-Style" content="text/css">
-<style type="text/css">
-       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       h1      { text-align: center }
-</style>
-<title>labwc-config</title>
+<title>labwc</title>
+<meta charset="utf-8" />
+<meta name="description" content="labwc"/>
+<meta name="viewport" content="width=device-width">
+<style>
+body {
+	overflow-y: scroll;
+	font-family: monospace;
+	background-color: #fff;
+	color: black;
+	max-width: 600px;
+	padding: 20px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	margin: auto;
+}
 
+pre {
+	padding: 20px;
+	white-space: pre-wrap;
+	border: 1px dotted gray;
+	display: block;
+	margin: 20px auto;
+	background-color: #eee;
+	color: #111;
+}
+
+code {
+	font-family: monospace;
+	background-color: #eee;
+	color: #111;
+}
+
+img {
+	margin: 20px auto;
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table,th,td {
+	border: 1px solid black;
+}
+
+th,td {
+	padding: 15px;
+	text-align: left;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: monospace;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 130%;
+}
+
+h2 {
+	font-size: 110%;
+}
+
+h3 {
+	font-size: 95%;
+}
+
+h4 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+h5 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+dt code {
+	font-weight: bold;
+}
+
+dd p {
+	margin-top: 0;
+}
+</style>
 </head>
 <body>
-
-<h1 align="center">labwc-config</h1>
-
-<a href="#NAME">NAME</a><br>
-<a href="#CONFIGURATION">CONFIGURATION</a><br>
-<a href="#GENERAL">GENERAL</a><br>
-<a href="#FOCUS">FOCUS</a><br>
-<a href="#Window snapping">Window snapping</a><br>
-<a href="#THEME">THEME</a><br>
-<a href="#KEYBOARD">KEYBOARD</a><br>
-<a href="#MOUSE">MOUSE</a><br>
-<a href="#LIBINPUT">LIBINPUT</a><br>
-<a href="#RESISTANCE">RESISTANCE</a><br>
-<a href="#SEE ALSO">SEE ALSO</a><br>
-
-<hr>
-
-
-<h2>NAME
-<a name="NAME"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">labwc -
-Configuration</p>
-
-<h2>CONFIGURATION
-<a name="CONFIGURATION"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">The
-configuration aims to be compatible with openbox
-specification, but there are some differences which are
-pointed out throughout the man pages.</p>
-
-<p style="margin-left:11%; margin-top: 1em">In accordance
-with XDG Base Directory Specification, configuration files
-will be searched for in the following order:</p>
-
-<p style="margin-left:17%; margin-top: 1em">&bull;
-${XDG_CONFIG_HOME:-$HOME/.config}/labwc <br>
-&bull; ${XDG_CONFIG_DIRS:-/etc/xdg}/labwc</p>
-
-<p style="margin-left:11%; margin-top: 1em">Configuration
-must be wrapped in a &lt;labwc_config&gt; root-node.</p>
-
-<h2>GENERAL
-<a name="GENERAL"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;core&gt;&lt;decoration&gt;</b>
-[server|client]</p>
-
-<p style="margin-left:17%;">Specify server or client side
-decorations for xdg-shell views. Note that it is not always
-possible to turn off client side decorations. Default is
-server.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;core&gt;&lt;gap&gt;</b></p>
-
-<p style="margin-left:17%;">The distance in pixels between
-views and output edges when using movement actions, for
-example MoveToEdge. Default is 0.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;core&gt;&lt;adaptiveSync&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Enable adaptive sync. Default
-is no.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;core&gt;&lt;cycleViewPreview&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Preview the contents of the
-selected window when cycling between windows. Default is
-no.</p>
-
-<h2>FOCUS
-<a name="FOCUS"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;focus&gt;&lt;followMouse&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Make focus follow mouse, i.e.
-focus is given to window under mouse cursor. Default is
-no.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;focus&gt;&lt;raiseOnFocus&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Raise window to top when
-focused. Default is no.</p>
-
-<h2>Window snapping
-<a name="Window snapping"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;snapping&gt;&lt;range&gt;</b></p>
-
-<p style="margin-left:17%;">The distance in pixels from the
-edge of an ouput for window Move operations to trigger
-SnapToEdge. A range of 0 disables window snapping. Default
-is 1.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;snapping&gt;&lt;topMaximize&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Maximize window if Move
-operation ends on the top edge. Default is yes.</p>
-
-<h2>THEME
-<a name="THEME"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;theme&gt;&lt;name&gt;</b></p>
-
-<p style="margin-left:17%;">The name of the Openbox theme
-to use. It is not set by default.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;theme&gt;&lt;cornerRadius&gt;</b></p>
-
-<p style="margin-left:17%;">The radius of server side
-decoration top corners. Default is 8.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;theme&gt;&lt;font
-place=&quot;&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">The font to use for a specific
-element of a window, menu or OSD. Places can be any of:</p>
-
-<p style="margin-left:23%;">&bull; ActiveWindow - titlebar
-of active window <br>
-&bull; MenuItem - menu item (currently only root menu) <br>
-&bull; OSD - items in the on screen display</p>
-
-<p style="margin-left:11%; margin-top: 1em">If no place
-attribute is provided, the setting will be applied to
+<main>
+<a href='index.html'>Home</a><h1>NAME</h1>
+<p>labwc - Configuration</p>
+<h1>CONFIGURATION</h1>
+<p>The configuration aims to be compatible with openbox specification,
+but there are some differences which are pointed out throughout the man
+pages.</p>
+<p>In accordance with XDG Base Directory Specification, configuration
+files will be searched for in the following order:</p>
+<blockquote>
+<p>· ${XDG_CONFIG_HOME:-$HOME/.config}/labwc</p>
+</blockquote>
+<blockquote>
+<p>· ${XDG_CONFIG_DIRS:-/etc/xdg}/labwc</p>
+</blockquote>
+<p>Configuration must be wrapped in a &lt;labwc_config&gt;
+root-node.</p>
+<h1>GENERAL</h1>
+<p><strong>&lt;core&gt;&lt;decoration&gt;</strong> [server|client]</p>
+<blockquote>
+<p>Specify server or client side decorations for xdg-shell views. Note
+that it is not always possible to turn off client side decorations.
+Default is server.</p>
+</blockquote>
+<p><strong>&lt;core&gt;&lt;gap&gt;</strong></p>
+<blockquote>
+<p>The distance in pixels between views and output edges when using
+movement actions, for example MoveToEdge. Default is 0.</p>
+</blockquote>
+<p><strong>&lt;core&gt;&lt;adaptiveSync&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Enable adaptive sync. Default is no.</p>
+</blockquote>
+<p><strong>&lt;core&gt;&lt;cycleViewPreview&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Preview the contents of the selected window when cycling between
+windows. Default is no.</p>
+</blockquote>
+<h1>FOCUS</h1>
+<p><strong>&lt;focus&gt;&lt;followMouse&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Make focus follow mouse, i.e. focus is given to window under mouse
+cursor. Default is no.</p>
+</blockquote>
+<p><strong>&lt;focus&gt;&lt;raiseOnFocus&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Raise window to top when focused. Default is no.</p>
+</blockquote>
+<h1>Window snapping</h1>
+<p><strong>&lt;snapping&gt;&lt;range&gt;</strong></p>
+<blockquote>
+<p>The distance in pixels from the edge of an ouput for window Move
+operations to trigger SnapToEdge. A range of 0 disables window snapping.
+Default is 1.</p>
+</blockquote>
+<p><strong>&lt;snapping&gt;&lt;topMaximize&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Maximize window if Move operation ends on the top edge. Default is
+yes.</p>
+</blockquote>
+<h1>THEME</h1>
+<p><strong>&lt;theme&gt;&lt;name&gt;</strong></p>
+<blockquote>
+<p>The name of the Openbox theme to use. It is not set by default.</p>
+</blockquote>
+<p><strong>&lt;theme&gt;&lt;cornerRadius&gt;</strong></p>
+<blockquote>
+<p>The radius of server side decoration top corners. Default is 8.</p>
+</blockquote>
+<p><strong>&lt;theme&gt;&lt;font place=""&gt;</strong></p>
+<blockquote>
+<p>The font to use for a specific element of a window, menu or OSD.
+Places can be any of:</p>
+<blockquote>
+<p>· ActiveWindow - titlebar of active window</p>
+</blockquote>
+<blockquote>
+<p>· MenuItem - menu item (currently only root menu)</p>
+</blockquote>
+<blockquote>
+<p>· OSD - items in the on screen display</p>
+</blockquote>
+</blockquote>
+<p>If no place attribute is provided, the setting will be applied to
 all</p>
-
-<p style="margin-left:17%;">places.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;theme&gt;&lt;font
-place=&quot;&quot;&gt;&lt;name&gt;</b></p>
-
-<p style="margin-left:17%;">Describes font name. Default is
-sans.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;theme&gt;&lt;font
-place=&quot;&quot;&gt;&lt;size&gt;</b></p>
-
-<p style="margin-left:17%;">Font size in pixels. Default is
-10.</p>
-
-<h2>KEYBOARD
-<a name="KEYBOARD"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;keyboard&gt;&lt;keybind
-key=&quot;&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Define a key binding in the
-format <b>modifier-key</b>, where supported modifiers
-include S (shift); C (control); A (alt); W (super). Unlike
-Openbox, multiple space-separated key combinations and
+<blockquote>
+<p>places.</p>
+</blockquote>
+<p><strong>&lt;theme&gt;&lt;font place=""&gt;&lt;name&gt;</strong></p>
+<blockquote>
+<p>Describes font name. Default is sans.</p>
+</blockquote>
+<p><strong>&lt;theme&gt;&lt;font place=""&gt;&lt;size&gt;</strong></p>
+<blockquote>
+<p>Font size in pixels. Default is 10.</p>
+</blockquote>
+<h1>KEYBOARD</h1>
+<p><strong>&lt;keyboard&gt;&lt;keybind key=""&gt;</strong></p>
+<blockquote>
+<p>Define a key binding in the format <strong>modifier-key</strong>,
+where supported modifiers include S (shift); C (control); A (alt); W
+(super). Unlike Openbox, multiple space-separated key combinations and
 key-chains are not supported.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;keyboard&gt;&lt;keybind
-key=&quot;&quot;&gt;&lt;action name=&quot;&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Keybind action. See
-labwc-action(5)</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;keyboard&gt;&lt;default
-/&gt;</b></p>
-
-<p style="margin-left:17%;">Load the default keybinds
-listed below. This is an addition to the openbox
-specification and provides a way to keep config files
-simpler whilst allowing your specific keybinds. Note that if
-no rc.xml is found, or if no &lt;keyboard&gt;&lt;keybind&gt;
-entries exist, the same default keybinds will be loaded even
-if the &lt;default /&gt; element is not provided.</p>
-
-<p style="margin-left:17%; margin-top: 1em">A-Tab - next
-window <br>
-A-Escape - exit <br>
-W-Return - alacritty <br>
-A-F3 - run bemenu <br>
-A-F4 - close window <br>
-W-a - toggle maximize <br>
-A-&lt;arrow&gt; - move window to edge <br>
-W-&lt;arrow&gt; - resize window to fill half the output</p>
-
-<p style="margin-left:17%; margin-top: 1em">Audio and
-MonBrightness keys are also bound to amixer and
+</blockquote>
+<p><strong>&lt;keyboard&gt;&lt;keybind key=""&gt;&lt;action
+name=""&gt;</strong></p>
+<blockquote>
+<p>Keybind action. See labwc-action(5)</p>
+</blockquote>
+<p><strong>&lt;keyboard&gt;&lt;default /&gt;</strong></p>
+<blockquote>
+<p>Load the default keybinds listed below. This is an addition to the
+openbox specification and provides a way to keep config files simpler
+whilst allowing your specific keybinds. Note that if no rc.xml is found,
+or if no &lt;keyboard&gt;&lt;keybind&gt; entries exist, the same default
+keybinds will be loaded even if the &lt;default /&gt; element is not
+provided.</p>
+</blockquote>
+<pre><code>  A-Tab - next window
+  A-Escape - exit
+  W-Return - alacritty
+  A-F3 - run bemenu
+  A-F4 - close window
+  W-a - toggle maximize
+  A-&lt;arrow&gt; - move window to edge
+  W-&lt;arrow&gt; - resize window to fill half the output</code></pre>
+<blockquote>
+<p>Audio and MonBrightness keys are also bound to amixer and
 brightnessctl respectively</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;keyboard&gt;&lt;repeatRate&gt;</b></p>
-
-<p style="margin-left:17%;">Set the rate at which
-keypresses are repeated per second. Default is 25.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;keyboard&gt;&lt;repeatDelay&gt;</b></p>
-
-<p style="margin-left:17%;">Set the delay before keypresses
-are repeated in milliseconds. Default is 600.</p>
-
-<h2>MOUSE
-<a name="MOUSE"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;mouse&gt;&lt;doubleClickTime&gt;</b></p>
-
-<p style="margin-left:17%;">Set double click time in
-milliseconds. Default is 500.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;mouse&gt;&lt;context
-name=&quot;&quot;&gt;&lt;mousebind
-button=&quot;&quot;&gt;&lt;action&gt;</b></p>
-
-<p style="margin-left:17%;">Multiple
-<b>&lt;mousebind&gt;</b> can exist within one
-<b>&lt;context&gt;</b>; and multiple <b>&lt;action&gt;</b>
-can exist within one <b>&lt;mousebind&gt;</b></p>
-
-<p style="margin-left:17%; margin-top: 1em">Define a mouse
-binding. Supported context-names include:</p>
-
-<p style="margin-left:23%;">&bull; TitleBar: The area where
-the title of the window is shown. <br>
-&bull; Title: The title of the window itself. <br>
-&bull; WindowMenu: The button on the left. <br>
-&bull; Iconify: The button that looks like an underline.
-<br>
-&bull; Maximize: The button that looks like a box. <br>
-&bull; Close: The button that looks like an X. <br>
-&bull; Top: The top edge of the window&rsquo;s border. <br>
-&bull; Bottom: The bottom edge of the window&rsquo;s border.
-<br>
-&bull; Left: The left edge of the window&rsquo;s border.
-<br>
-&bull; Right: The right edge of the window&rsquo;s border.
-<br>
-&bull; TRCorner: The top-right corner of the window&rsquo;s
-border. <br>
-&bull; TLCorner: The top-left corner of the window&rsquo;s
-border. <br>
-&bull; BLCorner: The bottom-left corner of the
-window&rsquo;s border. <br>
-&bull; BRCorner: The bottom-right edge of the window&rsquo;s
-border. <br>
-&bull; Client: The client area of a window, inside its
-decorations. Events bound to Client are also passed to
-applications. <br>
-&bull; Frame: Any part of a window, but events bound to
-Frame are not passed through to the application. <br>
-&bull; Desktop: The desktop background, where no windows are
-present. <br>
-&bull; Root: A synonym for Desktop (for compatibility).</p>
-
-<p style="margin-left:17%; margin-top: 1em">Supported mouse
-buttons are:</p>
-
-<p style="margin-left:23%;">&bull; Left <br>
-&bull; Middle <br>
-&bull; Right</p>
-
-<p style="margin-left:17%; margin-top: 1em">Supported mouse
-actions include:</p>
-
-<p style="margin-left:23%;">&bull; Press: Pressing the
-specified button down in the context. <br>
-&bull; Release: Releasing the specified button in the
-context. <br>
-&bull; Click: Pressing and then releasing inside of the the
-context. <br>
-&bull; DoubleClick: Two presses within the doubleClickTime.
-<br>
-&bull; Drag: Pressing the button within the context, then
-moving the cursor</p>
-
-<h2>LIBINPUT
-<a name="LIBINPUT"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;</b></p>
-
-<p style="margin-left:17%;">Define a category of devices to
-use the configuration values that follow. The category can
-be set to touch (devices that define a width and height),
-non-touch, default, or the name of a device. You can obtain
-your devices name by running <b>libinput list-devices</b>
-(you may need to be root or a part of the input group to
-perform this.) Any members of this category that are not set
-use the default for the device. With the exception of
-tap-to-click, which is enabled by default.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;&lt;naturalScroll&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Use natural scrolling for this
-category if available.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;&lt;leftHanded&gt;</b> [yes|no]</p>
-
-<p style="margin-left:17%;">Use your devices left-handed
-mode if available.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;&lt;pointerSpeed&gt;</b> [-1.0 to
-1.0]</p>
-
-<p style="margin-left:17%;">Set the pointer speed for this
-category. The speed is a number between -1.0 and 1.0, with
-0.0 being the default in most cases, and 1.0 being the
-fastest.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;&lt;accelProfile&gt;</b>
-[flat|adaptive]</p>
-
-<p style="margin-left:17%;">Set the pointer&rsquo;s
-acceleration profile for this category. Flat applies no
-acceleration (the pointers velocity is constant), while
-adaptive changes the pointers speed based the actual speed
-of your mouse or finger on your touchpad.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;&lt;tap&gt;</b> [yes|no]</p>
-
-<p style="margin-left:17%;">Enable or disable tap-to-click
-for this category. This is enabled by default for all
-categories.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;&lt;tapButtonMap&gt;</b>
-[lrm|lmr]</p>
-
-<p style="margin-left:17%;">Set the buttons mapped to one-,
-two-, and three-finger taps to the left button, right
-button, and middle button, respectively (lrm) (the default),
-or to left button, middle button, and right button
-(lmr).</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;&lt;device
-category=&quot;&quot;&gt;&lt;middleEmulation&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Enable or disable middle button
-emulation for this category. Middle emulation processes a
-simultaneous left and right click as a press of the middle
-mouse button (scroll wheel).</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;libinput&gt;device
-category=&quot;&quot;&gt;&lt;disableWhileTyping&gt;</b>
-[yes|no]</p>
-
-<p style="margin-left:17%;">Enable or disable disable while
-typing for this category. DWT ignores any motion events
-while a keyboard is typing, and for a short while after as
-well.</p>
-
-<h2>RESISTANCE
-<a name="RESISTANCE"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>&lt;resistance&gt;&lt;screenEdgeStrength&gt;</b></p>
-
-<p style="margin-left:17%;">Screen Edge Strength is how far
-past the screen&rsquo;s edge your cursor must move before
-the window will move with it. Resistance is counted in
+</blockquote>
+<p><strong>&lt;keyboard&gt;&lt;repeatRate&gt;</strong></p>
+<blockquote>
+<p>Set the rate at which keypresses are repeated per second. Default is
+25.</p>
+</blockquote>
+<p><strong>&lt;keyboard&gt;&lt;repeatDelay&gt;</strong></p>
+<blockquote>
+<p>Set the delay before keypresses are repeated in milliseconds. Default
+is 600.</p>
+</blockquote>
+<h1>MOUSE</h1>
+<p><strong>&lt;mouse&gt;&lt;doubleClickTime&gt;</strong></p>
+<blockquote>
+<p>Set double click time in milliseconds. Default is 500.</p>
+</blockquote>
+<p><strong>&lt;mouse&gt;&lt;context name=""&gt;&lt;mousebind
+button=""&gt;&lt;action&gt;</strong></p>
+<blockquote>
+<p>Multiple <strong>&lt;mousebind&gt;</strong> can exist within one
+<strong>&lt;context&gt;</strong>; and multiple
+<strong>&lt;action&gt;</strong> can exist within one
+<strong>&lt;mousebind&gt;</strong></p>
+<p>Define a mouse binding. Supported context-names include:</p>
+<blockquote>
+<p>· TitleBar: The area where the title of the window is shown.</p>
+</blockquote>
+<blockquote>
+<p>· Title: The title of the window itself.</p>
+</blockquote>
+<blockquote>
+<p>· WindowMenu: The button on the left.</p>
+</blockquote>
+<blockquote>
+<p>· Iconify: The button that looks like an underline.</p>
+</blockquote>
+<blockquote>
+<p>· Maximize: The button that looks like a box.</p>
+</blockquote>
+<blockquote>
+<p>· Close: The button that looks like an X.</p>
+</blockquote>
+<blockquote>
+<p>· Top: The top edge of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· Bottom: The bottom edge of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· Left: The left edge of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· Right: The right edge of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· TRCorner: The top-right corner of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· TLCorner: The top-left corner of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· BLCorner: The bottom-left corner of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· BRCorner: The bottom-right edge of the window's border.</p>
+</blockquote>
+<blockquote>
+<p>· Client: The client area of a window, inside its decorations. Events
+bound to Client are also passed to applications.</p>
+</blockquote>
+<blockquote>
+<p>· Frame: Any part of a window, but events bound to Frame are not passed
+through to the application.</p>
+</blockquote>
+<blockquote>
+<p>· Desktop: The desktop background, where no windows are present.</p>
+</blockquote>
+<blockquote>
+<p>· Root: A synonym for Desktop (for compatibility).</p>
+</blockquote>
+<p>Supported mouse buttons are:</p>
+<blockquote>
+<p>· Left</p>
+</blockquote>
+<blockquote>
+<p>· Middle</p>
+</blockquote>
+<blockquote>
+<p>· Right</p>
+</blockquote>
+<p>Supported mouse actions include:</p>
+<blockquote>
+<p>· Press: Pressing the specified button down in the context.</p>
+</blockquote>
+<blockquote>
+<p>· Release: Releasing the specified button in the context.</p>
+</blockquote>
+<blockquote>
+<p>· Click: Pressing and then releasing inside of the the context.</p>
+</blockquote>
+<blockquote>
+<p>· DoubleClick: Two presses within the doubleClickTime.</p>
+</blockquote>
+<blockquote>
+<p>· Drag: Pressing the button within the context, then moving the
+cursor</p>
+</blockquote>
+</blockquote>
+<h1>LIBINPUT</h1>
+<p><strong>&lt;libinput&gt;&lt;device category=""&gt;</strong></p>
+<blockquote>
+<p>Define a category of devices to use the configuration values that
+follow. The category can be set to touch (devices that define a width
+and height), non-touch, default, or the name of a device. You can obtain
+your devices name by running <strong>libinput list-devices</strong> (you
+may need to be root or a part of the input group to perform this.) Any
+members of this category that are not set use the default for the
+device. With the exception of tap-to-click, which is enabled by
+default.</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;&lt;device
+category=""&gt;&lt;naturalScroll&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Use natural scrolling for this category if available.</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;&lt;device
+category=""&gt;&lt;leftHanded&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Use your devices left-handed mode if available.</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;&lt;device
+category=""&gt;&lt;pointerSpeed&gt;</strong> [-1.0 to 1.0]</p>
+<blockquote>
+<p>Set the pointer speed for this category. The speed is a number
+between -1.0 and 1.0, with 0.0 being the default in most cases, and 1.0
+being the fastest.</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;&lt;device
+category=""&gt;&lt;accelProfile&gt;</strong> [flat|adaptive]</p>
+<blockquote>
+<p>Set the pointer's acceleration profile for this category. Flat
+applies no acceleration (the pointers velocity is constant), while
+adaptive changes the pointers speed based the actual speed of your mouse
+or finger on your touchpad.</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;&lt;device
+category=""&gt;&lt;tap&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Enable or disable tap-to-click for this category. This is enabled by
+default for all categories.</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;&lt;device
+category=""&gt;&lt;tapButtonMap&gt;</strong> [lrm|lmr]</p>
+<blockquote>
+<p>Set the buttons mapped to one-, two-, and three-finger taps to the
+left button, right button, and middle button, respectively (lrm) (the
+default), or to left button, middle button, and right button (lmr).</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;&lt;device
+category=""&gt;&lt;middleEmulation&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Enable or disable middle button emulation for this category. Middle
+emulation processes a simultaneous left and right click as a press of
+the middle mouse button (scroll wheel).</p>
+</blockquote>
+<p><strong>&lt;libinput&gt;device
+category=""&gt;&lt;disableWhileTyping&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Enable or disable disable while typing for this category. DWT ignores
+any motion events while a keyboard is typing, and for a short while
+after as well.</p>
+</blockquote>
+<h1>RESISTANCE</h1>
+<p><strong>&lt;resistance&gt;&lt;screenEdgeStrength&gt;</strong></p>
+<blockquote>
+<p>Screen Edge Strength is how far past the screen's edge your cursor
+must move before the window will move with it. Resistance is counted in
 pixels. Default is 20 pixels.</p>
-
-<h2>SEE ALSO
-<a name="SEE ALSO"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">labwc(1),
-labwc-actions(5), labwc-theme(5)</p>
-<hr>
+</blockquote>
+<h1>SEE ALSO</h1>
+<p>labwc(1), labwc-actions(5), labwc-theme(5)</p>
+</main>
 </body>
 </html>

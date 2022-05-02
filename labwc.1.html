@@ -1,152 +1,171 @@
-<!-- Creator     : groff version 1.22.4 -->
-<!-- CreationDate: Mon May  2 11:16:00 2022 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang=en>
 <head>
-<meta name="generator" content="groff -Thtml, see www.gnu.org">
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<meta name="Content-Style" content="text/css">
-<style type="text/css">
-       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       h1      { text-align: center }
-</style>
 <title>labwc</title>
+<meta charset="utf-8" />
+<meta name="description" content="labwc"/>
+<meta name="viewport" content="width=device-width">
+<style>
+body {
+	overflow-y: scroll;
+	font-family: monospace;
+	background-color: #fff;
+	color: black;
+	max-width: 600px;
+	padding: 20px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	margin: auto;
+}
 
+pre {
+	padding: 20px;
+	white-space: pre-wrap;
+	border: 1px dotted gray;
+	display: block;
+	margin: 20px auto;
+	background-color: #eee;
+	color: #111;
+}
+
+code {
+	font-family: monospace;
+	background-color: #eee;
+	color: #111;
+}
+
+img {
+	margin: 20px auto;
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table,th,td {
+	border: 1px solid black;
+}
+
+th,td {
+	padding: 15px;
+	text-align: left;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: monospace;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 130%;
+}
+
+h2 {
+	font-size: 110%;
+}
+
+h3 {
+	font-size: 95%;
+}
+
+h4 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+h5 {
+	font-size: 90%;
+	font-style: italic;
+}
+
+dt code {
+	font-weight: bold;
+}
+
+dd p {
+	margin-top: 0;
+}
+</style>
 </head>
 <body>
-
-<h1 align="center">labwc</h1>
-
-<a href="#NAME">NAME</a><br>
-<a href="#SYNOPSIS">SYNOPSIS</a><br>
-<a href="#DESCRIPTION">DESCRIPTION</a><br>
-<a href="#OPTIONS">OPTIONS</a><br>
-<a href="#CONFIGURATION AND THEMING">CONFIGURATION AND THEMING</a><br>
-<a href="#SEE ALSO">SEE ALSO</a><br>
-
-<hr>
-
-
-<h2>NAME
-<a name="NAME"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">labwc - A
-Wayland stacking compositor</p>
-
-<h2>SYNOPSIS
-<a name="SYNOPSIS"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>labwc</b>&Acirc;&nbsp;
-[options...]</p>
-
-<h2>DESCRIPTION
-<a name="DESCRIPTION"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">Labwc is a
-wlroots-based stacking compositor for Wayland.</p>
-
-<p style="margin-left:11%; margin-top: 1em">It aims to be
-light-weight and independent, with a focus on simply
-stacking windows well and rendering some window decorations.
-Where practicable, it uses clients for wall-paper, panels,
-screenshots, and so on.</p>
-
-<h2>OPTIONS
-<a name="OPTIONS"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>-c</b>
-&lt;config-file&gt;</p>
-
-<p style="margin-left:17%;">Specify a config file with
-path</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>-C</b>
-&lt;config-directory&gt;</p>
-
-<p style="margin-left:17%;">Specify a config directory</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>-d</b></p>
-
-<p style="margin-left:17%;">Enable full logging, including
-debug information</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>-h</b></p>
-
-<p style="margin-left:17%;">Show help message and quit</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>-s</b>
-&lt;command&gt;</p>
-
-<p style="margin-left:17%;">Run command on startup</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>-v</b></p>
-
-<p style="margin-left:17%;">Show the version number and
-quit</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>-V</b></p>
-
-<p style="margin-left:17%;">Enable more verbose logging</p>
-
-<h2>CONFIGURATION AND THEMING
-<a name="CONFIGURATION AND THEMING"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">Labwc uses
-openbox specification for configuration and theming, but
-does not support all options. The the following files
-control the look and behaviour:</p>
-
-<p style="margin-left:17%; margin-top: 1em">&bull;
-~/.config/labwc/rc.xml <br>
-&bull; ~/.config/labwc/menu.xml <br>
-&bull; ~/.config/labwc/autostart <br>
-&bull; ~/.config/labwc/environment <br>
-&bull; ~/.themes/&lt;name&gt;/openbox-3/themerc</p>
-
-<p style="margin-left:11%; margin-top: 1em">Equivalent XDG
-Base Directory Specification locations are also
+<main>
+<a href='index.html'>Home</a><h1>NAME</h1>
+<p>labwc - A Wayland stacking compositor</p>
+<h1>SYNOPSIS</h1>
+<p><strong>labwc</strong>  [options...]</p>
+<h1>DESCRIPTION</h1>
+<p>Labwc is a wlroots-based stacking compositor for Wayland.</p>
+<p>It aims to be light-weight and independent, with a focus on simply
+stacking windows well and rendering some window decorations. Where
+practicable, it uses clients for wall-paper, panels, screenshots, and so
+on.</p>
+<h1>OPTIONS</h1>
+<p><strong>-c</strong> &lt;config-file&gt;</p>
+<blockquote>
+<p>Specify a config file with path</p>
+</blockquote>
+<p><strong>-C</strong> &lt;config-directory&gt;</p>
+<blockquote>
+<p>Specify a config directory</p>
+</blockquote>
+<p><strong>-d</strong></p>
+<blockquote>
+<p>Enable full logging, including debug information</p>
+</blockquote>
+<p><strong>-h</strong></p>
+<blockquote>
+<p>Show help message and quit</p>
+</blockquote>
+<p><strong>-s</strong> &lt;command&gt;</p>
+<blockquote>
+<p>Run command on startup</p>
+</blockquote>
+<p><strong>-v</strong></p>
+<blockquote>
+<p>Show the version number and quit</p>
+</blockquote>
+<p><strong>-V</strong></p>
+<blockquote>
+<p>Enable more verbose logging</p>
+</blockquote>
+<h1>CONFIGURATION AND THEMING</h1>
+<p>Labwc uses openbox specification for configuration and theming, but
+does not support all options. The the following files control the look
+and behaviour:</p>
+<blockquote>
+<p>· ~/.config/labwc/rc.xml</p>
+</blockquote>
+<blockquote>
+<p>· ~/.config/labwc/menu.xml</p>
+</blockquote>
+<blockquote>
+<p>· ~/.config/labwc/autostart</p>
+</blockquote>
+<blockquote>
+<p>· ~/.config/labwc/environment</p>
+</blockquote>
+<blockquote>
+<p>· ~/.themes/&lt;name&gt;/openbox-3/themerc</p>
+</blockquote>
+<p>Equivalent XDG Base Directory Specification locations are also
 honoured.</p>
-
-<p style="margin-left:11%; margin-top: 1em">The
-configuration file and theme are re-loaded on receiving
-signal SIGHUP.</p>
-
-<p style="margin-left:11%; margin-top: 1em">The autostart
-file is executed as a shell script. This is a place for
-setting a background image, launching a panel, or
-similar.</p>
-
-<p style="margin-left:11%; margin-top: 1em">The environment
-file is parsed as &lt;variable&gt;=&lt;value&gt; and sets
-environment variables accordingly. It is recommended to
-specify keyboard settings here, for example:
-&lsquo;XKB_DEFAULT_LAYOUT=gb&lsquo;. See xkeyboard-config(7)
-for details. Note that the environment file is treated
-differently by openbox where it is simply sourced prior to
+<p>The configuration file and theme are re-loaded on receiving signal
+SIGHUP.</p>
+<p>The autostart file is executed as a shell script. This is a place for
+setting a background image, launching a panel, or similar.</p>
+<p>The environment file is parsed as &lt;variable&gt;=&lt;value&gt; and
+sets environment variables accordingly. It is recommended to specify
+keyboard settings here, for example: `XKB_DEFAULT_LAYOUT=gb`. See
+xkeyboard-config(7) for details. Note that the environment file is
+treated differently by openbox where it is simply sourced prior to
 running openbox.</p>
-
-<h2>SEE ALSO
-<a name="SEE ALSO"></a>
-</h2>
-
-
-
-<p style="margin-left:11%; margin-top: 1em">labwc-config(5),
-labwc-theme(5), labwc-actions(5)</p>
-<hr>
+<h1>SEE ALSO</h1>
+<p>labwc-config(5), labwc-theme(5), labwc-actions(5)</p>
+</main>
 </body>
 </html>
