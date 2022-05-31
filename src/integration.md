@@ -19,8 +19,7 @@ Add these two sections to enable a taskbar through the toplevel-foreign protocol
 ```
     "wlr/taskbar": {
         "format": "{app_id}",
-       "on-click": "minimize",
-       "on-click-right": "maximize",
+       "on-click": "minimize-raise",
     }
 ```
 
