@@ -35,7 +35,7 @@ code {
 }
 
 img {
-	margin: 20px auto;
+	margin: 0px;
 	max-width: 100%;
 }
 
@@ -97,14 +97,16 @@ dd p {
 <a href='index.html'>Home</a><h1>NAME</h1>
 <p>labwc - actions</p>
 <h1>ACTIONS</h1>
-<p>Actions are used in keyboard bindings.</p>
-<p><strong>&lt;action name="Close"&gt;&lt;command&gt;</strong></p>
+<p>Actions are used in menus and keyboard/mouse bindings.</p>
+<p><strong>&lt;action name="Close"&gt;</strong></p>
 <blockquote>
-<p>Close top-most view.</p>
+<p>Close top-most window.</p>
 </blockquote>
 <p><strong>&lt;action name="Execute"&gt;&lt;command&gt;</strong></p>
 <blockquote>
-<p>Execute command.</p>
+<p>Execute command. Note that in the interest of backward compatibility,
+labwc supports &lt;execute&gt; as an alternative to &lt;command&gt; even
+though openbox documentation states that it is deprecated.</p>
 </blockquote>
 <p><strong>&lt;action name="Exit"&gt;</strong></p>
 <blockquote>
@@ -129,7 +131,7 @@ dd p {
 <p><strong>&lt;action
 name="MoveToEdge"&gt;&lt;direction&gt;</strong></p>
 <blockquote>
-<p>Move view to edge of outputs. Understands directions "left", "up",
+<p>Move window to edge of outputs. Understands directions "left", "up",
 "right" and "down".</p>
 </blockquote>
 <p><strong>&lt;action name="Resize"&gt;</strong></p>
@@ -139,8 +141,8 @@ name="MoveToEdge"&gt;&lt;direction&gt;</strong></p>
 <p><strong>&lt;action
 name="SnapToEdge"&gt;&lt;direction&gt;</strong></p>
 <blockquote>
-<p>Resize view to fill half the output in the given direction. Supports
-directions "left", "up", "right", "down" and "center".</p>
+<p>Resize window to fill half the output in the given direction.
+Supports directions "left", "up", "right", "down" and "center".</p>
 </blockquote>
 <p><strong>&lt;action name="NextWindow"&gt;</strong></p>
 <blockquote>

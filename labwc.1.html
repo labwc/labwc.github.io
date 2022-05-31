@@ -35,7 +35,7 @@ code {
 }
 
 img {
-	margin: 20px auto;
+	margin: 0px;
 	max-width: 100%;
 }
 
@@ -95,15 +95,14 @@ dd p {
 <body>
 <main>
 <a href='index.html'>Home</a><h1>NAME</h1>
-<p>labwc - A Wayland stacking compositor</p>
+<p>labwc - a wayland stacking compositor</p>
 <h1>SYNOPSIS</h1>
 <p><strong>labwc</strong>  [options...]</p>
 <h1>DESCRIPTION</h1>
-<p>Labwc is a wlroots-based stacking compositor for Wayland.</p>
-<p>It aims to be light-weight and independent, with a focus on simply
-stacking windows well and rendering some window decorations. Where
-practicable, it uses clients for wall-paper, panels, screenshots, and so
-on.</p>
+<p>Labwc is a wlroots-based stacking compositor for wayland.</p>
+<p>It is light-weight and independent with a focus on simply stacking
+windows well and rendering some window decorations. Where practicable it
+uses clients for wall-paper, panels, screenshots and so on.</p>
 <h1>OPTIONS</h1>
 <p><strong>-c</strong> &lt;config-file&gt;</p>
 <blockquote>
@@ -133,37 +132,6 @@ on.</p>
 <blockquote>
 <p>Enable more verbose logging</p>
 </blockquote>
-<h1>CONFIGURATION AND THEMING</h1>
-<p>Labwc uses openbox specification for configuration and theming, but
-does not support all options. The the following files control the look
-and behaviour:</p>
-<blockquote>
-<p>· ~/.config/labwc/rc.xml</p>
-</blockquote>
-<blockquote>
-<p>· ~/.config/labwc/menu.xml</p>
-</blockquote>
-<blockquote>
-<p>· ~/.config/labwc/autostart</p>
-</blockquote>
-<blockquote>
-<p>· ~/.config/labwc/environment</p>
-</blockquote>
-<blockquote>
-<p>· ~/.themes/&lt;name&gt;/openbox-3/themerc</p>
-</blockquote>
-<p>Equivalent XDG Base Directory Specification locations are also
-honoured.</p>
-<p>The configuration file and theme are re-loaded on receiving signal
-SIGHUP.</p>
-<p>The autostart file is executed as a shell script. This is a place for
-setting a background image, launching a panel, or similar.</p>
-<p>The environment file is parsed as &lt;variable&gt;=&lt;value&gt; and
-sets environment variables accordingly. It is recommended to specify
-keyboard settings here, for example: `XKB_DEFAULT_LAYOUT=gb`. See
-xkeyboard-config(7) for details. Note that the environment file is
-treated differently by openbox where it is simply sourced prior to
-running openbox.</p>
 <h1>SEE ALSO</h1>
 <p>labwc-config(5), labwc-theme(5), labwc-actions(5)</p>
 </main>

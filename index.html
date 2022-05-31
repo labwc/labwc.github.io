@@ -35,7 +35,7 @@ code {
 }
 
 img {
-	margin: 20px auto;
+	margin: 0px;
 	max-width: 100%;
 }
 
@@ -94,16 +94,31 @@ dd p {
 </head>
 <body>
 <main>
-<h1>
-<img src="img/labwc.png" alt="labwc" height="64px"> <br /> Labwc
-Documentation
-</h1>
-<ul>
-<li><a
-href="https://github.com/labwc/labwc#readme">labwc#readme</a></li>
-<li><a href="integration.html">integration</a></li>
-<li><a href="manual.html">man pages</a></li>
-</ul>
+<h2>
+<img src="img/labwc.png" alt="labwc" height="64px" /><br />labwc
+</h2>
+<p>[<a href="https://github.com/labwc/labwc#readme">readme</a>]
+[<a href="integration.html">integration</a>]
+[<a href="manual.html">manual</a>]</p>
+<p>Labwc is a wlroots-based stacking compositor for Wayland.</p>
+<p>It is light-weight and independent with a focus on simply stacking
+windows well and rendering some window decorations. It takes a
+no-bling/frills approach for features such as icons (except window
+buttons), animations, decorative gradients and any other options not
+required to reasonably render common themes. It relies on clients for
+panels, screenshots, wallpapers and so on to create a full desktop
+environment.</p>
+<p>Labwc tries to stay in keeping with <a
+href="https://gitlab.freedesktop.org/wlroots/wlroots">wlroots</a> and <a
+href="https://github.com/swaywm">sway</a> in terms of general approach
+and coding style.</p>
+<p>Labwc only understands <a
+href="https://gitlab.freedesktop.org/wayland/wayland-protocols">wayland-protocols</a>
+&amp; <a
+href="https://gitlab.freedesktop.org/wlroots/wlr-protocols">wlr-protocols</a>,
+and it cannot be controlled with dbus, sway/i3-IPC or other technology.
+The reason for this is that we believe that custom IPCs and protocols
+create a fragmentation that hinders general Wayland adoption.</p>
 </main>
 </body>
 </html>

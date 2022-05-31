@@ -35,7 +35,7 @@ code {
 }
 
 img {
-	margin: 20px auto;
+	margin: 0px;
 	max-width: 100%;
 }
 
@@ -95,22 +95,49 @@ dd p {
 <body>
 <main>
 <a href='index.html'>Home</a><h1>NAME</h1>
-<p>labwc - Configuration</p>
+<p>labwc - configuration files</p>
 <h1>CONFIGURATION</h1>
-<p>The configuration aims to be compatible with openbox specification,
-but there are some differences which are pointed out throughout the man
-pages.</p>
+<p>Labwc uses openbox-3.6 specification for configuration and theming,
+but does not support all options. The following files form the basis of
+the labwc configuration: rc.xml, menu.xml, autostart and
+environment.</p>
+<p>No configuration files are needed to start and run labwc.</p>
 <p>In accordance with XDG Base Directory Specification, configuration
-files will be searched for in the following order:</p>
+files are searched for in the following order:</p>
 <blockquote>
 <p>· ${XDG_CONFIG_HOME:-$HOME/.config}/labwc</p>
 </blockquote>
 <blockquote>
 <p>· ${XDG_CONFIG_DIRS:-/etc/xdg}/labwc</p>
 </blockquote>
-<p>Configuration must be wrapped in a &lt;labwc_config&gt;
-root-node.</p>
-<h1>GENERAL</h1>
+<p>All configuration and theme files except autostart are re-loaded on
+receiving signal SIGHUP.</p>
+<p>The <strong>autostart</strong> file is executed as a shell script.
+This is the place for executing clients for handling background images,
+panels and similar.</p>
+<p>The <strong>environment</strong> file is parsed as
+<strong>variable=value</strong> and sets environment variables
+accordingly. It is recommended to specify keyboard layout settings and
+cursor size/theme here; see environment variable section below for
+details. Note that the environment file is treated differently by
+openbox where it is simply sourced prior to running openbox.</p>
+<p>The <strong>menu.xml</strong> file defines the context/root-menus and
+is described in labwc-menu(5)</p>
+<p>There is a small &lt;theme&gt; section in rc.xml, for example to set
+rouned corners, but the remainder of the theme specification and
+associated files are described in labwc-theme(5).</p>
+<p><strong>rc.xml</strong> is the main configuration file and all its
+options are described in detail below. Configuration must be wrapped in
+a &lt;labwc_config&gt; root-element, like this:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;labwc_config&gt;
+
+&lt;!-- settings --&gt;
+
+
+&lt;/labwc_config&gt;</code></pre>
+<p>The rest of this man page describes configuration options.</p>
+<h2>CORE</h2>
 <p><strong>&lt;core&gt;&lt;decoration&gt;</strong> [server|client]</p>
 <blockquote>
 <p>Specify server or client side decorations for xdg-shell views. Note
@@ -131,7 +158,14 @@ movement actions, for example MoveToEdge. Default is 0.</p>
 <p>Preview the contents of the selected window when cycling between
 windows. Default is no.</p>
 </blockquote>
-<h1>FOCUS</h1>
+<h2>RESISTANCE</h2>
+<p><strong>&lt;resistance&gt;&lt;screenEdgeStrength&gt;</strong></p>
+<blockquote>
+<p>Screen Edge Strength is how far past the screen's edge your cursor
+must move before the window will move with it. Resistance is counted in
+pixels. Default is 20 pixels.</p>
+</blockquote>
+<h2>FOCUS</h2>
 <p><strong>&lt;focus&gt;&lt;followMouse&gt;</strong> [yes|no]</p>
 <blockquote>
 <p>Make focus follow mouse, i.e. focus is given to window under mouse
@@ -141,7 +175,7 @@ cursor. Default is no.</p>
 <blockquote>
 <p>Raise window to top when focused. Default is no.</p>
 </blockquote>
-<h1>Window snapping</h1>
+<h2>WINDOW SNAPPING</h2>
 <p><strong>&lt;snapping&gt;&lt;range&gt;</strong></p>
 <blockquote>
 <p>The distance in pixels from the edge of an ouput for window Move
@@ -153,7 +187,7 @@ Default is 1.</p>
 <p>Maximize window if Move operation ends on the top edge. Default is
 yes.</p>
 </blockquote>
-<h1>THEME</h1>
+<h2>THEME</h2>
 <p><strong>&lt;theme&gt;&lt;name&gt;</strong></p>
 <blockquote>
 <p>The name of the Openbox theme to use. It is not set by default.</p>
@@ -189,7 +223,7 @@ all</p>
 <blockquote>
 <p>Font size in pixels. Default is 10.</p>
 </blockquote>
-<h1>KEYBOARD</h1>
+<h2>KEYBOARD</h2>
 <p><strong>&lt;keyboard&gt;&lt;keybind key=""&gt;</strong></p>
 <blockquote>
 <p>Define a key binding in the format <strong>modifier-key</strong>,
@@ -233,7 +267,7 @@ brightnessctl respectively</p>
 <p>Set the delay before keypresses are repeated in milliseconds. Default
 is 600.</p>
 </blockquote>
-<h1>MOUSE</h1>
+<h2>MOUSE</h2>
 <p><strong>&lt;mouse&gt;&lt;doubleClickTime&gt;</strong></p>
 <blockquote>
 <p>Set double click time in milliseconds. Default is 500.</p>
@@ -330,7 +364,7 @@ through to the application.</p>
 cursor</p>
 </blockquote>
 </blockquote>
-<h1>LIBINPUT</h1>
+<h2>LIBINPUT</h2>
 <p><strong>&lt;libinput&gt;&lt;device category=""&gt;</strong></p>
 <blockquote>
 <p>Define a category of devices to use the configuration values that
@@ -394,13 +428,18 @@ category=""&gt;&lt;disableWhileTyping&gt;</strong> [yes|no]</p>
 any motion events while a keyboard is typing, and for a short while
 after as well.</p>
 </blockquote>
-<h1>RESISTANCE</h1>
-<p><strong>&lt;resistance&gt;&lt;screenEdgeStrength&gt;</strong></p>
-<blockquote>
-<p>Screen Edge Strength is how far past the screen's edge your cursor
-must move before the window will move with it. Resistance is counted in
-pixels. Default is 20 pixels.</p>
-</blockquote>
+<h2>ENVIRONMENT VARIABLES</h2>
+<p><strong>XCURSOR_THEME</strong> and <strong>XCURSOR_SIZE</strong> are
+supported to set cursor theme and size respectively. The default size is
+24. System cursor themes can typically be found with a command such
+as:</p>
+<pre><code>find /usr/share/icons/ -type d -name &quot;cursors&quot;</code></pre>
+<p>The following keyboard-configuration variables are supported:
+<strong>XKB_DEFAULT_RULES</strong>, <strong>XKB_DEFAULT_MODEL</strong>,
+<strong>XKB_DEFAULT_LAYOUT</strong>,
+<strong>XKB_DEFAULT_VARIANT</strong> and
+<strong>XKB_DEFAULT_OPTIONS</strong>.</p>
+<p>See xkeyboard-config(7) for details.</p>
 <h1>SEE ALSO</h1>
 <p>labwc(1), labwc-actions(5), labwc-theme(5)</p>
 </main>

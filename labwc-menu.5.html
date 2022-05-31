@@ -35,7 +35,7 @@ code {
 }
 
 img {
-	margin: 20px auto;
+	margin: 0px;
 	max-width: 100%;
 }
 
@@ -95,7 +95,7 @@ dd p {
 <body>
 <main>
 <a href='index.html'>Home</a><h1>NAME</h1>
-<p>labwc - menu</p>
+<p>labwc - menu files</p>
 <h1>DESCRIPTION</h1>
 <p>Static menus are built based on content of XML files located at
 "~/.config/labwc" and equivalent XDG Base Directories.</p>
@@ -105,15 +105,15 @@ dd p {
 follows:</p>
 <pre><code>&lt;menu id=&quot;&quot; label=&quot;&quot;&gt;
 
-  &lt;!-- This is a menu item, such as a program --&gt;
+  &lt;!-- A menu entry with an action, for example to execute an application --&gt;
   &lt;item label=&quot;&quot;&gt;
     &lt;action&gt;&lt;/action&gt;
   &lt;/item&gt;
 
-  &lt;!-- This links to a submenu defined else where --&gt;
+  &lt;!-- A submenu defined elsewhere --&gt;
   &lt;menu id=&quot;&quot; /&gt;
 
-  &lt;!-- This links to a submenu defined inline --&gt;
+  &lt;!-- An inline submenu --&gt;
   &lt;menu id=&quot;&quot; label=&quot;&quot;&gt;
     ...some content...
   &lt;/menu&gt;
@@ -126,7 +126,8 @@ menu. This id is used to refer to the menu in a ShowMenu action.</p>
 </blockquote>
 <p><strong>menu.label</strong></p>
 <blockquote>
-<p>The title of the menu, shown in its parent.</p>
+<p>The title of the menu, shown in its parent. A label must be given
+when defining a menu.</p>
 </blockquote>
 <p><strong>menu.item.label</strong></p>
 <blockquote>
