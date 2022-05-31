@@ -13,6 +13,7 @@ build_src_pages () {
 	for md in src/*.md; do
 		filename=${md##*/}
 		html="${filename/%.md/.html}"
+		[[ $html -ot $md ]] || continue
 		printf '%s\n' "    GEN         ${html}"
 		if [[ $html != index.html ]]; then
 			header="<a href='index.html'>Home</a>"
@@ -28,13 +29,14 @@ build_man_pages () {
 		return
 	fi
 	template="$(sed -e 's/sans-serif/monospace/' src/template.html)"
-	for manual in ../labwc/build/docs/*; do
-		filename=${manual##*/}
-		out=$(basename ${manual}).html
-		printf '%s\n' "    GEN         ${out}"
+	for scd in ../labwc/build/docs/*; do
+		filename=${scd##*/}
+		html=$(basename ${scd}).html
+		[[ $html -ot $scd ]] || continue
+		printf '%s\n' "    GEN         ${html}"
 		header="<a href='index.html'>Home</a>"
-		printf '%b' "${template/'{{content}}'/$header$(pandoc --from man "$manual")}" >"${out}"
-		./fix-bullet-formatting.py "${out}"
+		printf '%b' "${template/'{{content}}'/$header$(pandoc --from man "$scd")}" >"${html}"
+		./fix-bullet-formatting.py "${html}"
 	done
 }
 
