@@ -18,10 +18,10 @@ body {
 	text-justify: inter-word;
 	--color-bg: #0d1117;
 	--color-hl: #333;
-	--color-fg: #ababab;
-	--color-link: #ab8888;
+	--color-fg: #eeeeee;
+	--color-link: #ffbce3;
 	--color-subtle: #555;
-	color: var(--color-link) !important;
+	color: var(--color-fg) !important;
 	background-color: var(--color-bg) !important;
 }
 
@@ -31,18 +31,20 @@ pre {
 	border: 1px dotted gray;
 	display: block;
 	margin: 20px auto;
-	color: var(--color-link) !important;
+	color: var(--color-fg) !important;
 	background-color: var(--color-bg) !important;
 }
 
 code {
 	font-family: monospace;
-	color: var(--color-link) !important;
+	color: var(--color-fg) !important;
 	background-color: var(--color-bg) !important;
 }
 
 img {
 	margin: 0px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 	max-width: 100%;
 }
 
@@ -64,7 +66,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
 }
 
 h1, h2, h3, h4, h5 {
-	color: var(--color-link) !important;
+	color: var(--color-fg) !important;
 	font-family: sans-serif;
 	font-weight: bold;
 }
@@ -100,7 +102,7 @@ dd p {
 }
 
 a, a:visited {
-	color: var(--color-fg) !important;
+	color: var(--color-link) !important;
 	text-decoration: none;
 }
 
@@ -112,19 +114,19 @@ a:hover {
 </head>
 <body>
 <main>
-<h2>
-<img src="img/labwc.png" alt="labwc" height="64px" /><br />labwc
-</h2>
-<p>[<a href="https://github.com/labwc/labwc#readme">readme</a>]
+<center>
+<img src="img/labwc2-with-text.png" alt="labwc" height="61px" /><br />
+[<a href="https://github.com/labwc/labwc#readme">readme</a>]
 [<a href="integration.html">integration</a>]
-[<a href="manual.html">manual</a>]</p>
-<p>Labwc is a wlroots-based stacking compositor for Wayland.</p>
-<p>It is light-weight and independent with a focus on simply stacking
-windows well and rendering some window decorations. It takes a
-no-bling/frills approach and says no to features such as icons (except
-window buttons), animations, decorative gradients and any other options
-not required to reasonably render common themes. It relies on clients
-for panels, screenshots, wallpapers and so on to create a full desktop
+[<a href="manual.html">manual</a>]
+</center>
+<p>Labwc is a wlroots-based stacking compositor for Wayland. It is
+light-weight and independent with a focus on simply stacking windows
+well and rendering some window decorations. It takes a no-bling/frills
+approach and says no to features such as icons (except window buttons),
+animations, decorative gradients and any other options not required to
+reasonably render common themes. It relies on clients for panels,
+screenshots, wallpapers and so on to create a full desktop
 environment.</p>
 <p>Labwc tries to stay in keeping with <a
 href="https://gitlab.freedesktop.org/wlroots/wlroots">wlroots</a> and <a
@@ -137,7 +139,7 @@ href="https://gitlab.freedesktop.org/wlroots/wlr-protocols">wlr-protocols</a>,
 and it cannot be controlled with dbus, sway/i3-IPC or other technology.
 The reason for this is that we believe that custom IPCs and protocols
 create a fragmentation that hinders general Wayland adoption.</p>
-<p><a href="https://i.imgur.com/vOelinT.png"><img src="https://i.imgur.com/vOelinT.png" width=640 height=360></a></p>
+<p><a href="https://i.imgur.com/vOelinT.png"><img src="https://i.imgur.com/vOelinTl.png" width=640 height=360></a></p>
 </main>
 </body>
 </html>

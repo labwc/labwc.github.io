@@ -18,11 +18,11 @@ body {
 	text-justify: inter-word;
 	--color-bg: #0d1117;
 	--color-hl: #333;
-	--color-fg: #ababab;
-	--color-link: #ab8888;
+	--color-fg: #eeeeee;
+	--color-link: #ffbce3;
 	--color-subtle: #555;
-	color: var(--color-link) !important;
-	background-color: var(--color-bg) !important;
+	color: var(--color-fg);
+	background-color: var(--color-bg);
 }
 
 pre {
@@ -31,18 +31,20 @@ pre {
 	border: 1px dotted gray;
 	display: block;
 	margin: 20px auto;
-	color: var(--color-link) !important;
-	background-color: var(--color-bg) !important;
+	color: var(--color-fg);
+	background-color: var(--color-bg);
 }
 
 code {
 	font-family: monospace;
-	color: var(--color-link) !important;
-	background-color: var(--color-bg) !important;
+	color: var(--color-fg);
+	background-color: var(--color-bg);
 }
 
 img {
 	margin: 0px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 	max-width: 100%;
 }
 
@@ -64,7 +66,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
 }
 
 h1, h2, h3, h4, h5 {
-	color: var(--color-link) !important;
+	color: var(--color-fg);
 	font-family: sans-serif;
 	font-weight: bold;
 }
@@ -100,7 +102,7 @@ dd p {
 }
 
 a, a:visited {
-	color: var(--color-fg) !important;
+	color: var(--color-link);
 	text-decoration: none;
 }
 
