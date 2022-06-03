@@ -5,8 +5,8 @@
 [<a href="manual.html">manual</a>]
 </center>
 
-Labwc is a wlroots-based window-stacking compositor for Wayland, inspired by
-Openbox.
+Labwc is a [wlroots]-based window-stacking compositor for [wayland], inspired by
+[openbox].
 
 It is light-weight and independent with a focus on simply stacking windows well
 and rendering some window decorations. It takes a no-bling/frills approach and
@@ -27,6 +27,8 @@ hinders general Wayland adoption.
   <img src="https://i.imgur.com/vOelinTl.png">
 </a>
 
+[wayland]: https://wayland.freedesktop.org/
+[openbox]: http://openbox.org/
 [wlroots]: https://gitlab.freedesktop.org/wlroots/wlroots
 [sway]: https://github.com/swaywm 
 [wayland-protocols]: https://gitlab.freedesktop.org/wayland/wayland-protocols
