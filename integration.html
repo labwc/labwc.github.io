@@ -115,10 +115,14 @@ a:hover {
 <body>
 <main>
 <a href='index.html'>Home</a><h1 id="integration">Integration</h1>
-<h2 id="table-of-contents">Table of Contents</h2>
-<p>Panels</p>
+<ul>
+<li><ol type="1">
+<li>Panels</li>
+</ol>
 <ul>
 <li><a href="#waybar">waybar</a></li>
+</ul></li>
+<li><a href="#menu-generators">2. Menu Generators</a></li>
 </ul>
 <h2 id="panels">Panels</h2>
 <h3 id="waybar">waybar</h3>
@@ -127,8 +131,19 @@ toplevel-foreign protocol:</p>
 <pre><code>&quot;modules-left&quot;: [&quot;wlr/taskbar&quot;],</code></pre>
 <pre><code>    &quot;wlr/taskbar&quot;: {
         &quot;format&quot;: &quot;{app_id}&quot;,
-       &quot;on-click&quot;: &quot;minimize-raise&quot;,
+        &quot;on-click&quot;: &quot;minimize-raise&quot;,
     }</code></pre>
+<h2 id="menu-generator">Menu Generators</h2>
+<p>Several menu-generators exist to automatically create a menu.xml with
+system applications:</p>
+<p><a
+href="https://github.com/labwc/labwc-menu-gnome3">labwc-menu-gnome3</a>
+<a
+href="https://trizenx.blogspot.com/2012/02/obmenu-generator.html">obmenu-generator</a>
+<a
+href="http://fabrice.thiroux.free.fr/openbox-menu_en.html">openbox-menu</a></p>
+<p>They are typically used like this:</p>
+<pre><code>labwc-menu-gnome3 &gt; ~/.config/labwc/menu.xml</code></pre>
 </main>
 </body>
 </html>
