@@ -18,7 +18,7 @@ build_src_pages () {
 		if [[ $html != index.html ]]; then
 			header="<a href='index.html'>Home</a>"
 		fi
-		printf '%b' "${template/'{{content}}'/$header$(pandoc "$md")}" >"${html}"
+		printf '%b' "${template/'{{content}}'/$header$(pandoc --from=markdown+footnotes "$md")}" >"${html}"
 		header=
 	done
 }
