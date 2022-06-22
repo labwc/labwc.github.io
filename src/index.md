@@ -2,6 +2,7 @@
 <img src="img/labwc2-with-text.png" alt="labwc" height="61px" /><br />
 [<a href="https://github.com/labwc/labwc#readme">readme</a>]
 [<a href="integration.html">integration</a>]
+[<a href="getting-started.html">getting-started</a>]
 [<a href="manual.html">manual</a>]
 </center>
 

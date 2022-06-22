@@ -2,7 +2,7 @@
 
 - 1. Panels
   - [waybar](#waybar)
-- [2. Menu Generators](#menu-generators)
+- 2. [Menu Generators](#menu-generators)
 
 
 ## Panels
