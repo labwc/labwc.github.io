@@ -121,28 +121,29 @@ configuration files, theme files or even a session file. It should be
 enough to simply run the labwc binary from a TTY or Wayland/X11
 session.</p>
 <p>If labwc is not packaged by your OS/distribution of choice, it is
-quite easy to build it (which should take no more than a few seconds)
-and run from the build directory.<a href="#fn1" class="footnote-ref"
+quite easy to build (which should take no more than a few seconds) and
+run from the build directory.<a href="#fn1" class="footnote-ref"
 id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>The first time you run labwc, you’ll be greeted by a blank screen. If
 you click on the desktop you will see your root-menu containing
-‘reconfigure’ and ‘exit’. Although this initial appearance is minimalist
+‘Reconfigure’ and ‘Exit’. Although this initial appearance is minimalist
 and sparse, it is easy to get started.</p>
 <p>Before doing any configuration, you can start labwc with the
-following command to starting an application (alacritty is used in the
+following command to start an application (alacritty is used in the
 example, but it could of course be any application):</p>
 <pre><code>labwc -s alacritty</code></pre>
 <p>Alternatively, if you have bemenu installed, you can use the default
 keybind Alt-F3 to launch applications.</p>
-<p><img src="https://i.imgur.com/SWhEhuz.png"></p>
+<p><img src="https://i.imgur.com/vn1eGaI.png" /></p>
 <h1 id="configuration">Configuration</h1>
 <p>labwc user configuration files are located at
-<code>~/.config/labwc/</code> with the following four files forming the
-basis:</p>
-<pre><code>- rc.xml
-- autostart
-- environment
-- menu.xml</code></pre>
+<code>~/.config/labwc/</code>. The following four files are used:</p>
+<ul>
+<li>rc.xml</li>
+<li>autostart</li>
+<li>environment</li>
+<li>menu.xml</li>
+</ul>
 <p>The purpose of each of these files should become clear if you take
 the steps below.</p>
 <h2 id="step-1---set-your-keyboard-layout">Step 1 - Set your keyboard
@@ -156,10 +157,14 @@ your country code.</p>
 <pre><code>XKB_DEFAULT_LAYOUT=se</code></pre>
 <p>If you are unsure what your country code is, refer to the ‘layout’
 section of <code>/usr/share/X11/xkb/rules/evdev.lst</code></p>
+<p>See further examples in <a
+href="https://github.com/labwc/labwc/blob/master/docs/environment">docs/environment</a></p>
 <h2 id="step-2---add-some-items-to-the-root-menu">Step 2 - Add some
 items to the root-menu</h2>
-<p>Create a <code>~/.config/labwc/menu.xml</code> as in the example
-below:</p>
+<p>Create a <code>~/.config/labwc/menu.xml</code> to hand-craft a menu.
+See <a
+href="https://github.com/labwc/labwc/blob/master/docs/menu.xml">docs/menu.xml</a>
+for inspiration, or use the simple example below</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot;&gt;
 
 &lt;openbox_menu&gt;
@@ -191,10 +196,13 @@ wofi, or simply a terminal, create a configuration file
   &lt;/keyboard&gt;
 
 &lt;/labwc_config&gt;</code></pre>
+<p>See <a
+href="https://github.com/labwc/labwc/blob/master/docs/rc.xml.all">docs/rc.xml.all</a>
+for all available configuration options.</p>
 <h2 id="step-4---start-a-background-image-client-and-a-panel">Step 4 -
 Start a background-image client and a panel</h2>
 <p>To use a background-color/image client or a panel, simply add the
-command to <code>~/.config/labwc/autostart</code>. See example below
+command to <code>~/.config/labwc/autostart</code>. See example below for
 using swaybg and waybar:</p>
 <pre><code>swaybg -i foo.png &gt;/dev/null 2&gt;&amp;1 &amp;
 waybar &gt;/dev/null 2&gt;&amp;1 &amp;</code></pre>
@@ -202,7 +210,7 @@ waybar &gt;/dev/null 2&gt;&amp;1 &amp;</code></pre>
 the logging. Don’t forget the <code>&amp;</code> at the end otherwise
 the compositor will get stuck on that line.</p>
 <p>See further examples in <a
-href="https://github.com/labwc/labwc/blob/master/docs/autostart">autostart</a></p>
+href="https://github.com/labwc/labwc/blob/master/docs/autostart">docs/autostart</a></p>
 <h2 id="step-5---install-some-themes-for-server-side-decorations">Step 5
 - install some themes for server-side-decorations</h2>
 <p>Some commonly packaged themes support openbox (and therefore labwc)
@@ -214,6 +222,8 @@ out of the box, for example <code>Numix</code> and
   &lt;/theme&gt;</code></pre>
 <p>To just use the current GTK theme, you can use <a
 href="https://github.com/johanmalm/labwc-gtktheme">this tool</a></p>
+<p>Refer to the <a href="https://labwc.github.io/manual.html">man
+pages</a> for full documentation.</p>
 <p>Enjoy!</p>
 <section class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
