@@ -18,7 +18,7 @@ body {
 	text-justify: inter-word;
 	--color-bg: #0d1117;
 	--color-hl: #333;
-	--color-fg: #eeeeee;
+	--color-fg: #c9d1d9;
 	--color-link: #ffbce3;
 	--color-subtle: #555;
 	color: var(--color-fg);
@@ -115,19 +115,15 @@ a:hover {
 <body>
 <main>
 <a href='index.html'>Home</a><h1 id="integration">Integration</h1>
-<ul>
-<li><ol type="1">
-<li>Panels</li>
-</ol>
-<ul>
+<ol type="1">
+<li><a href="#panels">Panels</a>
+<ol type="1">
 <li><a href="#waybar">waybar</a></li>
-</ul></li>
-<li><ol start="2" type="1">
-<li><a href="#menu-generators">Menu Generators</a></li>
 </ol></li>
-</ul>
-<h2 id="panels">Panels</h2>
-<h3 id="waybar">waybar</h3>
+<li><a href="#menu-generators">Menu Generators</a></li>
+</ol>
+<h1 id="panels">1. Panels</h1>
+<h2 id="waybar">1.1 waybar</h2>
 <p>Add these two sections to enable a taskbar through the
 toplevel-foreign protocol:</p>
 <pre><code>&quot;modules-left&quot;: [&quot;wlr/taskbar&quot;],</code></pre>
@@ -135,15 +131,17 @@ toplevel-foreign protocol:</p>
         &quot;format&quot;: &quot;{app_id}&quot;,
         &quot;on-click&quot;: &quot;minimize-raise&quot;,
     }</code></pre>
-<h2 id="menu-generator">Menu Generators</h2>
+<h1 id="menu-generators">2. Menu Generators</h1>
 <p>Several menu-generators exist to automatically create a menu.xml with
 system applications:</p>
-<p><a
-href="https://github.com/labwc/labwc-menu-gnome3">labwc-menu-gnome3</a>
-<a
-href="https://trizenx.blogspot.com/2012/02/obmenu-generator.html">obmenu-generator</a>
-<a
-href="http://fabrice.thiroux.free.fr/openbox-menu_en.html">openbox-menu</a></p>
+<ul>
+<li><a
+href="https://github.com/labwc/labwc-menu-gnome3">labwc-menu-gnome3</a></li>
+<li><a
+href="https://trizenx.blogspot.com/2012/02/obmenu-generator.html">obmenu-generator</a></li>
+<li><a
+href="http://fabrice.thiroux.free.fr/openbox-menu_en.html">openbox-menu</a></li>
+</ul>
 <p>They are typically used like this:</p>
 <pre><code>labwc-menu-gnome3 &gt; ~/.config/labwc/menu.xml</code></pre>
 </main>
