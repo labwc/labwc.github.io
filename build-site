@@ -15,11 +15,7 @@ build_src_pages () {
 		html="${filename/%.md/.html}"
 		[[ $html -ot $md ]] || continue
 		printf '%s\n' "    GEN         ${html}"
-		if [[ $html != index.html ]]; then
-			header="<a href='index.html'>Home</a>"
-		fi
-		printf '%b' "${template/'{{content}}'/$header$(pandoc --from=markdown+footnotes "$md")}" >"${html}"
-		header=
+		printf '%b' "${template/'{{content}}'/$(pandoc --from=markdown+footnotes "$md")}" >"${html}"
 	done
 }
 
@@ -34,8 +30,7 @@ build_man_pages () {
 		html=$(basename ${scd}).html
 		[[ $html -ot $scd ]] || continue
 		printf '%s\n' "    GEN         ${html}"
-		header="<a href='index.html'>Home</a>"
-		printf '%b' "${template/'{{content}}'/$header$(pandoc --from man "$scd")}" >"${html}"
+		printf '%b' "${template/'{{content}}'/$(pandoc --from man "$scd")}" >"${html}"
 		./fix-bullet-formatting.py "${html}"
 	done
 }
