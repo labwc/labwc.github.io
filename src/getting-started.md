@@ -33,7 +33,6 @@ Alt-F3 to launch applications.
 
 <img src="https://i.imgur.com/vn1eGaI.png" />
 
-
 # Configuration
 
 labwc user configuration files are located at `~/.config/labwc/`. The following
@@ -66,11 +65,11 @@ XKB_DEFAULT_LAYOUT=se
 If you are unsure what your country code is, refer to the 'layout' section of
 `/usr/share/X11/xkb/rules/evdev.lst`
 
-See further examples in [docs/environment](https://github.com/labwc/labwc/blob/master/docs/environment)
+See further examples in [docs/environment]
 
 ## Step 2 - Add some items to the root-menu
 
-Create a `~/.config/labwc/menu.xml` to hand-craft a menu. See [docs/menu.xml](https://github.com/labwc/labwc/blob/master/docs/menu.xml)
+Create a `~/.config/labwc/menu.xml` to hand-craft a menu. See [docs/menu.xml]
 for inspiration, or use the simple example below
 
 ```
@@ -88,8 +87,8 @@ for inspiration, or use the simple example below
 
 Run `killall -s SIGHUP labwc` to reload the config files.
 
-See [integration#menu-generators](https://labwc.github.io/integration.html#menu-generators)
-for ideas on how to automatically create menu.xml files.
+See [integration#menu-generators] for ideas on how to automatically create
+menu.xml files.
 
 ## Step 3 - Set a shortcut to a launcher
 
@@ -110,7 +109,7 @@ terminal sakura:
 </labwc_config>
 ```
 
-See [docs/rc.xml.all](https://github.com/labwc/labwc/blob/master/docs/rc.xml.all) for all available configuration options.
+See [docs/rc.xml.all] for all available configuration options.
 
 ## Step 4 - Start a background-image client and a panel
 
@@ -126,7 +125,7 @@ The `>/dev/null 2>&1` is simply there to hide the logging.
 Don't forget the `&` at the end otherwise the compositor will get stuck on that
 line.
 
-See further examples in [docs/autostart](https://github.com/labwc/labwc/blob/master/docs/autostart)
+See further examples in [docs/autostart]
 
 ## Step 5 - install some themes for server-side-decorations
 
@@ -141,8 +140,17 @@ Install a theme and set it in rc.xml:
   </theme>
 ```
 
-To just use the current GTK theme, you can use [this tool](https://github.com/johanmalm/labwc-gtktheme)
+To just use the current GTK theme, you can use [labwc-gtktheme]
 
-Refer to the [man pages](https://labwc.github.io/manual.html) for full documentation.
+Refer to the [man pages] for full documentation.
 
 Enjoy!
+
+
+[docs/environment]: https://github.com/labwc/labwc/blob/master/docs/environment
+[docs/menu.xml]: https://github.com/labwc/labwc/blob/master/docs/menu.xml
+[integration#menu-generators]: https://labwc.github.io/integration.html#menu-generators
+[docs/rc.xml.all]: https://github.com/labwc/labwc/blob/master/docs/rc.xml.all
+[docs/autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
+[labwc-gtktheme]: https://github.com/johanmalm/labwc-gtktheme
+[man pages]: manual.html
