@@ -8,7 +8,7 @@
 <style>
 body {
 	overflow-y: scroll;
-	font-family: sans-serif;
+	font-family: monospace;
 	max-width: 640px;
 	padding: 20px;
 	line-height: 1.5;
@@ -67,7 +67,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
 
 h1, h2, h3, h4, h5 {
 	color: var(--color-fg);
-	font-family: sans-serif;
+	font-family: monospace;
 	font-weight: bold;
 }
 
@@ -122,16 +122,47 @@ a:hover {
 [<a href="getting-started.html">getting-started</a>]
 [<a href="manual.html">manual</a>]
 </center>
-<h1 id="documentation">Documentation</h1>
-<h2 id="man-pages">Man Pages</h2>
-<p><a href="labwc.1.html">labwc(1)</a><br />
-<a href="labwc-config.5.html">labwc-config(5)</a><br />
-<a href="labwc-theme.5.html">labwc-theme(5)</a><br />
-<a href="labwc-menu.5.html">labwc-menu(5)</a><br />
-<a href="labwc-actions.5.html">labwc-actions(5)</a><br />
-<a href="labwc-environment.5.html">labwc-environment(5)</a></p>
-<h2 id="diagrams">Diagrams</h2>
-<p><a href="diagrams-theme.html">theme variables</a></p>
+<h1>NAME</h1>
+<p>labwc - environment</p>
+<h1>DESCRIPTION</h1>
+<p>The environment file sets up the environment variables for labwc
+including keyboard layout and options, cursor themes and size as well
+as other toolkit specific and application specific options.</p>
+<h1>EXAMPLE</h1>
+<pre><code># Example environment file
+
+# Set keyboard layout to Swedish
+XKB_DEFAULT_LAYOUT=se
+
+# Set two keyboard layouts and toggle between them using alt+shift
+XKB_DEFAULT_LAYOUT=se,de
+XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle
+
+# Force firefox to use wayland backend
+MOZ_ENABLE_WAYLAND=1
+
+# gtk wayland
+GDK_BACKEND=wayland
+
+# sdl wayland
+SDL_VIDEODRIVER=wayland
+
+# Set cursor theme.
+# Find icons themes with the command below or similar:
+#     find /usr/share/icons/ -type d -name "cursors"
+XCURSOR_THEME=breeze_cursors
+
+# Disable hardware cursors. Most users wouldn't want to do this, but if you
+# are experiencing issues with disappearing cursors, this might fix it.
+WLR_NO_HARDWARE_CURSORS=1
+
+# For Java applications such as JetBrains/Intellij Idea, set this variable
+# to avoid menus with incorrect offset and blank windows
+# See https://github.com/swaywm/sway/issues/595
+_JAVA_AWT_WM_NONREPARENTING=1</code></pre>
+
+<h1>SEE ALSO</h1>
+<p>labwc(1), labwc-config(5), labwc-actions(5), labwc-theme(5)</p>
 </main>
 </body>
 </html>
