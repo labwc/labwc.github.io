@@ -186,6 +186,11 @@ movement actions, for example MoveToEdge. Default is 0.</p>
 <p>Preview the contents of the selected window when cycling between
 windows. Default is no.</p>
 </blockquote>
+<p><strong>&lt;core&gt;&lt;cycleViewOutlines&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Draw an outline around the selected window when cycling between
+windows. Default is yes.</p>
+</blockquote>
 <h2>RESISTANCE</h2>
 <p><strong>&lt;resistance&gt;&lt;screenEdgeStrength&gt;</strong></p>
 <blockquote>
@@ -248,7 +253,7 @@ Places can be any of:</p>
 <p>· MenuItem - menu item (currently only root menu)</p>
 </blockquote>
 <blockquote>
-<p>· OSD - items in the on screen display</p>
+<p>· OnScreenDisplay - items in the on screen display</p>
 </blockquote>
 </blockquote>
 <p>If no place attribute is provided, the setting will be applied to
@@ -263,6 +268,14 @@ all</p>
 <p><strong>&lt;theme&gt;&lt;font place=""&gt;&lt;size&gt;</strong></p>
 <blockquote>
 <p>Font size in pixels. Default is 10.</p>
+</blockquote>
+<p><strong>&lt;theme&gt;&lt;font place=""&gt;&lt;slant&gt;</strong></p>
+<blockquote>
+<p>Font slant (normal or italic). Default is normal.</p>
+</blockquote>
+<p><strong>&lt;theme&gt;&lt;font place=""&gt;&lt;weight&gt;</strong></p>
+<blockquote>
+<p>Font weight (normal or bold). Default is normal.</p>
 </blockquote>
 <h2>KEYBOARD</h2>
 <p><strong>&lt;keyboard&gt;&lt;keybind key=""&gt;</strong></p>
@@ -287,7 +300,6 @@ keybinds will be loaded even if the &lt;default /&gt; element is not
 provided.</p>
 </blockquote>
 <pre><code>  A-Tab - next window
-  A-Escape - exit
   W-Return - alacritty
   A-F3 - run bemenu
   A-F4 - close window
@@ -322,10 +334,12 @@ button=""&gt;&lt;action&gt;</strong></p>
 <strong>&lt;mousebind&gt;</strong></p>
 <p>Define a mouse binding. Supported context-names include:</p>
 <blockquote>
-<p>· TitleBar: The area where the title of the window is shown.</p>
+<p>· TitleBar: The decoration on top of the window, where the window
+buttons and the window title are shown.</p>
 </blockquote>
 <blockquote>
-<p>· Title: The title of the window itself.</p>
+<p>· Title: The area of the titlebar (including blank space) between the
+window buttons, where the window title is displayed.</p>
 </blockquote>
 <blockquote>
 <p>· WindowMenu: The button on the left.</p>
@@ -404,6 +418,15 @@ through to the application.</p>
 <p>· Drag: Pressing the button within the context, then moving the
 cursor</p>
 </blockquote>
+</blockquote>
+<p><strong>&lt;mouse&gt;&lt;default /&gt;</strong></p>
+<blockquote>
+<p>Load default mousebinds. This is an addition to the openbox
+specification and provides a way to keep config files simpler whilst
+allowing user specific binds. Note that if no rc.xml is found, or if no
+&lt;mouse&gt;&lt;mousebind&gt; entries exist, the same default
+mousebinds will be loaded even if the &lt;default /&gt; element is not
+provided.</p>
 </blockquote>
 <h2>LIBINPUT</h2>
 <p><strong>&lt;libinput&gt;&lt;device category=""&gt;</strong></p>

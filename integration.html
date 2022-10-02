@@ -131,6 +131,7 @@ a:hover {
 <li><a href="#menu-generators">Menu Generators</a></li>
 <li><a href="#csd">CSD</a></li>
 <li><a href="#output-management">Output Management</a></li>
+<li><a href="#screenshots">Screenshots</a></li>
 </ol>
 <h1 id="panels">1. Panels</h1>
 <h2 id="waybar">1.1 waybar</h2>
@@ -238,6 +239,19 @@ like this:</p>
   output HDMI-A-1 position 1366,0
   output eDP-1 position 0,0
 }</code></pre>
+<h1 id="screenshots">5. Screenshots</h1>
+<p>Screenshots can be taken using the <code>wlr-screencopy</code>
+protocol via applications such as <a
+href="https://git.sr.ht/~emersion/grim">grim</a>.</p>
+<p>Grim is a commandline tool which can be combined with other clients,
+for example</p>
+<ul>
+<li><a href="https://github.com/emersion/slurp">slurp</a></li>
+<li><a href="https://github.com/bugaevc/wl-clipboard">wl-copy</a></li>
+<li><a href="https://github.com/jtheoof/swappy">swappy</a></li>
+</ul>
+<pre><code>grim -g &quot;$(slurp)&quot; - | swappy -f -
+grim - | wl-copy</code></pre>
 </main>
 </body>
 </html>
