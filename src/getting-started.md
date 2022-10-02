@@ -73,7 +73,7 @@ Create a `~/.config/labwc/menu.xml` to hand-craft a menu. See [docs/menu.xml]
 for inspiration, or use the simple example below
 
 ```
-<?xml version="1.0">
+<?xml version="1.0" ?>
 
 <openbox_menu>
 <menu id="root-menu" label="">
@@ -98,7 +98,7 @@ a `<keybind>` entry as shown below. In this example `Super-d` is bound to the
 terminal sakura:
 
 ```
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <labwc_config>
 
   <keyboard>
