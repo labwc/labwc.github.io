@@ -5,6 +5,7 @@
 2. [Menu Generators](#menu-generators)
 3. [CSD](#csd)
 4. [Output Management](#output-management)
+5. [Screenshots](#screenshots)
 
 # 1. Panels {#panels}
 
@@ -98,6 +99,23 @@ profile {
   output HDMI-A-1 position 1366,0
   output eDP-1 position 0,0
 }
+```
+
+# 5. Screenshots {#screenshots}
+
+Screenshots can be taken using the `wlr-screencopy` protocol via applications
+such as [grim](https://git.sr.ht/~emersion/grim).
+
+Grim is a commandline tool which can be combined with other clients, for
+example
+
+- [slurp](https://github.com/emersion/slurp)
+- [wl-copy](https://github.com/bugaevc/wl-clipboard)
+- [swappy](https://github.com/jtheoof/swappy)
+
+```
+grim -g "$(slurp)" - | swappy -f -
+grim - | wl-copy
 ```
 
 [labwc-menu-generator]: https://github.com/labwc/labwc-menu-generator
