@@ -131,32 +131,47 @@ a:hover {
 <p>It is light-weight and independent with a focus on simply stacking
 windows well and rendering some window decorations. Where practicable it
 uses clients for wall-paper, panels, screenshots and so on.</p>
+<p>The compositor will exit or reload its configuration upon receiving
+SIGTERM and SIGHUP respectively. For example:</p>
+<pre><code>kill -s &lt;signal&gt; $LABWC_PID
+killall -s &lt;signal&gt; labwc</code></pre>
+<p>Each running instance of labwc sets the environment variable
+`LABWC_PID` to its PID. This is useful for sending signals to a specific
+instance and is what the `--exit` and `--reconfigure` options use.</p>
 <h1>OPTIONS</h1>
-<p><strong>-c</strong> &lt;config-file&gt;</p>
+<p><strong>-c, --config</strong> &lt;config-file&gt;</p>
 <blockquote>
 <p>Specify a config file with path</p>
 </blockquote>
-<p><strong>-C</strong> &lt;config-directory&gt;</p>
+<p><strong>-C, --config-dir</strong> &lt;config-directory&gt;</p>
 <blockquote>
 <p>Specify a config directory</p>
 </blockquote>
-<p><strong>-d</strong></p>
+<p><strong>-d, --debug</strong></p>
 <blockquote>
 <p>Enable full logging, including debug information</p>
 </blockquote>
-<p><strong>-h</strong></p>
+<p><strong>-e, --exit</strong></p>
+<blockquote>
+<p>Exit the compositor</p>
+</blockquote>
+<p><strong>-h, --help</strong></p>
 <blockquote>
 <p>Show help message and quit</p>
 </blockquote>
-<p><strong>-s</strong> &lt;command&gt;</p>
+<p><strong>-r, --reconfigure</strong></p>
+<blockquote>
+<p>Reload the compositor configuration</p>
+</blockquote>
+<p><strong>-s, --startup</strong> &lt;command&gt;</p>
 <blockquote>
 <p>Run command on startup</p>
 </blockquote>
-<p><strong>-v</strong></p>
+<p><strong>-v, --version</strong></p>
 <blockquote>
 <p>Show the version number and quit</p>
 </blockquote>
-<p><strong>-V</strong></p>
+<p><strong>-V, --verbose</strong></p>
 <blockquote>
 <p>Enable more verbose logging</p>
 </blockquote>

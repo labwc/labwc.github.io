@@ -325,8 +325,8 @@ is 600.</p>
 <blockquote>
 <p>Set double click time in milliseconds. Default is 500.</p>
 </blockquote>
-<p><strong>&lt;mouse&gt;&lt;context name=""&gt;&lt;mousebind
-button=""&gt;&lt;action&gt;</strong></p>
+<p><strong>&lt;mouse&gt;&lt;context name=""&gt;&lt;mousebind button=""
+direction=""&gt;&lt;action&gt;</strong></p>
 <blockquote>
 <p>Multiple <strong>&lt;mousebind&gt;</strong> can exist within one
 <strong>&lt;context&gt;</strong>; and multiple
@@ -391,12 +391,25 @@ through to the application.</p>
 <blockquote>
 <p>· Root: A synonym for Desktop (for compatibility).</p>
 </blockquote>
-<p>Supported mouse buttons are:</p>
+<p>Supported mouse <strong>buttons</strong> are:</p>
 <blockquote>
 <p>· Left</p>
 </blockquote>
 <blockquote>
 <p>· Middle</p>
+</blockquote>
+<blockquote>
+<p>· Right</p>
+</blockquote>
+<p>Supported scroll <strong>directions</strong> are:</p>
+<blockquote>
+<p>· Up</p>
+</blockquote>
+<blockquote>
+<p>· Down</p>
+</blockquote>
+<blockquote>
+<p>· Left</p>
 </blockquote>
 <blockquote>
 <p>· Right</p>
@@ -416,7 +429,11 @@ through to the application.</p>
 </blockquote>
 <blockquote>
 <p>· Drag: Pressing the button within the context, then moving the
-cursor</p>
+cursor.</p>
+</blockquote>
+<blockquote>
+<p>· Scroll: Scrolling in specified <strong>direction</strong> in the
+context.</p>
 </blockquote>
 </blockquote>
 <p><strong>&lt;mouse&gt;&lt;default /&gt;</strong></p>
