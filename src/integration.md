@@ -2,6 +2,7 @@
 
 1. [Panels](#panels)
     1. [waybar](#waybar)
+    2. [sfwbar](#sfwbar)
 2. [Menu Generators](#menu-generators)
 3. [CSD](#csd)
 4. [Output Management](#output-management)
@@ -22,6 +23,16 @@ Add these two sections to enable a taskbar through the toplevel-foreign protocol
         "format": "{app_id}",
         "on-click": "minimize-raise",
     }
+```
+
+## 1.2 sfwbar {#sfwbar}
+
+Configure sfwbar in `~/.config/sfwbar/sfwbar.config`
+
+Add this to `~/.config/labwc/autostart` file:
+
+```
+sfwbar &
 ```
 
 # 2. Menu Generators {#menu-generators}
