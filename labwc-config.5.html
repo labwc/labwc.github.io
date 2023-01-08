@@ -138,6 +138,8 @@ files are searched for in the following order:</p>
 <blockquote>
 <p>· ${XDG_CONFIG_DIRS:-/etc/xdg}/labwc</p>
 </blockquote>
+<p>The configuration directory location can be override with the -C
+command line option.</p>
 <p>All configuration and theme files except autostart are re-loaded on
 receiving signal SIGHUP.</p>
 <p>The <strong>autostart</strong> file is executed as a shell script.
@@ -502,7 +504,7 @@ category=""&gt;&lt;middleEmulation&gt;</strong> [yes|no]</p>
 emulation processes a simultaneous left and right click as a press of
 the middle mouse button (scroll wheel).</p>
 </blockquote>
-<p><strong>&lt;libinput&gt;device
+<p><strong>&lt;libinput&gt;&lt;device
 category=""&gt;&lt;disableWhileTyping&gt;</strong> [yes|no]</p>
 <blockquote>
 <p>Enable or disable disable while typing for this category. DWT ignores
