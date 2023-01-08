@@ -3,6 +3,7 @@
 1. [Panels](#panels)
     1. [waybar](#waybar)
     2. [sfwbar](#sfwbar)
+    3. [xfce4-panel](#xfce4panel)
 2. [Menu Generators](#menu-generators)
 3. [CSD](#csd)
 4. [Output Management](#output-management)
@@ -34,6 +35,37 @@ Add this to `~/.config/labwc/autostart` file:
 ```
 sfwbar &
 ```
+
+## 1.3 xfce4-panel {#xfce4-panel}
+
+Just after the release of Xfce 4.18 in Dec 2022, Wayland support was added
+([MR103]) to [xfce4-panel] including the layer-shell and
+foreign-toplevel-management protocols.
+
+For the time being it is best to force all plugins to run as internal:
+
+`xfconf-query -c xfce4-panel -p /force-all-internal -t bool -s true --create`
+
+Until the next release, you can get it going by cloning the master branch and
+building with the following (adjusting prefix to suit your system of course):
+
+```
+./autogen --prefix=/usr
+make
+make install
+```
+
+On Arch Linux you can simply install the following packages: [xfce4-dev-tools],
+[libxfce4util], [libxfce4ui], [libxfce4windowing-devel] and [xfce4-panel-git].
+
+[MR103]: https://gitlab.xfce.org/xfce/xfce4-panel/-/merge_requests/103
+[xfce4-panel]: https://docs.xfce.org/xfce/xfce4-panel/start
+
+[xfce4-dev-tools]: https://archlinux.org/packages/extra/x86_64/xfce4-dev-tools/
+[libxfce4util]: https://archlinux.org/packages/extra/x86_64/libxfce4util/
+[libxfce4ui]: https://archlinux.org/packages/extra/x86_64/libxfce4ui/
+[libxfce4windowing-devel]: https://aur.archlinux.org/packages/libxfce4windowing-devel
+[xfce4-panel-git]: https://aur.archlinux.org/packages/xfce4-panel-git
 
 # 2. Menu Generators {#menu-generators}
 

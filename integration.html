@@ -128,6 +128,7 @@ a:hover {
 <ol type="1">
 <li><a href="#waybar">waybar</a></li>
 <li><a href="#sfwbar">sfwbar</a></li>
+<li><a href="#xfce4panel">xfce4-panel</a></li>
 </ol></li>
 <li><a href="#menu-generators">Menu Generators</a></li>
 <li><a href="#csd">CSD</a></li>
@@ -147,6 +148,32 @@ toplevel-foreign protocol:</p>
 <p>Configure sfwbar in <code>~/.config/sfwbar/sfwbar.config</code></p>
 <p>Add this to <code>~/.config/labwc/autostart</code> file:</p>
 <pre><code>sfwbar &amp;</code></pre>
+<h2 id="xfce4-panel">1.3 xfce4-panel</h2>
+<p>Just after the release of Xfce 4.18 in Dec 2022, Wayland support was
+added (<a
+href="https://gitlab.xfce.org/xfce/xfce4-panel/-/merge_requests/103">MR103</a>)
+to <a
+href="https://docs.xfce.org/xfce/xfce4-panel/start">xfce4-panel</a>
+including the layer-shell and foreign-toplevel-management protocols.</p>
+<p>For the time being it is best to force all plugins to run as
+internal:</p>
+<p><code>xfconf-query -c xfce4-panel -p /force-all-internal -t bool -s true --create</code></p>
+<p>Until the next release, you can get it going by cloning the master
+branch and building with the following (adjusting prefix to suit your
+system of course):</p>
+<pre><code>./autogen --prefix=/usr
+make
+make install</code></pre>
+<p>On Arch Linux you can simply install the following packages: <a
+href="https://archlinux.org/packages/extra/x86_64/xfce4-dev-tools/">xfce4-dev-tools</a>,
+<a
+href="https://archlinux.org/packages/extra/x86_64/libxfce4util/">libxfce4util</a>,
+<a
+href="https://archlinux.org/packages/extra/x86_64/libxfce4ui/">libxfce4ui</a>,
+<a
+href="https://aur.archlinux.org/packages/libxfce4windowing-devel">libxfce4windowing-devel</a>
+and <a
+href="https://aur.archlinux.org/packages/xfce4-panel-git">xfce4-panel-git</a>.</p>
 <h1 id="menu-generators">2. Menu Generators</h1>
 <p>Several menu-generators exist to automatically create a menu.xml with
 system applications:</p>
