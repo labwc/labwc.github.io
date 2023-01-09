@@ -129,6 +129,7 @@ a:hover {
 <li><a href="#waybar">waybar</a></li>
 <li><a href="#sfwbar">sfwbar</a></li>
 <li><a href="#xfce4panel">xfce4-panel</a></li>
+<li><a href="#yambar">yambar</a></li>
 </ol></li>
 <li><a href="#menu-generators">Menu Generators</a></li>
 <li><a href="#csd">CSD</a></li>
@@ -136,19 +137,39 @@ a:hover {
 <li><a href="#screenshots">Screenshots</a></li>
 </ol>
 <h1 id="panels">1. Panels</h1>
+<p>There are a variety of wayland panels available for
+<strong>labwc</strong> ranging from simple to complex. Below are some
+that you can try.</p>
+<p>Most panels are started from the
+<code>~/.config/labwc/autostart</code> file like so:</p>
+<pre><code>mypanel &gt;/dev/null 2&gt;&amp;1 &amp;</code></pre>
+<p>See the <a
+href="https://github.com/labwc/labwc/blob/master/docs/autostart">autostart</a>
+documentation for further information.</p>
 <h2 id="waybar">1.1 waybar</h2>
+<p><a href="https://github.com/Alexays/Waybar">waybar repository</a></p>
 <p>Add these two sections to enable a taskbar through the
-toplevel-foreign protocol:</p>
+toplevel-foreign protocol to the <code>~/.config/waybar/config</code>
+file:</p>
 <pre><code>&quot;modules-left&quot;: [&quot;wlr/taskbar&quot;],</code></pre>
 <pre><code>    &quot;wlr/taskbar&quot;: {
         &quot;format&quot;: &quot;{app_id}&quot;,
         &quot;on-click&quot;: &quot;minimize-raise&quot;,
     }</code></pre>
+<p>See the <a
+href="https://github.com/Alexays/Waybar/tree/master/man">waybar
+documentation</a> for further information.</p>
 <h2 id="sfwbar">1.2 sfwbar</h2>
-<p>Configure sfwbar in <code>~/.config/sfwbar/sfwbar.config</code></p>
-<p>Add this to <code>~/.config/labwc/autostart</code> file:</p>
-<pre><code>sfwbar &amp;</code></pre>
-<h2 id="xfce4-panel">1.3 xfce4-panel</h2>
+<p><a href="https://github.com/LBCrion/sfwbar">sfwbar repository</a></p>
+<p>Configure sfwbar in the <code>~/.config/sfwbar/sfwbar.config</code>
+file.</p>
+<p>The default config will mostly work however for more information see
+the <a
+href="https://github.com/LBCrion/sfwbar/blob/main/doc/sfwbar.rst">sfwbar
+man page</a>.</p>
+<h2 id="xfce4panel">1.3 xfce4-panel</h2>
+<p><a href="https://gitlab.xfce.org/xfce/xfce4-panel">xfce4-panel
+repository</a></p>
 <p>Just after the release of Xfce 4.18 in Dec 2022, Wayland support was
 added (<a
 href="https://gitlab.xfce.org/xfce/xfce4-panel/-/merge_requests/103">MR103</a>)
@@ -174,6 +195,14 @@ href="https://archlinux.org/packages/extra/x86_64/libxfce4ui/">libxfce4ui</a>,
 href="https://aur.archlinux.org/packages/libxfce4windowing-devel">libxfce4windowing-devel</a>
 and <a
 href="https://aur.archlinux.org/packages/xfce4-panel-git">xfce4-panel-git</a>.</p>
+<h2 id="yambar">1.3 yambar</h2>
+<p><a href="https://codeberg.org/dnkl/yambar">yambar repository</a></p>
+<p>Configure yambar in the <code>~/.config/yambar/config.yml</code>.
+Yambar configuration uses the <a
+href="https://yaml.org"><code>yaml</code> language</a>.</p>
+<p>Read the <a
+href="https://codeberg.org/dnkl/yambar/src/branch/master/doc">yambar
+documentation</a> for further information.</p>
 <h1 id="menu-generators">2. Menu Generators</h1>
 <p>Several menu-generators exist to automatically create a menu.xml with
 system applications:</p>
