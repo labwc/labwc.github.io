@@ -4,6 +4,7 @@
     1. [waybar](#waybar)
     2. [sfwbar](#sfwbar)
     3. [xfce4-panel](#xfce4panel)
+    4. [yambar](#yambar)
 2. [Menu Generators](#menu-generators)
 3. [CSD](#csd)
 4. [Output Management](#output-management)
@@ -11,9 +12,23 @@
 
 # 1. Panels {#panels}
 
+There are a variety of wayland panels available for __labwc__ ranging
+from simple to complex. Below are some that you can try.
+
+Most panels are started from the `~/.config/labwc/autostart` file like so:
+
+```
+mypanel >/dev/null 2>&1 &
+```
+
+See the [autostart] documentation for further information.
+
 ## 1.1 waybar {#waybar}
 
-Add these two sections to enable a taskbar through the toplevel-foreign protocol:
+[waybar repository]
+
+Add these two sections to enable a taskbar through the toplevel-foreign 
+protocol to the `~/.config/waybar/config` file:
 
 ```
 "modules-left": ["wlr/taskbar"],
@@ -26,17 +41,20 @@ Add these two sections to enable a taskbar through the toplevel-foreign protocol
     }
 ```
 
+See the [waybar documentation] for further information.
+
 ## 1.2 sfwbar {#sfwbar}
 
-Configure sfwbar in `~/.config/sfwbar/sfwbar.config`
+[sfwbar repository]
 
-Add this to `~/.config/labwc/autostart` file:
+Configure sfwbar in the `~/.config/sfwbar/sfwbar.config` file. 
 
-```
-sfwbar &
-```
+The default config will mostly work however for more information see the
+[sfwbar man page].
 
-## 1.3 xfce4-panel {#xfce4-panel}
+## 1.3 xfce4-panel {#xfce4panel}
+
+[xfce4-panel repository]
 
 Just after the release of Xfce 4.18 in Dec 2022, Wayland support was added
 ([MR103]) to [xfce4-panel] including the layer-shell and
@@ -66,6 +84,15 @@ On Arch Linux you can simply install the following packages: [xfce4-dev-tools],
 [libxfce4ui]: https://archlinux.org/packages/extra/x86_64/libxfce4ui/
 [libxfce4windowing-devel]: https://aur.archlinux.org/packages/libxfce4windowing-devel
 [xfce4-panel-git]: https://aur.archlinux.org/packages/xfce4-panel-git
+
+## 1.3 yambar {#yambar}
+
+[yambar repository]
+
+Configure yambar in the `~/.config/yambar/config.yml`. Yambar configuration
+uses the [`yaml` language].
+
+Read the [yambar documentation] for further information.
 
 # 2. Menu Generators {#menu-generators}
 
@@ -161,6 +188,15 @@ grim -g "$(slurp)" - | swappy -f -
 grim - | wl-copy
 ```
 
+[autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
+[waybar repository]: https://github.com/Alexays/Waybar
+[waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
+[sfwbar repository]: https://github.com/LBCrion/sfwbar
+[sfwbar man page]: https://github.com/LBCrion/sfwbar/blob/main/doc/sfwbar.rst
+[xfce4-panel repository]: https://gitlab.xfce.org/xfce/xfce4-panel
+[yambar repository]: https://codeberg.org/dnkl/yambar
+[`yaml` language]: https://yaml.org
+[yambar documentation]: https://codeberg.org/dnkl/yambar/src/branch/master/doc
 [labwc-menu-generator]: https://github.com/labwc/labwc-menu-generator
 [labwc-menu-gnome3]: https://github.com/labwc/labwc-menu-gnome3
 [obmenu-generator]: https://trizenx.blogspot.com/2012/02/obmenu-generator.html
