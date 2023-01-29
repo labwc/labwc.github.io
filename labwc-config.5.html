@@ -183,6 +183,14 @@ movement actions, for example MoveToEdge. Default is 0.</p>
 <blockquote>
 <p>Enable adaptive sync. Default is no.</p>
 </blockquote>
+<p><strong>&lt;core&gt;&lt;reuseOutputMode&gt;</strong> [yes|no]</p>
+<blockquote>
+<p>Try to re-use the existing output mode (resolution / refresh rate).
+This may prevent unnecessary screenblank delays when starting labwc
+(also known as flicker free boot). If the existing output mode can not
+be used with labwc the preferred mode of the monitor is used instead.
+Default is no.</p>
+</blockquote>
 <p><strong>&lt;core&gt;&lt;cycleViewPreview&gt;</strong> [yes|no]</p>
 <blockquote>
 <p>Preview the contents of the selected window when cycling between
@@ -221,6 +229,18 @@ Default is 1.</p>
 <blockquote>
 <p>Maximize window if Move operation ends on the top edge. Default is
 yes.</p>
+</blockquote>
+<h2>REGIONS</h2>
+<p><strong>&lt;regions&gt;&lt;region name="snap-1" x="10%" y="10%"
+width="80%" height="80%"&gt;</strong></p>
+<blockquote>
+<p>Define snap regions. The regions are calculated based on the usable
+area of each output. Usable area in this context means space not
+exclusively used by layershell clients like panels. The "%" character is
+required. Windows can either be snapped to regions by keeping a keyboard
+modifier pressed while moving a window (Ctrl, Alt, Shift, Logo) or by
+using the SnapToRegion action. By default there are no regions
+defined.</p>
 </blockquote>
 <h2>WORKSPACES</h2>
 <p><strong>&lt;desktops&gt;&lt;names&gt;&lt;name&gt;</strong></p>
