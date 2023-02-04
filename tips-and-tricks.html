@@ -123,13 +123,27 @@ a:hover {
 [<a href="manual.html">manual</a>]
 [<a href="tips-and-tricks.html">tips&nbsp;&amp;&nbsp;tricks</a>]
 </center>
-<h1 id="diagrams-of-theme-variables">Diagrams of Theme Variables</h1>
-<!-- source: img/theme-window.svg -->
-<!-- also at "https://i.imgur.com/534SSaOl.png" -->
-<h2 id="window">Window</h2>
-<p><img src="img/theme-window.png" /></p>
-<h2 id="menu">Menu</h2>
-<p><img src="img/theme-menu.png" /></p>
+<h1 id="tips-tricks">Tips &amp; Tricks</h1>
+<h2 id="xml">XML</h2>
+<p><code>labwc</code> parses XML in an element/attribute agnostic way.
+This is a design decision to increase config file flexibility and keep
+code simple. In practical terms, this means that
+<code>&lt;a&gt;&lt;b&gt;c&lt;/b&gt;&lt;/a&gt;</code> is equivalent to
+<code>&lt;a b="c" /&gt;</code>.</p>
+<p>To the end-user, the following three are therefore treated the
+same:</p>
+<pre><code>&lt;action&gt;
+    &lt;name&gt;Execute&lt;/name&gt;
+    &lt;command&gt;foot&lt;/command&gt;
+&lt;/action&gt;</code></pre>
+<pre><code>&lt;action name=&quot;Execute&quot;&gt;
+    &lt;command&gt;foot&lt;/command&gt;
+&lt;/action&gt;</code></pre>
+<pre><code>&lt;action name=&quot;Execute&quot; command=&quot;foot&quot; /&gt;</code></pre>
+<p>The benefit of the final one is brevity whereas the advantage of the
+first two is that you can add ’ and ” within the
+<code>&lt;command&gt;</code> block, for example:</p>
+<pre><code>&lt;command&gt;sh -c &#39;grim -g &quot;`slurp`&quot;&#39;&lt;/command&gt;</code></pre>
 </main>
 </body>
 </html>
