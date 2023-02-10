@@ -99,14 +99,17 @@ Read the [yambar documentation] for further information.
 Several menu-generators exist to automatically create a menu.xml with system
 applications:
 
-| Name                   | Language | Comment
-| ---------------------- | ---------| -------
-| [labwc-menu-generator] | C        | Indepedent of menu-packages. Very easy to build and use.
-| [labwc-menu-gnome3]    | C        | Depends on GTK and a menu package such as gnome, mate, cinnamon
-| [obmenu-generator]     | Perl     | Popular with openbox communities
-| [openbox-menu]         | C        | XDG menu spec compliant, using LXDE's library and menu package. Used to be packaged by debian, but isn't anymore.
-| [arch-xdg-menu]        | Perl     | Arch Linux's xdg-menu package based on SuSE 2003 implementation
-| [obamenu]              | python3  | Designed for pipemenus, but could easily be modified to produce a root-menu
+- [labwc-menu-generator]\: Indepedent of Desktop Environments and associated
+  menu-packages. Very easy to build and use. Written in C.
+- [labwc-menu-gnome3]\: Depends on GTK and a menu package such as gnome, mate and
+  cinnamon. Written in C.
+- [obmenu-generator]\: Popular with openbox communities. Written in Perl.
+- [openbox-menu]\: XDG menu spec compliant, using LXDE's library and menu
+  package. Used to be packaged by debian, but isn't anymore. Written in C.
+- [arch-xdg-menu]\: Arch Linux's xdg-menu package based on SuSE 2003
+  implementation. Written in Perl.
+- [obamenu]\: Designed for pipemenus, but could easily be modified to produce
+  a root-menu. Written in python3.
 
 They are typically used like this:
 

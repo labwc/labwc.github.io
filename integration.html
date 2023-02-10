@@ -207,59 +207,29 @@ documentation</a> for further information.</p>
 <h1 id="menu-generators">2. Menu Generators</h1>
 <p>Several menu-generators exist to automatically create a menu.xml with
 system applications:</p>
-<table>
-<colgroup>
-<col style="width: 57%" />
-<col style="width: 23%" />
-<col style="width: 18%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Language</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a
-href="https://github.com/labwc/labwc-menu-generator">labwc-menu-generator</a></td>
-<td>C</td>
-<td>Indepedent of menu-packages. Very easy to build and use.</td>
-</tr>
-<tr class="even">
-<td><a
-href="https://github.com/labwc/labwc-menu-gnome3">labwc-menu-gnome3</a></td>
-<td>C</td>
-<td>Depends on GTK and a menu package such as gnome, mate, cinnamon</td>
-</tr>
-<tr class="odd">
-<td><a
-href="https://trizenx.blogspot.com/2012/02/obmenu-generator.html">obmenu-generator</a></td>
-<td>Perl</td>
-<td>Popular with openbox communities</td>
-</tr>
-<tr class="even">
-<td><a
-href="http://fabrice.thiroux.free.fr/openbox-menu_en.html">openbox-menu</a></td>
-<td>C</td>
-<td>XDG menu spec compliant, using LXDE’s library and menu package. Used
-to be packaged by debian, but isn’t anymore.</td>
-</tr>
-<tr class="odd">
-<td><a
-href="https://arch.p5n.pp.ru/~sergej/dl/2018/">arch-xdg-menu</a></td>
-<td>Perl</td>
-<td>Arch Linux’s xdg-menu package based on SuSE 2003 implementation</td>
-</tr>
-<tr class="even">
-<td><a href="https://github.com/onuronsekiz/obamenu">obamenu</a></td>
-<td>python3</td>
-<td>Designed for pipemenus, but could easily be modified to produce a
-root-menu</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><a
+href="https://github.com/labwc/labwc-menu-generator">labwc-menu-generator</a>:
+Indepedent of Desktop Environments and associated menu-packages. Very
+easy to build and use. Written in C.</li>
+<li><a
+href="https://github.com/labwc/labwc-menu-gnome3">labwc-menu-gnome3</a>:
+Depends on GTK and a menu package such as gnome, mate and cinnamon.
+Written in C.</li>
+<li><a
+href="https://trizenx.blogspot.com/2012/02/obmenu-generator.html">obmenu-generator</a>:
+Popular with openbox communities. Written in Perl.</li>
+<li><a
+href="http://fabrice.thiroux.free.fr/openbox-menu_en.html">openbox-menu</a>:
+XDG menu spec compliant, using LXDE’s library and menu package. Used to
+be packaged by debian, but isn’t anymore. Written in C.</li>
+<li><a href="https://arch.p5n.pp.ru/~sergej/dl/2018/">arch-xdg-menu</a>:
+Arch Linux’s xdg-menu package based on SuSE 2003 implementation. Written
+in Perl.</li>
+<li><a href="https://github.com/onuronsekiz/obamenu">obamenu</a>:
+Designed for pipemenus, but could easily be modified to produce a
+root-menu. Written in python3.</li>
+</ul>
 <p>They are typically used like this:</p>
 <pre><code>labwc-menu-generator &gt; ~/.config/labwc/menu.xml</code></pre>
 <p>Some of them support several menu formats, in which case you have to
