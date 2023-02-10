@@ -111,6 +111,13 @@ terminal sakura:
 
 See [docs/rc.xml.all] for all available configuration options.
 
+To figure out the name of a key, you can use either xev (widely available,
+runs via xwayland) or [wev]. Alternatively, search for keysym names directly in
+[xkbcommon-keysyms.h].
+
+[wev]: https://git.sr.ht/~sircmpwn/wev
+[xkbcommon-keysyms.h]: https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h
+
 ## Step 4 - Start a background-image client and a panel
 
 To use a background-color/image client or a panel, simply add the command
