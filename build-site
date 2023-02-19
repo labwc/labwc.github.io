@@ -3,6 +3,8 @@
 # This script depends on pandoc
 #
 
+: ${LABWC_DOC_DIR:=../labwc/build/docs}
+
 die () {
 	printf 'fatal: %b\n' "$@" >&2
 	exit 1
@@ -20,12 +22,12 @@ build_src_pages () {
 }
 
 build_man_pages () {
-	if ! [[ -d ../labwc/build/docs ]]; then
+	if ! [[ -d "$LABWC_DOC_DIR" ]]; then
 		printf 'warn: %b\n' "Need labwc next to labwc.github.io with man pages built" >&2
 		return
 	fi
 	template="$(sed -e 's/sans-serif/monospace/' src/template.html)"
-	for scd in ../labwc/build/docs/*; do
+	for scd in "$LABWC_DOC_DIR"/*; do
 		filename=${scd##*/}
 		html=$(basename ${scd}).html
 		[[ $html -ot $scd ]] || continue
