@@ -1,46 +1,40 @@
 #!/usr/bin/env bash
-#
-# This script depends on pandoc
-#
 
-: ${LABWC_DOC_DIR:=../labwc/build/docs}
 
-die () {
-	printf 'fatal: %b\n' "$@" >&2
-	exit 1
-}
+: ${DEPLOY_DIR:=deploy}
 
 build_src_pages () {
-	template="$(<"src/template.html")"
 	for md in src/*.md; do
-		filename=${md##*/}
-		html="${filename/%.md/.html}"
-		[[ $html -ot $md ]] || continue
-		printf '%s\n' "    GEN         ${html}"
-		printf '%b' "${template/'{{content}}'/$(pandoc --from=markdown+footnotes "$md")}" >"${html}"
+		html=${md##*/}
+		html="${DEPLOY_DIR}/${html/%.md/.html}"
+		echo "Converting $md to $html"
+
+		cat src/template_pre.html > "$html"
+		pandoc --from=markdown+footnotes "$md" >> "$html"
+		cat src/template_post.html >> "$html"
 	done
 }
 
 build_man_pages () {
-	if ! [[ -d "$LABWC_DOC_DIR" ]]; then
-		printf 'warn: %b\n' "Need labwc next to labwc.github.io with man pages built" >&2
-		return
-	fi
-	template="$(sed -e 's/sans-serif;/monospace;/' src/template.html)"
-	for scd in "$LABWC_DOC_DIR"/*; do
-		filename=${scd##*/}
-		html=$(basename ${scd}).html
-		[[ $html -ot $scd ]] || continue
-		printf '%s\n' "    GEN         ${html}"
-		printf '%b' "${template/'{{content}}'/$(pandoc --from man "$scd")}" >"${html}"
-		./fix-bullet-formatting.py "${html}"
+	test -d labwc || git clone --branch master --depth 1 https://github.com/labwc/labwc labwc
+
+	for scd in labwc/docs/*.scd; do
+		html=${scd##*/}
+		html="${DEPLOY_DIR}/${html/%.scd/.html}"
+		echo "Converting $scd to $html"
+
+		sed 's/sans-serif;/monospace;/' src/template_pre.html > "$html"
+		scdoc < "$scd" |  pandoc --from man >> "$html"
+		cat src/template_post.html >> "$html"
+		./fix-bullet-formatting.py "$html"
 	done
 }
 
 main () {
+	mkdir -p "$DEPLOY_DIR"
+
 	build_src_pages
 	build_man_pages
 }
 
 main "$@"
-

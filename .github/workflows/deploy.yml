@@ -1,0 +1,59 @@
+# Ref: https://github.com/actions/starter-workflows/tree/main/pages
+# Ref: https://stackoverflow.com/questions/65370859/github-action-trigger-on-another-repo-update-push-pull-request/65514259#65514259
+
+on:
+  # When accepting PRs
+  push:
+    branches:
+      - 'main'
+
+  # Allow running workflow manually
+  workflow_dispatch:
+
+  # Allow labwc main repo to trigger the action
+  repository_dispatch:
+    types:
+      - rebuild
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Prepare
+        run: sudo apt update && sudo apt install -y scdoc pandoc
+
+      - name: Checkout labwc.github.io
+        uses: actions/checkout@v3
+
+      - name: Checkout labwc
+        uses: actions/checkout@v3
+        with:
+          repository: 'labwc/labwc'
+          path: 'labwc'
+
+      - name: Build page
+        run: ./build-site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'deploy'
+
+  deploy:
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v1
