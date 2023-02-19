@@ -26,7 +26,7 @@ build_man_pages () {
 		printf 'warn: %b\n' "Need labwc next to labwc.github.io with man pages built" >&2
 		return
 	fi
-	template="$(sed -e 's/sans-serif/monospace/' src/template.html)"
+	template="$(sed -e 's/sans-serif;/monospace;/' src/template.html)"
 	for scd in "$LABWC_DOC_DIR"/*; do
 		filename=${scd##*/}
 		html=$(basename ${scd}).html
