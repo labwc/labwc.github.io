@@ -6,7 +6,7 @@
 decision to increase config file flexibility and keep code simple. In practical
 terms, this means that `<a><b>c</b></a>` is equivalent to `<a b="c" />`.
 
-To the end-user, the following three are therefore treated the same:
+The following three are therefore treated the same:
 
 ```
 <action>
