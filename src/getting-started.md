@@ -35,16 +35,52 @@ Alt-F3 to launch applications.
 
 # Configuration
 
-labwc user configuration files are located at `~/.config/labwc/`. The following
-four files are used:
+User config files are located at `${XDG_CONFIG_HOME:-$HOME/.config/labwc/}`
+(usually `~/.config/labwc/`) with the following five files being used:
+[rc.xml], [menu.xml], [autostart], [environment] and [themerc-override].
 
-- rc.xml
-- autostart
-- environment
-- menu.xml
+The example [rc.xml] has been kept simple. For all options and default values,
+see [rc.xml.all]
 
-The purpose of each of these files should become clear if you take the steps
-below.
+For full details on configuration options, see the man pages: 
+[labwc(1)], [labwc-config(5)], [labwc-theme(5)], [labwc-actions(5)] and
+[labwc-menu(5)].
+
+Run `labwc --reconfigure` to reload configuration and theme files.
+
+Your OS/Distribution of choice may include these example configuration files in
+`/usr/share/doc/labwc/` or similar. If not, you could download them with:
+
+```bash
+mkdir -p ~/.config/labwc
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/environment -O ~/.config/labwc/environment
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/autostart -O ~/.config/labwc/autostart
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/menu.xml -O ~/.config/labwc/menu.xml
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/rc.xml -O ~/.config/labwc/rc.xml
+```
+
+> **_NOTE:_** Before using these configuration files, please read them through
+> and modify the content to suit your specific needs.
+
+For more information about each configuration file and to help create a setup
+that work for you, please read through the sections below.
+
+If you get stuck, do reach out on the [IRC Channel] or [Github Discussions].
+
+[rc.xml]: https://github.com/labwc/labwc/blob/master/docs/rc.xml
+[rc.xml.all]: https://github.com/labwc/labwc/blob/master/docs/rc.xml.all
+[menu.xml]: https://github.com/labwc/labwc/blob/master/docs/menu.xml
+[autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
+[environment]: https://github.com/labwc/labwc/blob/master/docs/environment
+[themerc-override]: https://github.com/labwc/labwc/blob/master/docs/themerc
+[labwc(1)]: https://labwc.github.io/labwc.1.html
+[labwc-config(5)]: https://labwc.github.io/labwc-config.5.html
+[labwc-menu(5)]: https://labwc.github.io/labwc-menu.5.html
+[labwc-environment(5)]: https://labwc.github.io/labwc-environment.5.html
+[labwc-theme(5)]: https://labwc.github.io/labwc-theme.5.html
+[labwc-actions(5)]: https://labwc.github.io/labwc-actions.5.html
+[IRC Channel]: https://web.libera.chat/gamja/?channels=#labwc
+[Github Discussions]: https://github.com/labwc/labwc/discussions
 
 ## Step 1 - Set your keyboard layout
 
@@ -65,7 +101,9 @@ XKB_DEFAULT_LAYOUT=se
 If you are unsure what your country code is, refer to the 'layout' section of
 `/usr/share/X11/xkb/rules/evdev.lst`
 
-See further examples in [docs/environment]
+See further details, see [docs/environment] and [xkeyboard-config(7)].
+
+[xkeyboard-config(7)]: https://manpages.debian.org/testing/xkb-data/xkeyboard-config.7.en.html
 
 ## Step 2 - Add some items to the root-menu
 
@@ -84,8 +122,6 @@ for inspiration, or use the simple example below
 </menu>
 </openbox_menu>
 ```
-
-Run `killall -s SIGHUP labwc` to reload the config files.
 
 See [integration#menu-generators] for ideas on how to automatically create
 menu.xml files.
