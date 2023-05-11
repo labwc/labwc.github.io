@@ -114,6 +114,25 @@ a:hover {
 	text-decoration: underline;
 }
 
+a.perma {
+	display: none;
+}
+a.perma:hover {
+	text-decoration: none;
+}
+:hover > a.perma {
+	width: 1.5em;
+	margin-left: -1.5em;
+	display: inline-block;
+}
+
+:target {
+	background-color: rgba(128, 128, 128, 0.2);
+}
+
+.LOC {
+	margin: 2em 0;
+}
 </style>
 </head>
 <body>
@@ -127,3 +146,4 @@ a:hover {
 [<a href="manual.html">manual</a>]
 [<a href="tips-and-tricks.html">tips&nbsp;&amp;&nbsp;tricks</a>]
 </center>
+<!--%%%TOC%%%-->
