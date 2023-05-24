@@ -11,6 +11,7 @@
 5. [Output Management](#output-management)
 6. [Screenshots](#screenshots)
 7. [Session Lock](#session-lock)
+8. [Desktops](#desktops)
 
 # 1. Introduction {#introduction}
 
@@ -230,6 +231,25 @@ use it with swayidle by changing the timeout arguments to:
 [chayang]: https://git.sr.ht/~emersion/chayang
 [wlopm]: https://git.sr.ht/~leon_plickat/wlopm
 [kde-idle]: https://wayland.app/protocols/kde-idle
+
+# 8. Desktops {#desktops}
+
+`pcmanfm-qt --desktop` does not support the wlr-layer-shell protocol, but can
+be used with the following window-rule in `rc.xml`:
+
+```
+<windowRules>
+  <windowRule title="pcmanfm-desktop*" skipTaskbar="yes" skipWindowSwitcher="yes">
+    <action name="ToggleAlwaysOnBottom"/>
+  </windowRule>
+</windowRules>
+```
+
+Also, consider tweaking the following in Desktop Preferences:
+
+- General - Margin of Work Area
+- Background - Individual wallpaper for each monitor
+
 
 [autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
 [waybar repository]: https://github.com/Alexays/Waybar
