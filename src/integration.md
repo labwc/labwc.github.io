@@ -33,6 +33,8 @@ mypanel >/dev/null 2>&1 &
 
 See the [autostart] documentation for further information.
 
+[autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
+
 ## 2.1 waybar {#waybar}
 
 [waybar repository]
@@ -150,6 +152,8 @@ To also show a client-menu button, run this command:
 gsettings set org.gnome.desktop.wm.preferences button-layout "menu:minimize,maximize,close"
 ```
 
+[gsettings-desktop-schemas]: https://github.com/GNOME/gsettings-desktop-schemas
+
 # 5. Output Management {#output-management}
 
 To most users the term 'output' refers to the physical display(s) used.
@@ -183,6 +187,9 @@ profile {
   output eDP-1 position 0,0
 }
 ```
+
+[kanshi]: https://sr.ht/~emersion/kanshi/
+[xrandr]: https://wiki.archlinux.org/title/xrandr
 
 # 6. Screenshots {#screenshots}
 
@@ -250,8 +257,6 @@ Also, consider tweaking the following in Desktop Preferences:
 - General - Margin of Work Area
 - Background - Individual wallpaper for each monitor
 
-
-[autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
 [sfwbar repository]: https://github.com/LBCrion/sfwbar
@@ -266,9 +271,4 @@ Also, consider tweaking the following in Desktop Preferences:
 [openbox-menu]: http://fabrice.thiroux.free.fr/openbox-menu_en.html
 [arch-xdg-menu]: https://arch.p5n.pp.ru/~sergej/dl/2018/
 [obamenu]: https://github.com/onuronsekiz/obamenu
-
-[gsettings-desktop-schemas]: https://github.com/GNOME/gsettings-desktop-schemas
-
-[kanshi]: https://sr.ht/~emersion/kanshi/
 [wlr-randr]: https://sr.ht/~emersion/wlr-randr/
-[xrandr]: https://wiki.archlinux.org/title/xrandr
