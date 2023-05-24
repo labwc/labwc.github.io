@@ -1,16 +1,25 @@
 # Integration
 
-1. [Panels](#panels)
+1. [Introduction](#introduction)
+2. [Panels](#panels)
     1. [waybar](#waybar)
     2. [sfwbar](#sfwbar)
     3. [xfce4-panel](#xfce4panel)
     4. [yambar](#yambar)
-2. [Menu Generators](#menu-generators)
-3. [CSD](#csd)
-4. [Output Management](#output-management)
-5. [Screenshots](#screenshots)
+3. [Menu Generators](#menu-generators)
+4. [CSD](#csd)
+5. [Output Management](#output-management)
+6. [Screenshots](#screenshots)
+7. [Session Lock](#session-lock)
 
-# 1. Panels {#panels}
+# 1. Introduction {#introduction}
+
+This document describes how clients (not part of the labwc project) can be
+used with labwc to create a Desktop Environment. It does not attempt to
+describe in detail how to setup and use those other clients, but merely
+sign-posts to them and gives some simple hints to get started.
+
+# 2. Panels {#panels}
 
 There are a variety of wayland panels available for __labwc__ ranging
 from simple to complex. Below are some that you can try.
@@ -23,7 +32,7 @@ mypanel >/dev/null 2>&1 &
 
 See the [autostart] documentation for further information.
 
-## 1.1 waybar {#waybar}
+## 2.1 waybar {#waybar}
 
 [waybar repository]
 
@@ -43,7 +52,7 @@ protocol to the `~/.config/waybar/config` file:
 
 See the [waybar documentation] for further information.
 
-## 1.2 sfwbar {#sfwbar}
+## 2.2 sfwbar {#sfwbar}
 
 [sfwbar repository]
 
@@ -52,7 +61,7 @@ Configure sfwbar in the `~/.config/sfwbar/sfwbar.config` file.
 The default config will mostly work however for more information see the
 [sfwbar man page].
 
-## 1.3 xfce4-panel {#xfce4panel}
+## 2.3 xfce4-panel {#xfce4panel}
 
 [xfce4-panel repository]
 
@@ -85,7 +94,7 @@ On Arch Linux you can simply install the following packages: [xfce4-dev-tools],
 [libxfce4windowing-devel]: https://aur.archlinux.org/packages/libxfce4windowing-devel
 [xfce4-panel-git]: https://aur.archlinux.org/packages/xfce4-panel-git
 
-## 1.3 yambar {#yambar}
+## 2.4 yambar {#yambar}
 
 [yambar repository]
 
@@ -94,7 +103,7 @@ uses the [`yaml` language].
 
 Read the [yambar documentation] for further information.
 
-# 2. Menu Generators {#menu-generators}
+# 3. Menu Generators {#menu-generators}
 
 Several menu-generators exist to automatically create a menu.xml with system
 applications:
@@ -120,7 +129,7 @@ labwc-menu-generator > ~/.config/labwc/menu.xml
 Some of them support several menu formats, in which case you have to specify
 `openbox` format.
 
-# 3. Client Side Decoration (CSD) {#csd}
+# 4. Client Side Decoration (CSD) {#csd}
 
 Labwc is designed to use Server Side Decoration (SSD) for windows, but does
 support CSD. If you prefer to use CSD or use GTK applications which will not
@@ -140,7 +149,7 @@ To also show a client-menu button, run this command:
 gsettings set org.gnome.desktop.wm.preferences button-layout "menu:minimize,maximize,close"
 ```
 
-# 4. Output Management {#output-management}
+# 5. Output Management {#output-management}
 
 To most users the term 'output' refers to the physical display(s) used.
 
@@ -174,7 +183,7 @@ profile {
 }
 ```
 
-# 5. Screenshots {#screenshots}
+# 6. Screenshots {#screenshots}
 
 Screenshots can be taken using the `wlr-screencopy` protocol via applications
 such as [grim](https://git.sr.ht/~emersion/grim).
@@ -190,6 +199,37 @@ example
 grim -g "$(slurp)" - | swappy -f -
 grim - | wl-copy
 ```
+
+# 7. Session Lock {#session-lock}
+
+`labwc` supports the [ext-session-lock] and [kde-idle] protocols and you can use clients such
+as `swaylock` to lock your session.
+
+It is common to want to lock the session/screen after a period of inactivity.
+This can be acieved by using `swayidle` as follows:
+
+```
+swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 600 'wlopm --off \*' \
+	resume 'wlopm --on \*' \
+	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+```
+
+Note that in the context of idle system power management, it is *NOT* a good
+idea to turn off displays by 'disabling outputs' for example by `wlr-randr
+--output <whatever> --off` because this re-arranges views. Instead use a
+wlr-output-power-management client such as [wlopm]
+
+[chayang] is a small Wayland client which gradually dims the screen. This is
+useful for setting up a grace period before turning off the screens. You can
+use it with swayidle by changing the timeout arguments to:
+
+`'chayang && swaylock -f'`
+
+[chayang]: https://git.sr.ht/~emersion/chayang
+[wlopm]: https://git.sr.ht/~leon_plickat/wlopm
+[kde-idle]: https://wayland.app/protocols/kde-idle
 
 [autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
 [waybar repository]: https://github.com/Alexays/Waybar
