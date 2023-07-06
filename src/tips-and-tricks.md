@@ -27,4 +27,33 @@ parent compositor and thereby forward them to the nested instance.
 
 [`ToggleKeybinds`]: https://labwc.github.io/labwc-actions.5.html#entry_action_name=togglekeybinds
 
+## Run or Raise
 
+The `wlr-foreign-toplevel-managment` protocols provides clients with a list of
+opened applications and lets them request certain actions on them, like
+maximizing, focusing, etc. This can be used for scripting with clients such as
+[`wlrctl`] and [`lswt`]. For example, see below a a script which (a) launches
+an application if it is not already running, or (b) focuses the application's
+most recently opened window if it is already running:
+
+```
+#!/bin/sh
+
+if test -z "$1"; then
+	echo "Usage: runraise app_id [executable]"
+	exit 1
+fi
+
+app_id=$1
+executable=$2
+test -z "$executable" && executable=$app_id
+
+if ! wlrctl window focus "$app_id"; then
+	$executable &
+	disown
+fi
+```
+
+[`wlrctl`]: https://git.sr.ht/~brocellous/wlrctl
+[`lswt`]: https://sr.ht/~leon_plickat/lswt/
+[`wlr-foreign-toplevel-managment`]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
