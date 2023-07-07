@@ -1,10 +1,49 @@
 # Tips & Tricks
 
-## XML Flexibility
+1. [XML Nodenames](#xml-nodenames)
+2. [Keybind Forwarding](#keybind-forwarding)
+3. [Run or Raise](#run-or-raise)
+3. [Environment Variables](#environment-variables)
 
-`labwc` parses XML in an element/attribute agnostic way. This is a design
-decision to increase config file flexibility and keep code simple. In practical
-terms, this means that `<a><b>c</b></a>` is equivalent to `<a b="c" />`.
+## XML Nodenames
+
+`labwc` refers to each element and attribute in an XML tree by a nodename.  For
+example, the `<c>` element below would be assigned the nodename `c.b.a`:
+
+```
+<a>
+  <b>
+    <c>foo</c>
+  </b>
+<a>
+```
+
+`labwc` also parses XML in an element/attribute agnostic way, which means that
+`<a><b>foo</b></a>` is equivalent to `<a b="foo"/>`.
+
+Too see the config/menu file nodenames when `labwc` starts, set the following
+environment variables:
+
+```
+LABWC_DEBUG_CONFIG_NODENAMES=1
+LABWC_DEBUG_MENU_NODENAMES=1
+```
+
+In practical terms, this means that the following syntax could be used:
+
+```
+<keybind key="W-l" name.action="Execute" command.action="swaylock -c 000000"/>
+```
+
+...rather than then lengthier:
+
+```
+<keybind key="W-l">
+  <action name="Execute">
+    <command>swaylock -c 000000"</command>
+  </action>
+</keybind>
+```
 
 See [labwc-config(5)-syntax] for examples and more detail.
 
@@ -12,8 +51,8 @@ See [labwc-config(5)-syntax] for examples and more detail.
 
 ## Keybind Forwarding
 
-The [`ToggleKeybinds`] action allows better control of Virtual Machines,
-VNC clients, nested compositors or similar.
+The [`ToggleKeybinds`] action allows better control of Virtual Machines, VNC
+clients, nested compositors or similar.
 
 For example, to make alt-tab work in a nested compositor add the code below to
 `~/.config/labwc/rc.xml` and then press F12 to disable all keybinds in the
@@ -32,9 +71,9 @@ parent compositor and thereby forward them to the nested instance.
 The `wlr-foreign-toplevel-managment` protocols provides clients with a list of
 opened applications and lets them request certain actions on them, like
 maximizing, focusing, etc. This can be used for scripting with clients such as
-[`wlrctl`] and [`lswt`]. For example, see below a a script which (a) launches
-an application if it is not already running, or (b) focuses the application's
-most recently opened window if it is already running:
+[`wlrctl`] and [`lswt`]. For example, the script below launches an application
+if it is not already running, or focuses the application's most recently opened
+window if it is already running:
 
 ```
 #!/bin/sh
@@ -57,3 +96,16 @@ fi
 [`wlrctl`]: https://git.sr.ht/~brocellous/wlrctl
 [`lswt`]: https://sr.ht/~leon_plickat/lswt/
 [`wlr-foreign-toplevel-managment`]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
+
+## Environment Variables
+
+There are a number of advanced settings that can be invoked for `wlroots` by
+setting some environment variables.
+
+For example `labwc` can be run nested on Wayland with multiple outputs using
+the following: `WLR_WL_OUTPUTS=2 labwc`
+
+See the wlroots repo [`env_vars.md`] file for details.
+
+[`env_vars.md`]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md
+
