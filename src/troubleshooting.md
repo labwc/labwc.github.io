@@ -10,7 +10,7 @@ GBM_BACKEND=nvidia-drm
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 ```
 
-# Cursors
+## Cursors
 
 If no cursor is showing (sometimes reported by people running vwmare), try
 adding `WLR_NO_HARDWARE_CURSORS=1` to `~/.config/labwc/environment`.
