@@ -140,6 +140,7 @@ terminal sakura:
   <keyboard>
     <default />
     <keybind key="W-d"><action name="Execute" command="sakura" /></keybind>
+    <keybind key="W-z"><action name="Execute" command="wofi --show drun" /></keybind>
   </keyboard>
 
 </labwc_config>
