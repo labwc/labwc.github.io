@@ -6,6 +6,7 @@
     2. [sfwbar](#sfwbar)
     3. [xfce4-panel](#xfce4panel)
     4. [yambar](#yambar)
+    5. [lxqt-panel](#lxqt-panel)
 3. [Menu Generators](#menu-generators)
 4. [CSD](#csd)
 5. [Output Management](#output-management)
@@ -15,10 +16,31 @@
 
 # 1. Introduction {#introduction}
 
-This document describes how clients (not part of the labwc project) can be
-used with labwc to create a Desktop Environment. It does not attempt to
-describe in detail how to setup and use those other clients, but merely
-sign-posts to them and gives some simple hints to get started.
+This document describes how clients (not part of the labwc project) can be used
+with labwc to create a Desktop Environment. It does not attempt to describe in
+detail how to setup and use those other clients, but merely sign-posts to them
+and gives some simple hints to get started.
+
+There are two protocols in particularly that are fundamental in integrating
+desktop components and that will be referred to through this document namely:
+[`wlr-layer-shell`] and [`wlr-foreign-toplevel-management`].
+
+[`wlr-layer-shell`] allows surfaces to be assigned to a "layer" with a defined
+z-depth and also to be anchored to the edges/corners of a screen.
+
+[`wlr-foreign-toplevel-management`] provides clients such as taskbars and docks
+with a list of opened applications and supports requests for certain actions
+such as maximizing, etc.
+
+At the time of writing some common toolkits do not have full support for
+[`wlr-layer-shell`], most notably `GTK4` and `Qt <6.5`. In order to integrate
+componenents written in these eco-systems in the short/medium term, window
+rules can be used to achieve a reasonable setup. Please note though that the
+use of window-rules is a sub-optimal solution which relies on user
+configuration and does not always support per-output configuration.
+
+[`wlr-layer-shell`]: https://wayland.app/protocols/wlr-layer-shell-unstable-v1
+[`wlr-foreign-toplevel-management`]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
 
 # 2. Panels {#panels}
 
@@ -106,6 +128,22 @@ uses the [`yaml` language].
 
 Read the [yambar documentation] for further information.
 
+## 2.5 lxqt-panel {#lxqt-panel}
+
+`lxqt-panel` does not support [`wlr-layer-shell`] and
+[`wlr-foreign-toplevel-management`] but can be run with the following window
+rules.
+
+```
+<windowRules>
+  <windowRule identifier="lxqt-panel" matchOnce="true">
+    <skipTaskbar>yes</skipTaskbar>
+    <action name="MoveTo" x="0" y="0" />
+    <action name="ToggleAlwaysOnTop"/>
+  </windowRule>
+</windowRules>
+```
+
 # 3. Menu Generators {#menu-generators}
 
 Several menu-generators exist to automatically create a menu.xml with system
@@ -134,6 +172,8 @@ Some of them support several menu formats, in which case you have to specify
 
 # 4. Client Side Decoration (CSD) {#csd}
 
+## 4.1 `gsettings` {#gsettings}
+
 Labwc is designed to use Server Side Decoration (SSD) for windows, but does
 support CSD. If you prefer to use CSD or use GTK applications which will not
 surrender their CSD, such as nautilus, you may wish to manage some CSD
@@ -153,6 +193,12 @@ gsettings set org.gnome.desktop.wm.preferences button-layout "menu:minimize,maxi
 ```
 
 [gsettings-desktop-schemas]: https://github.com/GNOME/gsettings-desktop-schemas
+
+## 4.2 Firefox {#firefox}
+
+Firefox prefers CSD by default. In order to disable CSD, take the following steps:
+
+- `Settings` -> `More Tools` -> `Customize toolbar` -> `Title Bar` checkbox (bottom left corner)
 
 # 5. Output Management {#output-management}
 
@@ -246,7 +292,10 @@ be used with the following window-rule in `rc.xml`:
 
 ```
 <windowRules>
-  <windowRule title="pcmanfm-desktop*" skipTaskbar="yes" skipWindowSwitcher="yes">
+  <windowRule title="pcmanfm-desktop*">
+    <skipTaskbar>yes</skipTaskbar>
+    <skipWindowSwitcher>yes</skipWindowSwitcher>
+    <action name="MoveTo" x="0" y="0" />
     <action name="ToggleAlwaysOnBottom"/>
   </windowRule>
 </windowRules>
