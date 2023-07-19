@@ -20,3 +20,15 @@ example `Adwaita`) and set `XCURSOR_THEME` in `~/.config/labwc/environment`
 accordingly (for example `XCURSOR_THEME=Adwaita`).  `labwc` handles missing
 cursor themes by falling back on builtin old X11 cursors, but some applications
 do not resulting in the wrong or no cursor being set.
+
+## Logout
+
+When using a laptop with an external monitor and the built-in monitor is closed,
+it may happen that the system goes into hibernation when disconnecting.
+If so, edit the configuration file `etc/systemd/logind.conf' and uncomment
+the following and set them to ignore (see logind.conf(5) manual for more info):
+
+```
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+```
