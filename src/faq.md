@@ -2,7 +2,7 @@
 
 ## Unset keybinds
 
-### Q: How do I get `Alt+Left/Right` to not move windows? I want these to navigate forward/backwards in Nautilus and Firefox.
+### Q: How do I get `Alt+Left/Right` to not move windows? I want these to navigate forward/backwards in File Managers and Firefox.
 
 You could either copy `rc.xml.all` and just remove the entries you do not want, such as `<keybind key="A-Left">`
 
