@@ -24,9 +24,9 @@ Or you could use the `None` action or simply define a keybind with no action (wh
 <keybind key="W-Up"><action name="ToggleMaximize"/></keybind>
 ```
 
-See [`ToggleMaximize`] action.
+See [ToggleMaximize] action.
 
-[`ToggleMaximize`]: https://labwc.github.io/labwc-actions.5.html#entry_action_name=togglemaximize
+[ToggleMaximize]: https://labwc.github.io/labwc-actions.5.html#entry_action_name=togglemaximize
 
 > Is it possible to launch wofi with only the Super key?
 

@@ -51,7 +51,7 @@ See [labwc-config(5)-syntax] for examples and more detail.
 
 ## Keybind Forwarding
 
-The [`ToggleKeybinds`] action allows better control of Virtual Machines, VNC
+The [ToggleKeybinds] action allows better control of Virtual Machines, VNC
 clients, nested compositors or similar.
 
 For example, to make alt-tab work in a nested compositor add the code below to
@@ -64,14 +64,14 @@ parent compositor and thereby forward them to the nested instance.
 </keybind>
 ```
 
-[`ToggleKeybinds`]: https://labwc.github.io/labwc-actions.5.html#entry_action_name=togglekeybinds
+[ToggleKeybinds]: https://labwc.github.io/labwc-actions.5.html#entry_action_name=togglekeybinds
 
 ## Run or Raise
 
-The `wlr-foreign-toplevel-managment` protocols provides clients with a list of
+The [wlr-foreign-toplevel-managment] protocols provides clients with a list of
 opened applications and lets them request certain actions on them, like
 maximizing, focusing, etc. This can be used for scripting with clients such as
-[`wlrctl`] and [`lswt`]. For example, the script below launches an application
+[wlrctl] and [lswt]. For example, the script below launches an application
 if it is not already running, or focuses the application's most recently opened
 window if it is already running:
 
@@ -93,9 +93,9 @@ if ! wlrctl window focus "$app_id"; then
 fi
 ```
 
-[`wlrctl`]: https://git.sr.ht/~brocellous/wlrctl
-[`lswt`]: https://sr.ht/~leon_plickat/lswt/
-[`wlr-foreign-toplevel-managment`]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
+[wlrctl]: https://git.sr.ht/~brocellous/wlrctl
+[lswt]: https://sr.ht/~leon_plickat/lswt/
+[wlr-foreign-toplevel-managment]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
 
 ## Environment Variables
 
@@ -105,7 +105,7 @@ setting some environment variables.
 For example `labwc` can be run nested on Wayland with multiple outputs using
 the following: `WLR_WL_OUTPUTS=2 labwc`
 
-See the wlroots repo [`env_vars.md`] file for details.
+See the wlroots repo [env_vars.md] file for details.
 
-[`env_vars.md`]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md
+[env_vars.md]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md
 
