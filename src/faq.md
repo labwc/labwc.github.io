@@ -6,7 +6,7 @@
 
 You could either copy `rc.xml.all` and just remove the entries you do not want, such as `<keybind key="A-Left">`
 
-Or you could use the `None` action or simply define a keybind with no action (which will does the same). For example:
+Or you could use the `None` action or simply define a keybind with no action (which does the same). For example:
 
 ```
   <keyboard>
@@ -28,7 +28,7 @@ See [ToggleMaximize] action.
 
 [ToggleMaximize]: https://labwc.github.io/labwc-actions.5.html#entry_action_name=togglemaximize
 
-> Is it possible to launch wofi with only the Super key?
+### Q: Is it possible to launch wofi with only the Super key?
 
 No. I'm afraid that is not yet implemented.
 
