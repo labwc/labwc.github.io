@@ -80,6 +80,15 @@ Yes. Action `ToggleDecoration`, but it removes borders too.
 </windowRule>
 ```
 
+### Q: I'd like to be able to remove the client-menu button. How can this be done?
+
+Add this to `~/.config/labwc/themerc-override`:
+
+```
+window.active.button.menu.unpressed.image.color: #000000 0
+window.inactive.button.menu.unpressed.image.color: #000000 0
+```
+
 # 3. Mouse and Trackpads {mouse-and-trackpads}
 
 ## 3.1 Libinput {libinput}
