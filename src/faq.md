@@ -1,6 +1,16 @@
 # Frequently Asked Questions
 
-## Unset keybinds
+1. [Keybinds](#keybinds)
+    1. [Unset Keybinds](#unset-keybinds)
+    2. [Common Keybinds](#common-keybinds)
+2. [Theme](#theme)
+    1. [Server Side Decoration](#server-side-decoration)
+3. [Mouse and Trackpads](#mouse-and-trackpads)
+    1. [Libinput](#libinput)
+
+# 1. Keybinds {keybinds}
+
+## 1.1 Unset keybinds {unset-keybinds}
 
 ### Q: How do I get `Alt+Left/Right` to not move windows? I want these to navigate forward/backwards in File Managers and Firefox.
 
@@ -16,7 +26,7 @@ Or you could use the `None` action or simply define a keybind with no action (wh
   </keyboard>
 ```
 
-## Common keybinds
+## 1.2 Common keybinds {common-keybinds}
 
 ### Q: How do I get `Windows+Up` to maximize/restore-to-previous-size a window?
 
@@ -56,7 +66,9 @@ In true `sway` style:
 <keybind key="W-S-3"><action name="SendToDesktop" to="3" follow="false"/></keybind>
 ```
 
-## General
+# 2. Theme {theme}
+
+## 2.1 Server Side Decoration {server-side-decoration}
 
 ### Q: Is it possible to completely remove windows' title-bars?
 
@@ -67,6 +79,10 @@ Yes. Action `ToggleDecoration`, but it removes borders too.
   <action name="ToggleDecoration"/>
 </windowRule>
 ```
+
+# 3. Mouse and Trackpads {mouse-and-trackpads}
+
+## 3.1 Libinput {libinput}
 
 ### Q: How to scroll with the right edge of the trackpad?
 
