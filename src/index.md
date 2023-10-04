@@ -13,8 +13,8 @@ be controlled with dbus, sway/i3-IPC or other technology. The reason for this is
 that we believe that custom IPCs and protocols create a fragmentation that
 hinders general Wayland adoption.
 
-<a href="https://i.imgur.com/vOelinT.png">
-  <img src="https://i.imgur.com/vOelinTl.png">
+<a href="img/scrot1.png">
+  <img src="img/scrot1-small.png">
 </a>
 
 [wayland]: https://wayland.freedesktop.org/
