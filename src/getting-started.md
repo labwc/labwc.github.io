@@ -31,7 +31,7 @@ labwc -s alacritty
 Alternatively, if you have bemenu installed, you can use the default keybind
 Alt-F3 to launch applications.
 
-<img src="img/scrot-first-startup.png" />
+<img src="img/scrot-first-start.png" />
 
 # Configuration
 
