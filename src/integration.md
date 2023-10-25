@@ -72,7 +72,7 @@ protocol to the `~/.config/waybar/config` file:
     "wlr/taskbar": {
         "format": "{app_id}",
         "on-click": "minimize-raise",
-    }
+    },
 ```
 
 See the [waybar documentation] for further information.
