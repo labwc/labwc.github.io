@@ -21,7 +21,7 @@ example, the `<c>` element below would be assigned the nodename `c.b.a`:
 `labwc` also parses XML in an element/attribute agnostic way, which means that
 `<a><b>foo</b></a>` is equivalent to `<a b="foo"/>`.
 
-Too see the config/menu file nodenames when `labwc` starts, set the following
+To see the config/menu file nodenames when `labwc` starts, set the following
 environment variables:
 
 ```
