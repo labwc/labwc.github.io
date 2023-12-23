@@ -136,7 +136,7 @@ rules.
 
 ```
 <windowRules>
-  <windowRule identifier="lxqt-panel" matchOnce="true">
+  <windowRule identifier="lxqt-panel" matchOnce="true" fixedPosition="yes">
     <skipTaskbar>yes</skipTaskbar>
     <action name="MoveTo" x="0" y="0" />
     <action name="ToggleAlwaysOnTop"/>
