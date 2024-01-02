@@ -3,7 +3,8 @@
 1. [XML Nodenames](#xml-nodenames)
 2. [Keybind Forwarding](#keybind-forwarding)
 3. [Run or Raise](#run-or-raise)
-3. [Environment Variables](#environment-variables)
+4. [Environment Variables](#environment-variables)
+5. [Nested XWayland](#nested-xwayland)
 
 ## XML Nodenames
 
@@ -108,4 +109,14 @@ the following: `WLR_WL_OUTPUTS=2 labwc`
 See the wlroots repo [env_vars.md] file for details.
 
 [env_vars.md]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md
+
+## Nexted XWayland
+
+To run a nested instances of openbox on labwc:
+
+```
+Xwayland -decorate -noreset :55
+DISPLAY=:55 dbus-run-session openbox-session
+```
+
 
