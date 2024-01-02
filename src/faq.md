@@ -97,3 +97,19 @@ window.inactive.button.menu.unpressed.image.color: #000000 0
 
 Not yet implemented.
 
+## 3.2 Mousebinds
+
+### Q: I'm used to MS Windows and would like all window to unfocus when I click the desktop. How can this be achieved?
+
+```
+<mouse>
+  <default />
+  <context name="Root">
+    <mousebind button="Left" action="Press">
+      <action name="Unfocus" />
+    </mousebind>
+  </context>
+</mouse>
+```
+
+
