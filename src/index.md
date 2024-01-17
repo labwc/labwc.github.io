@@ -24,7 +24,6 @@ hinders general Wayland adoption.
 [sway]: https://github.com/swaywm 
 [wayland-protocols]: https://gitlab.freedesktop.org/wayland/wayland-protocols
 [wlr-protocols]: https://gitlab.freedesktop.org/wlroots/wlr-protocols 
-[wlr-protocols]: https://gitlab.freedesktop.org/wlroots/wlr-protocols
 [mate-panel]: https://github.com/mate-desktop/mate-panel
 [labwc-tweaks]: https://github.com/labwc/labwc-tweaks
 [Integration]: https://labwc.github.io/integration.html
