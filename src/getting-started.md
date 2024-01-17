@@ -3,7 +3,7 @@
 Labwc is designed to be easy to get started with.
 
 To use the compositor for the first time, there is no need for configuration
-files, theme files or even a session file.  It should be enough to simply run
+files, theme files or even a session file. It should be enough to simply run
 the labwc binary from a TTY or Wayland/X11 session. 
 
 If labwc is not packaged by your OS/distribution of choice, it is quite easy
@@ -35,8 +35,9 @@ Alt-F3 to launch applications.
 
 # Configuration
 
-User config files are located at `${XDG_CONFIG_HOME:-$HOME/.config/labwc/}`
-(usually `~/.config/labwc/`) with the following five files being used:
+The default config files are located at `/usr/share/doc/labwc/`. You can either modify those or
+create your own ones by copying them to `${XDG_CONFIG_HOME:-$HOME/.config/labwc/}`
+(usually `~/.config/labwc/`), with the following five files being used:
 [rc.xml], [menu.xml], [autostart], [environment] and [themerc-override].
 
 The example [rc.xml] has been kept simple. For all options and default values,
