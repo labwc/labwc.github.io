@@ -50,6 +50,9 @@ wget https://raw.githubusercontent.com/labwc/labwc/master/docs/menu.xml -O ~/.co
 wget https://raw.githubusercontent.com/labwc/labwc/master/docs/rc.xml -O ~/.config/labwc/rc.xml
 ```
 
+> **_NOTE:_** Before using these configuration files, please read them through
+> and modify the content to suit your specific needs.
+
 The example [rc.xml] has been kept simple. For all options and default values,
 see [rc.xml.all]
 
@@ -58,9 +61,6 @@ For full details on configuration options, see the man pages:
 [labwc-menu(5)].
 
 Run `labwc --reconfigure` to reload configuration and theme files.
-
-> **_NOTE:_** Before using these configuration files, please read them through
-> and modify the content to suit your specific needs.
 
 For more information about each configuration file and to help create a setup
 that work for you, please read through the sections below.
