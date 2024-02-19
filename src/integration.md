@@ -86,6 +86,15 @@ Configure sfwbar in the `~/.config/sfwbar/sfwbar.config` file.
 The default config will mostly work however for more information see the
 [sfwbar man page].
 
+[sfwbar/config] contains example config files (with file extension `.config`)
+which can be by merely copying them to `~/.config/sfwbar/sfwbar.config`. Note
+that if the config file contains a `include("foo.widget")` then `foo.widget`
+also needs to be copied to `~/.config/sfwbar/`.
+
+[sfwbar repository]: https://github.com/LBCrion/sfwbar
+[sfwbar man page]: https://github.com/LBCrion/sfwbar/blob/main/doc/sfwbar.rst
+[sfwbar/config]: https://github.com/LBCrion/sfwbar/tree/main/config
+
 ## 2.3 xfce4-panel {#xfce4panel}
 
 [xfce4-panel repository]
@@ -308,8 +317,6 @@ Also, consider tweaking the following in Desktop Preferences:
 
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
-[sfwbar repository]: https://github.com/LBCrion/sfwbar
-[sfwbar man page]: https://github.com/LBCrion/sfwbar/blob/main/doc/sfwbar.rst
 [xfce4-panel repository]: https://gitlab.xfce.org/xfce/xfce4-panel
 [yambar repository]: https://codeberg.org/dnkl/yambar
 [`yaml` language]: https://yaml.org
