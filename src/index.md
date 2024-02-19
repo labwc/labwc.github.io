@@ -13,17 +13,15 @@ be controlled with dbus, sway/i3-IPC or other technology. The reason for this is
 that we believe that custom IPCs and protocols create a fragmentation that
 hinders general Wayland adoption.
 
-<a href="img/scrot1.png">
-  <img src="img/scrot1-small.png">
+<a href="img/scrot2.png">
+  <img src="img/scrot2-small.png">
 </a>
-<small>Labwc environment integrated with [mate-panel], running [labwc-tweaks]. See the [Integration] page for how to integrate clients with labwc.</small>
+<small>[The obligatory screenshot.]</small>
 
 [wayland]: https://wayland.freedesktop.org/
 [openbox]: http://openbox.org/
 [wlroots]: https://gitlab.freedesktop.org/wlroots/wlroots
 [sway]: https://github.com/swaywm 
 [wayland-protocols]: https://gitlab.freedesktop.org/wayland/wayland-protocols
-[wlr-protocols]: https://gitlab.freedesktop.org/wlroots/wlr-protocols 
-[mate-panel]: https://github.com/mate-desktop/mate-panel
-[labwc-tweaks]: https://github.com/labwc/labwc-tweaks
-[Integration]: https://labwc.github.io/integration.html
+[wlr-protocols]: https://gitlab.freedesktop.org/wlroots/wlr-protocols
+[The obligatory screenshot.]: https://labwc.github.io/obligatory-screenshot.html
