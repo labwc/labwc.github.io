@@ -87,9 +87,11 @@ The default config will mostly work however for more information see the
 [sfwbar man page].
 
 [sfwbar/config] contains example config files (with file extension `.config`)
-which can be by merely copying them to `~/.config/sfwbar/sfwbar.config`. Note
-that if the config file contains a `include("foo.widget")` then `foo.widget`
-also needs to be copied to `~/.config/sfwbar/`.
+which can be used by merely copying them to `~/.config/sfwbar/sfwbar.config`.
+Note that if the config file contains a `include("foo.widget")` then
+`foo.widget` also needs to be copied to `~/.config/sfwbar/`.
+
+See example configuration [here](obligatory-screenshot.html#panel).
 
 [sfwbar repository]: https://github.com/LBCrion/sfwbar
 [sfwbar man page]: https://github.com/LBCrion/sfwbar/blob/main/doc/sfwbar.rst
