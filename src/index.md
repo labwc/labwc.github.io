@@ -16,7 +16,7 @@ hinders general Wayland adoption.
 <a href="img/scrot2.png">
   <img src="img/scrot2-small.png">
 </a>
-<small>[The obligatory screenshot.]</small>
+<small><a href="https://labwc.github.io/obligatory-screenshot.html">The obligatory screenshot.</a></small>
 
 [wayland]: https://wayland.freedesktop.org/
 [openbox]: http://openbox.org/
@@ -24,4 +24,3 @@ hinders general Wayland adoption.
 [sway]: https://github.com/swaywm 
 [wayland-protocols]: https://gitlab.freedesktop.org/wayland/wayland-protocols
 [wlr-protocols]: https://gitlab.freedesktop.org/wlroots/wlr-protocols
-[The obligatory screenshot.]: https://labwc.github.io/obligatory-screenshot.html
