@@ -35,10 +35,20 @@ Alt-F3 to launch applications.
 
 # Configuration
 
-The default config files are located at `/usr/share/doc/labwc/`. You can either modify those or
+Example config files, which reflect the default configuration of labwc, are located at `/usr/share/doc/labwc/`. You can either modify those or
 create your own ones by copying them to `${XDG_CONFIG_HOME:-$HOME/.config/labwc/}`
 (usually `~/.config/labwc/`), with the following five files being used:
 [rc.xml], [menu.xml], [autostart], [environment] and [themerc-override].
+
+Your OS/Distribution of choice may include these example configuration files. If not, you could download them with:
+
+```bash
+mkdir -p ~/.config/labwc
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/environment -O ~/.config/labwc/environment
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/autostart -O ~/.config/labwc/autostart
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/menu.xml -O ~/.config/labwc/menu.xml
+wget https://raw.githubusercontent.com/labwc/labwc/master/docs/rc.xml -O ~/.config/labwc/rc.xml
+```
 
 The example [rc.xml] has been kept simple. For all options and default values,
 see [rc.xml.all]
@@ -49,24 +59,13 @@ For full details on configuration options, see the man pages:
 
 Run `labwc --reconfigure` to reload configuration and theme files.
 
-Your OS/Distribution of choice may include these example configuration files in
-`/usr/share/doc/labwc/` or similar. If not, you could download them with:
-
-```bash
-mkdir -p ~/.config/labwc
-wget https://raw.githubusercontent.com/labwc/labwc/master/docs/environment -O ~/.config/labwc/environment
-wget https://raw.githubusercontent.com/labwc/labwc/master/docs/autostart -O ~/.config/labwc/autostart
-wget https://raw.githubusercontent.com/labwc/labwc/master/docs/menu.xml -O ~/.config/labwc/menu.xml
-wget https://raw.githubusercontent.com/labwc/labwc/master/docs/rc.xml -O ~/.config/labwc/rc.xml
-```
-
 > **_NOTE:_** Before using these configuration files, please read them through
 > and modify the content to suit your specific needs.
 
 For more information about each configuration file and to help create a setup
 that work for you, please read through the sections below.
 
-If you get stuck, do reach out on the [IRC Channel] or [Github Discussions].
+If you get stuck, do reach out on the [IRC Channel] or [GitHub Discussions].
 
 [rc.xml]: https://github.com/labwc/labwc/blob/master/docs/rc.xml
 [rc.xml.all]: https://github.com/labwc/labwc/blob/master/docs/rc.xml.all
@@ -81,7 +80,7 @@ If you get stuck, do reach out on the [IRC Channel] or [Github Discussions].
 [labwc-theme(5)]: https://labwc.github.io/labwc-theme.5.html
 [labwc-actions(5)]: https://labwc.github.io/labwc-actions.5.html
 [IRC Channel]: https://web.libera.chat/gamja/?channels=#labwc
-[Github Discussions]: https://github.com/labwc/labwc/discussions
+[GitHub Discussions]: https://github.com/labwc/labwc/discussions
 
 ## Step 1 - Set your keyboard layout
 
