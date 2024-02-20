@@ -88,8 +88,6 @@ The default config will mostly work however for more information see the
 
 [sfwbar/config] contains example config files (with file extension `.config`)
 which can be used by merely copying them to `~/.config/sfwbar/sfwbar.config`.
-Note that if the config file contains a `include("foo.widget")` then
-`foo.widget` also needs to be copied to `~/.config/sfwbar/`.
 
 See example configuration [here](obligatory-screenshot.html#panel).
 
