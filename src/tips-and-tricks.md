@@ -96,7 +96,7 @@ fi
 
 [wlrctl]: https://git.sr.ht/~brocellous/wlrctl
 [lswt]: https://sr.ht/~leon_plickat/lswt/
-[wlr-foreign-toplevel-managment]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
+[wlr-foreign-toplevel-management]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
 
 ## Environment Variables
 
