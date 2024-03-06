@@ -69,7 +69,7 @@ parent compositor and thereby forward them to the nested instance.
 
 ## Run or Raise
 
-The [wlr-foreign-toplevel-managment] protocols provides clients with a list of
+The [wlr-foreign-toplevel-management] protocol provides clients with a list of
 opened applications and lets them request certain actions on them, like
 maximizing, focusing, etc. This can be used for scripting with clients such as
 [wlrctl] and [lswt]. For example, the script below launches an application
@@ -110,7 +110,7 @@ See the wlroots repo [env_vars.md] file for details.
 
 [env_vars.md]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md
 
-## Nexted XWayland
+## Nested XWayland
 
 To run a nested instances of openbox on labwc:
 
