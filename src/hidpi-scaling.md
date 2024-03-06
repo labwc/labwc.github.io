@@ -113,7 +113,7 @@ profile {
 To make kanshi settings permanent, add a kanshi entry in
 `~/.config/labwc/autostart`.
 
-If you change the kanshi config file on a runnnig system, you can trigger a
+If you change the kanshi config file on a running system, you can trigger a
 re-load with `killall -s SIGHUP kanshi`.
 
 ## Wayland Applications
@@ -239,7 +239,7 @@ scaling if needed.
 
 If you have installed Jetbrains applications via the Jetbrains Toolbox, the
 .desktop files are located in `~/.local/share/applications` and these can be
-modfied to set environment variables in the `Exec=` line, see the
+modified to set environment variables in the `Exec=` line, see the
 [Modify environment variables](https://wiki.archlinux.org/title/Desktop_entries#Modify_environment_variables)
 archwiki page for instructions.
 

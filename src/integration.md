@@ -34,7 +34,7 @@ such as maximizing, etc.
 
 At the time of writing some common toolkits do not have full support for
 [`wlr-layer-shell`], most notably `GTK4` and `Qt <6.5`. In order to integrate
-componenents written in these eco-systems in the short/medium term, window
+components written in these eco-systems in the short/medium term, window
 rules can be used to achieve a reasonable setup. Please note though that the
 use of window-rules is a sub-optimal solution which relies on user
 configuration and does not always support per-output configuration.
@@ -158,7 +158,7 @@ rules.
 Several menu-generators exist to automatically create a menu.xml with system
 applications:
 
-- [labwc-menu-generator]\: Indepedent of Desktop Environments and associated
+- [labwc-menu-generator]\: Independent of Desktop Environments and associated
   menu-packages. Very easy to build and use. Written in C.
 - [labwc-menu-gnome3]\: Depends on GTK and a menu package such as gnome, mate and
   cinnamon. Written in C.
@@ -230,7 +230,7 @@ outputs from the command line like this:
 wlr-randr --output DP-1 --mode 1920x1080@144.001007Hz
 ```
 
-> Note: Use all the frequncy (Hz) decimals when specifying a mode
+> Note: Use all the frequency (Hz) decimals when specifying a mode
 
 If you prefer to have display (output) configuration automatically selected,
 try [kanshi] which supports directive definitions (in `~/.config/kanshi/config`)
@@ -269,7 +269,7 @@ grim - | wl-copy
 as `swaylock` to lock your session.
 
 It is common to want to lock the session/screen after a period of inactivity.
-This can be acieved by using `swayidle` as follows:
+This can be achieved by using `swayidle` as follows:
 
 ```
 swayidle -w \
