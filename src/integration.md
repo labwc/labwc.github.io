@@ -13,6 +13,7 @@
 6. [Screenshots](#screenshots)
 7. [Session Lock](#session-lock)
 8. [Desktops](#desktops)
+9. [Qt](#qt)
 
 # 1. Introduction {#introduction}
 
@@ -315,6 +316,17 @@ Also, consider tweaking the following in Desktop Preferences:
 - General - Margin of Work Area
 - Background - Individual wallpaper for each monitor
 
+# 9. Qt {#qt}
+
+To run Qt applications on Wayland it may be necessary to install a specific
+`qt6-wayland` package from the distribution repositories. For examples
+on Arch Linux, install [qt6-wayland].
+
+You may use [qt6ct] to configure Qt6 settings such as theme, font and icons;
+and set `QT_QPA_PLATFORMTHEME=qt6ct` in `~/.config/labwc/environment`.
+
+[qt6-wayland]: https://archlinux.org/packages/extra/x86_64/qt6-wayland/
+[qt6ct]: https://github.com/trialuser02/qt6ct
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
 [xfce4-panel repository]: https://gitlab.xfce.org/xfce/xfce4-panel
