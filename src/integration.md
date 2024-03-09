@@ -293,6 +293,7 @@ use it with swayidle by changing the timeout arguments to:
 [chayang]: https://git.sr.ht/~emersion/chayang
 [wlopm]: https://git.sr.ht/~leon_plickat/wlopm
 [kde-idle]: https://wayland.app/protocols/kde-idle
+[ext-session-lock]: https://wayland.app/protocols/ext-session-lock-v1
 
 # 8. Desktops {#desktops}
 
