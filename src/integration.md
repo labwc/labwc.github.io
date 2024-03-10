@@ -353,6 +353,10 @@ following wayland protocols since version 0.17.2:
 - [input-method-v2]
   - Supported by Fcitx5, but not by IBus yet ([issue]).
 
+<!---
+  As text-input-v1 is an outdated protocol, @tokyo4j's patch is required.
+  TODO: remove these once https://chromium-review.googlesource.com/c/chromium/src/+/3750452 is merged
+-->
 By installing labwc from [this branch] or [AUR]:
 
 - [text-input-v1]
