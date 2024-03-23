@@ -353,16 +353,6 @@ following wayland protocols since version 0.7.2:
 - [input-method-v2]
   - Supported by Fcitx5, but not by IBus yet ([issue]).
 
-<!---
-  As text-input-v1 is an outdated protocol, @tokyo4j's patch is required.
-  TODO: remove these once https://chromium-review.googlesource.com/c/chromium/src/+/3750452 is merged
--->
-By installing labwc from [this branch] or [AUR]:
-
-- [text-input-v1]
-  - Used by Chromium and Electron-based apps (by running with
-    `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`).
-
 Here is a quick guide for using Fcitx5 in labwc:
 
 1. Install fcitx5, GTK/Qt modules, configtool and language-specific module.
@@ -383,13 +373,36 @@ module and to set up hotkeys. See [Configtool (Fcitx 5) - Fcitx].
 
 5. Activate input method with hotkeys while typing in applications.
 
+<!--- TODO: remove this once https://chromium-review.googlesource.com/c/chromium/src/+/3750452 is merged -->
+## Input method on Chromium
+Chromium currently doesn't support [text-input-v3] protocol. So if you want to
+use IME with Chromium under labwc, you have following options:
+
+1. Run Chromium under XWayland
+
+    This is the default option. However, some features like touchpad gesture
+    don't work.
+
+2. Use GTK IM Module
+
+    By running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4`,
+    you can enable IME with GTK IM Module (selected by `GTK_IM_MODULE`) under
+    wayland. However, IME popups might be incorrectly positioned.
+
+3. Patch labwc and use [text-input-v1] protocol
+
+    Since [text-input-v1] is an outdated protocol, labwc doesn't officially
+    support it. However, you can optionally add support for it by installing
+    labwc from the unofficial [AUR] or by applying its patch. Then, you can
+    enable IME with [text-input-v1] by running Chromium with
+    `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`.
+
 [text-input-v3]: https://wayland.app/protocols/text-input-unstable-v3
 [input-method-v2]: https://wayland.app/protocols/input-method-unstable-v2
 [issue]: https://github.com/ibus/ibus/issues/2182
-[this branch]: https://github.com/tokyo4j/labwc/tree/text-input-v1
-[AUR]: https://aur.archlinux.org/packages/labwc-im
-[text-input-v1]: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml
 [Configtool (Fcitx 5) - Fcitx]: https://fcitx-im.org/wiki/Configtool_(Fcitx_5)
+[text-input-v1]: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml
+[AUR]: https://aur.archlinux.org/packages/labwc-im
 
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
