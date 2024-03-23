@@ -345,7 +345,7 @@ export XMODIFIERS=@im=fcitx
 ```
 
 For apps not running on those platforms (e.g. Alacritty), labwc supports
-following wayland protocols since version 0.17.2:
+following wayland protocols since version 0.7.2:
 
 - [text-input-v3]
   - Used by winit apps (e.g. Alacritty) and GTK (without setting
