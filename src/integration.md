@@ -375,8 +375,10 @@ module and to set up hotkeys. See [Configtool (Fcitx 5) - Fcitx].
 
 <!--- TODO: remove this once https://chromium-review.googlesource.com/c/chromium/src/+/3750452 is merged -->
 ## Input method on Chromium
-Chromium currently doesn't support [text-input-v3] protocol. So if you want to
-use IME with Chromium under labwc, you have following options:
+
+Chromium (and Electron-based apps) currently doesn't support [text-input-v3]
+protocol. So if you want to use IME with Chromium under labwc, you have
+following options:
 
 1. Run Chromium under XWayland
 
