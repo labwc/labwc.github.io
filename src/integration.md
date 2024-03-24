@@ -344,8 +344,9 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 ```
 
+<!-- TODO: remove "in the master branch" when labwc 0.7.2 is released -->
 For apps not running on those platforms (e.g. Alacritty), labwc supports
-following wayland protocols since version 0.7.2:
+the following wayland protocols in the master branch:
 
 - [text-input-v3]
   - Used by winit apps (e.g. Alacritty) and GTK (without setting
