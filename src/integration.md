@@ -352,7 +352,8 @@ the following wayland protocols in the master branch:
   - Used by winit apps (e.g. Alacritty) and GTK (without setting
     `GTK_IM_MODULE` environment variable).
 - [input-method-v2]
-  - Supported by Fcitx5, but not by IBus yet ([issue]).
+  - Supported by Fcitx5, but not by IBus yet
+    ([issue](https://github.com/ibus/ibus/issues/2182)).
 
 Here is a quick guide for using Fcitx5 in labwc:
 
@@ -396,16 +397,14 @@ following options:
 
     Since [text-input-v1] is an outdated protocol, labwc doesn't officially
     support it. However, you can optionally add support for it by installing
-    labwc from the unofficial [AUR] or by applying its patch. Then, you can
-    enable IME with [text-input-v1] by running Chromium with
-    `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`.
+    labwc from the [unofficial AUR](https://aur.archlinux.org/packages/labwc-im)
+    or by applying its patch. Then, you can enable IME with [text-input-v1] by
+    running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`.
 
 [text-input-v3]: https://wayland.app/protocols/text-input-unstable-v3
 [input-method-v2]: https://wayland.app/protocols/input-method-unstable-v2
-[issue]: https://github.com/ibus/ibus/issues/2182
 [Configtool (Fcitx 5) - Fcitx]: https://fcitx-im.org/wiki/Configtool_(Fcitx_5)
 [text-input-v1]: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml
-[AUR]: https://aur.archlinux.org/packages/labwc-im
 
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
