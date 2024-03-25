@@ -299,6 +299,8 @@ use it with swayidle by changing the timeout arguments to:
 
 # 8. Desktops {#desktops}
 
+## LXQt
+
 `pcmanfm-qt --desktop` does not support the wlr-layer-shell protocol, but can
 be used with the following window-rule in `rc.xml`:
 
@@ -317,6 +319,19 @@ Also, consider tweaking the following in Desktop Preferences:
 
 - General - Margin of Work Area
 - Background - Individual wallpaper for each monitor
+
+## Conky
+
+Conky, starting with version 1.19.6, has the ability to run as a true Wayland
+application. Not all of the functionality of the X11 version is available,
+notably the ability to use lua as it's X11 based. It uses waylands layer
+shell, and by default shows across all workspaces. Config file should have
+something like this:
+
+```
+out_to_x = false,
+out_to_wayland = true,
+```
 
 # 9. Qt {#qt}
 
