@@ -364,8 +364,8 @@ Here is a quick guide for using Fcitx5 in labwc:
     Replace `fcitx5-mozc` with a module for your language.
 
 2. Set `GTK_IM_MODULE`, `QT_IM_MODULE` and `XMODIFIERS` like described earlier.
-These are usually saved in files like `~/.profile`, `~/.bash_profile` and
-`/etc/environment`.
+These are usually saved in files like `~/.config/labwc/environment`,
+`~/.profile` and `/etc/environment`.
 
 3. Start `fcitx5`. You can automatically start fcitx5 by adding `fcitx5 &` to
 `~/.config/labwc/autostart`.
