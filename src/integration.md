@@ -141,9 +141,9 @@ Read the [yambar documentation] for further information.
 
 ## 2.5 lxqt-panel {#lxqt-panel}
 
-`lxqt-panel` does not support [`wlr-layer-shell`] and
-[`wlr-foreign-toplevel-management`] but can be run with the following window
-rules.
+Since version `2.0.0`, `lxqt-panel` supports the [`wlr-layer-shell`] protocol
+and thus runs natively under Wayland without window rules. Should you have an
+older version, it can still be used with a window rule such as:
 
 ```
 <windowRules>
@@ -154,6 +154,9 @@ rules.
   </windowRule>
 </windowRules>
 ```
+
+Note: `lxqt-panel` does not support [`wlr-foreign-toplevel-management`] so the
+taskbar does not work.
 
 # 3. Menu Generators {#menu-generators}
 
@@ -301,8 +304,10 @@ use it with swayidle by changing the timeout arguments to:
 
 ## LXQt
 
-`pcmanfm-qt --desktop` does not support the wlr-layer-shell protocol, but can
-be used with the following window-rule in `rc.xml`:
+Since version `2.0.0`, `pcmanfm-qt --desktop` supports the [`wlr-layer-shell`]
+protocol, and thus runs natively without window-rules.
+
+Older version can be run with the rule below in `rc.xml`:
 
 ```
 <windowRules>
