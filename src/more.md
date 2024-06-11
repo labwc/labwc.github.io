@@ -1,3 +1,4 @@
+- [configuration](configuration.html)
 - [troubleshooting](troubleshooting.html)
 - [tips and tricks](tips-and-tricks.html)
 - [hidpi scaling](hidpi-scaling.html)
