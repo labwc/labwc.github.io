@@ -270,7 +270,7 @@ grim - | wl-copy
 
 # 7. Session Lock {#session-lock}
 
-`labwc` supports the [ext-session-lock] and [kde-idle] protocols and you can use clients such
+`labwc` supports the [ext-session-lock] and [ext-idle-notify] protocols and you can use clients such
 as `swaylock` to lock your session.
 
 It is common to want to lock the session/screen after a period of inactivity.
@@ -297,7 +297,7 @@ use it with swayidle by changing the timeout arguments to:
 
 [chayang]: https://git.sr.ht/~emersion/chayang
 [wlopm]: https://git.sr.ht/~leon_plickat/wlopm
-[kde-idle]: https://wayland.app/protocols/kde-idle
+[ext-idle-notify]: https://wayland.app/protocols/ext-idle-notify-v1
 [ext-session-lock]: https://wayland.app/protocols/ext-session-lock-v1
 
 # 8. Desktops {#desktops}
