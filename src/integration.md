@@ -14,7 +14,8 @@
 7. [Session Lock](#session-lock)
 8. [Desktops](#desktops)
 9. [Qt](#qt)
-10. [Input Method](#input-method)
+10. [Clipboard](#clipboard)
+11. [Input Method](#input-method)
 
 # 1. Introduction {#introduction}
 
@@ -350,7 +351,25 @@ and set `QT_QPA_PLATFORMTHEME=qt6ct` in `~/.config/labwc/environment`.
 [qt6-wayland]: https://archlinux.org/packages/extra/x86_64/qt6-wayland/
 [qt6ct]: https://github.com/trialuser02/qt6ct
 
-# 10. Input Method {#input-method}
+# 10. Clipboard {#clipboard}
+
+**Labwc** does not store clipboard contents after an application quits.
+For this functionality you need a _clipboard manager_.
+
+For example, you could add a line similar to this to
+`~/.config/labwc/autostart`:
+
+```
+wl-paste --watch cliphist store &
+```
+
+This uses [cliphist] and [wl-clipboard]. Other clipboard managers include
+[clapboard] and [clipse].
+
+Many clipboard managers have features beyond just keeping the clipboard
+alive. See the documentation of the individual tools for further information.
+
+# 11. Input Method {#input-method}
 
 Input methods like Fcitx5 and IBus provide modules for GTK and Qt and an
 interface for xserver (xwayland) using D-Bus without wayland protocols.
@@ -439,3 +458,7 @@ So if you want to use IME with Chromium under labwc, you have following options:
 [arch-xdg-menu]: https://arch.p5n.pp.ru/~sergej/dl/2018/
 [obamenu]: https://github.com/onuronsekiz/obamenu
 [wlr-randr]: https://sr.ht/~emersion/wlr-randr/
+[cliphist]: https://github.com/sentriz/cliphist
+[clapboard]: https://github.com/bjesus/clapboard
+[clipse]: https://github.com/savedra1/clipse
+[wl-clipboard]: https://github.com/bugaevc/wl-clipboard
