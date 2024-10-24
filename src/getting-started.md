@@ -36,8 +36,9 @@ Alt-F3 to launch applications.
 # Configuration
 
 User config files are located at `${XDG_CONFIG_HOME:-$HOME/.config/labwc/}`
-(usually `~/.config/labwc/`) with the following five files being used:
-[rc.xml], [menu.xml], [autostart], [environment] and [themerc-override].
+(usually `~/.config/labwc/`) with the following six files being used:
+[rc.xml], [menu.xml], [autostart], [environment], [shutdown] and
+[themerc-override].
 
 The example [rc.xml] has been kept simple. For all options and default values,
 see [rc.xml.all]
@@ -72,6 +73,7 @@ If you get stuck, do reach out on the [IRC Channel] or [Github Discussions].
 [menu.xml]: https://github.com/labwc/labwc/blob/master/docs/menu.xml
 [autostart]: https://github.com/labwc/labwc/blob/master/docs/autostart
 [environment]: https://github.com/labwc/labwc/blob/master/docs/environment
+[shutdown]: https://github.com/labwc/labwc/blob/master/docs/shutdown
 [themerc-override]: https://github.com/labwc/labwc/blob/master/docs/themerc
 [labwc(1)]: https://labwc.github.io/labwc.1.html
 [labwc-config(5)]: https://labwc.github.io/labwc-config.5.html
