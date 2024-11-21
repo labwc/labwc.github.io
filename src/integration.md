@@ -16,6 +16,7 @@
 9. [Qt](#qt)
 10. [Clipboard](#clipboard)
 11. [Input Method](#input-method)
+12. [GTK](#gtk)
 
 # 1. Introduction {#introduction}
 
@@ -439,6 +440,23 @@ So if you want to use IME with Chromium under labwc, you have following options:
     labwc from the [unofficial AUR](https://aur.archlinux.org/packages/labwc-im)
     or by applying its patch. Then, you can enable IME with [text-input-v1] by
     running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`.
+
+# 12. GTK {#gtk}
+
+In some recent GTK (>=4.16) applications the File Chooser defaults to using
+xdg-portal technology which may not work depending on your system setup. There
+are at least two ways to fallback to a 'normal' File Chooser:
+
+1. Set the environment variable `GDK_DEBUG=no-portals` (in for example
+   `$HOME/.config/labwc/environment`)
+2. Create a portal configuration file in the current user home based on
+   [labwc-portals.conf] and add the line `org.freedesktop.impl.portal.FileChooser=none`
+   to it. The location of this file should typically be
+   `$HOME/.config/xdg-desktop-portal/` but please see [portal-user-home] for
+   further details.
+
+[labwc-portals.conf]: https://github.com/labwc/labwc/blob/master/data/labwc-portals.conf
+[portal-user-home]: https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html
 
 [text-input-v3]: https://wayland.app/protocols/text-input-unstable-v3
 [input-method-v2]: https://wayland.app/protocols/input-method-unstable-v2
