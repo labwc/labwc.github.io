@@ -171,7 +171,8 @@ applications:
   cinnamon. Written in C.
 - [obmenu-generator]\: Popular with openbox communities. Written in Perl.
 - [openbox-menu]\: XDG menu spec compliant, using LXDE's library and menu
-  package. Used to be packaged by debian, but isn't anymore. Written in C.
+  package. Used to be packaged by debian, but isn't anymore. Though the Github 
+  repos has been frozen, as of November 2024 it works once compiled. Written in C.
 - [arch-xdg-menu]\: Arch Linux's xdg-menu package based on SuSE 2003
   implementation. Written in Perl.
 - [obamenu]\: Designed for pipemenus, but could easily be modified to produce
@@ -472,7 +473,7 @@ are at least two ways to fallback to a 'normal' File Chooser:
 [labwc-menu-generator]: https://github.com/labwc/labwc-menu-generator
 [labwc-menu-gnome3]: https://github.com/labwc/labwc-menu-gnome3
 [obmenu-generator]: https://trizenx.blogspot.com/2012/02/obmenu-generator.html
-[openbox-menu]: http://fabrice.thiroux.free.fr/openbox-menu_en.html
+[openbox-menu]: https://github.com/fabriceT/openbox-menu
 [arch-xdg-menu]: https://arch.p5n.pp.ru/~sergej/dl/2018/
 [obamenu]: https://github.com/onuronsekiz/obamenu
 [wlr-randr]: https://sr.ht/~emersion/wlr-randr/
