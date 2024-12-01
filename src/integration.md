@@ -172,7 +172,7 @@ applications:
 - [obmenu-generator]\: Popular with openbox communities. Written in Perl.
 - [openbox-menu]\: XDG menu spec compliant, using LXDE's library and menu
   package. Used to be packaged by debian, but isn't anymore. Though the Github 
-  repos has been frozen, as of Novembre 2024 it works once compiled. Written in C.
+  repos has been frozen, as of November 2024 it works once compiled. Written in C.
 - [arch-xdg-menu]\: Arch Linux's xdg-menu package based on SuSE 2003
   implementation. Written in Perl.
 - [obamenu]\: Designed for pipemenus, but could easily be modified to produce
