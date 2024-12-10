@@ -16,7 +16,7 @@ example, the `<c>` element below would be assigned the nodename `c.b.a`:
   <b>
     <c>foo</c>
   </b>
-<a>
+</a>
 ```
 
 `labwc` also parses XML in an element/attribute agnostic way, which means that
