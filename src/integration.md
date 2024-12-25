@@ -444,9 +444,10 @@ So if you want to use IME with Chromium under labwc, you have following options:
 
 # 12. GTK {#gtk}
 
-In some recent GTK (>=4.16) applications the File Chooser defaults to using
-xdg-portal technology which may not work depending on your system setup. There
-are at least two ways to fallback to a 'normal' File Chooser:
+In some recent GTK (>=4.16) applications (e.g. Gnome's Simple-Scan and Clapper)
+the File Chooser defaults to using xdg-portal technology which may not work
+depending on your system setup. There are at least two ways to fallback to a
+'normal' File Chooser:
 
 1. Set the environment variable `GDK_DEBUG=no-portals` (in for example
    `$HOME/.config/labwc/environment`)
