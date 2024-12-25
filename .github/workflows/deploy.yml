@@ -37,10 +37,9 @@ jobs:
         run: ./build-site
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: 'deploy'
-          overwrite: true
 
   deploy:
     needs: build
@@ -57,4 +56,4 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
