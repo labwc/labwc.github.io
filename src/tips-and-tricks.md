@@ -97,6 +97,24 @@ if ! wlrctl window focus "$app_id"; then
 fi
 ```
 
+As of labwc version 0.7.2 it is also possible to create a run or raise keybind
+with the `ForEach` action.
+
+```
+<keybind key="W-F1">
+  <action name="ForEach">
+    <query identifier="foot" />
+    <then>
+      <action name="Raise" />
+      <action name="Focus" />
+    </then>
+    <none>
+      <action name="Execute" command="foot" />
+    </none>
+  </action>
+</keybind>
+```
+
 [wlrctl]: https://git.sr.ht/~brocellous/wlrctl
 [lswt]: https://sr.ht/~leon_plickat/lswt/
 [wlr-foreign-toplevel-management]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
