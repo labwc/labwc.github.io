@@ -72,12 +72,26 @@ In true `sway` style:
 
 ### Q: Is it possible to completely remove windows' title-bars?
 
-Yes. Action `ToggleDecoration`, but it removes borders too.
+Yes.
+
+Action `SetDecorations` can be used for this. This action can be used with
+key/mousebinds or with window rules like this:
 
 ```
-<windowRule title="*" >
-  <action name="ToggleDecoration"/>
-</windowRule>
+<windowRules>
+  <windowRule identifier="*">
+    <action name="SetDecorations" decorations="border" />
+  </windowRule>
+</windowRules>
+```
+
+With window rules it can be achieve more simply as in the example below, but
+that will remove borders too:
+
+```
+<windowRules>
+  <windowRule identifier="*" serverDecoration="no" />
+</windowRules>
 ```
 
 ### Q: I'd like to be able to remove the client-menu button. How can this be done?
