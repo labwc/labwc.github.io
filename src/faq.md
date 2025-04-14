@@ -3,10 +3,17 @@
 1. [Keybinds](#keybinds)
     1. [Unset Keybinds](#unset-keybinds)
     2. [Common Keybinds](#common-keybinds)
+    3. [Keybind Forwarding](#keybind-forwarding)
 2. [Theme](#theme)
     1. [Server Side Decoration](#server-side-decoration)
 3. [Mouse and Trackpads](#mouse-and-trackpads)
     1. [Libinput](#libinput)
+4. [XML](#xml)
+    1. [XML Nodenames](#xml-nodenames)
+5. [Scripting](#scripting)
+    1. [Run or Raise](#run-or-raise)
+6. [Environment Variables](#environment-variables)
+7. [Nested XWayland](#nested-xwayland)
 
 # 1. Keybinds {#keybinds}
 
@@ -65,6 +72,23 @@ In true `sway` style:
 <keybind key="W-S-2"><action name="SendToDesktop" to="2" follow="false"/></keybind>
 <keybind key="W-S-3"><action name="SendToDesktop" to="3" follow="false"/></keybind>
 ```
+
+## 1.3 Keybind Forwarding {#keybind-forwarding}
+
+The [ToggleKeybinds] action allows better control of Virtual Machines, VNC
+clients, nested compositors or similar.
+
+For example, to make alt-tab work in a nested compositor add the code below to
+`~/.config/labwc/rc.xml` and then press F12 to disable all keybinds in the
+parent compositor and thereby forward them to the nested instance.
+
+```
+<keybind key="F12">
+	<action name="ToggleKeybinds"/>
+</keybind>
+```
+
+[ToggleKeybinds]: https://labwc.github.io/labwc-actions.5.html#entry_action_name=togglekeybinds
 
 # 2. Theme {#theme}
 
@@ -126,4 +150,132 @@ Not yet implemented.
 </mouse>
 ```
 
+# 4. XML {#xml}
+
+## 4.1 XML Nodenames {#xml-nodenames}
+
+### Q: My config file does not work. How can I debug it?
+
+You a can a nested instance of labwc in a terminal to see the error messages
+relating to bad XML syntax of missing elements/attributes.
+
+For more fine-grained analysis you can see the config/menu file nodenames when
+`labwc` starts, by setting the following environment variables:
+
+```
+LABWC_DEBUG_CONFIG_NODENAMES=1
+LABWC_DEBUG_MENU_NODENAMES=1
+```
+
+With `labwc` a nodename is a way to refer to each element and attribute in an
+XML tree.  For example, the `<c>` element below would be assigned the nodename
+`c.b.a`:
+
+```
+<a>
+  <b>
+    <c>foo</c>
+  </b>
+</a>
+```
+
+Please note that `labwc` also parses the rc.xml configuration file in an
+element/attribute agnostic way, which means that `<a><b>foo</b></a>` is
+equivalent to `<a b="foo"/>`. Be careful though, because this does not apply to
+some aspects of menu.xml (specifically the attributes id, label and execute).
+
+In practical terms, this means that the following syntax could be used:
+
+```
+<keybind key="W-l" name.action="Execute" command.action="swaylock -c 000000"/>
+```
+
+...rather than then lengthier:
+
+```
+<keybind key="W-l">
+  <action name="Execute">
+    <command>swaylock -c 000000"</command>
+  </action>
+</keybind>
+```
+
+See [labwc-config(5)-syntax] for more details.
+
+[labwc-config(5)-syntax]: https://labwc.github.io/labwc-config.5.html#syntax
+
+# 5. Scripting {#scripting}
+
+## 5.2 Run or Raise {#run-or-raise}
+
+The [wlr-foreign-toplevel-management] protocol provides clients with a list of
+opened applications and lets them request certain actions on them, like
+maximizing, focusing, etc. This can be used for scripting with clients such as
+[wlrctl] and [lswt]. For example, the script below launches an application
+if it is not already running, or focuses the application's most recently opened
+window if it is already running:
+
+```
+#!/bin/sh
+
+if test -z "$1"; then
+	echo "Usage: runraise app_id [executable]"
+	exit 1
+fi
+
+app_id=$1
+executable=$2
+test -z "$executable" && executable=$app_id
+
+if ! wlrctl window focus "$app_id"; then
+	$executable &
+	disown
+fi
+```
+
+As of labwc version 0.7.2 it is also possible to create a run or raise keybind
+with the `ForEach` action:
+
+```
+<keybind key="W-F1">
+  <action name="ForEach">
+    <query identifier="foot" />
+    <then>
+      <action name="Raise" />
+      <action name="Focus" />
+    </then>
+    <none>
+      <action name="Execute" command="foot" />
+    </none>
+  </action>
+</keybind>
+```
+
+[wlrctl]: https://git.sr.ht/~brocellous/wlrctl
+[lswt]: https://sr.ht/~leon_plickat/lswt/
+[wlr-foreign-toplevel-management]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
+
+# 6. Environment Variables {#environment-variables}
+
+There are a number of advanced settings that can be invoked for `wlroots` by
+setting some environment variables.
+
+For example `labwc` can be run nested on Wayland with multiple outputs using
+the following: `WLR_WL_OUTPUTS=2 labwc`
+
+See the wlroots repo [env_vars.md] file for details.
+
+[env_vars.md]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md
+
+# 7. Nested XWayland {#nested-xwayland}
+
+To run a nested instance of openbox on labwc:
+ 
+```
+Xwayland -decorate -noreset :55
+DISPLAY=:55 dbus-run-session openbox-session
+  
+```
+ 
+  
 
