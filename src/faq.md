@@ -8,12 +8,17 @@
     1. [Server Side Decoration](#server-side-decoration)
 3. [Mouse and Trackpads](#mouse-and-trackpads)
     1. [Libinput](#libinput)
+    2. [Mousebinds](#mousebinds)
+    3. [Cursor](#cursor)
 4. [XML](#xml)
     1. [XML Nodenames](#xml-nodenames)
 5. [Scripting](#scripting)
     1. [Run or Raise](#run-or-raise)
 6. [Environment Variables](#environment-variables)
 7. [Nested XWayland](#nested-xwayland)
+8. [Hardware](#hardware)
+    1. [Nvidia](#nvidia)
+    2. [Laptop Lid](#laptop-lid)
 
 # 1. Keybinds {#keybinds}
 
@@ -135,7 +140,7 @@ window.inactive.button.menu.unpressed.image.color: #000000 0
 
 Not yet implemented.
 
-## 3.2 Mousebinds
+## 3.2 Mousebinds {#mousebinds}
 
 ### Q: I'm used to MS Windows and would like all window to unfocus when I click the desktop. How can this be achieved?
 
@@ -149,6 +154,19 @@ Not yet implemented.
   </context>
 </mouse>
 ```
+
+## 3.3 Cursor {#cursor}
+
+### Q: I cannot see a cursor. What should I do?
+
+If no cursor is showing (sometimes reported by people running vwmare), try
+adding `WLR_NO_HARDWARE_CURSORS=1` to `~/.config/labwc/environment`.
+
+If cursors do not update as expected, try installing a cursor theme (for
+example `Adwaita`) and set `XCURSOR_THEME` in `~/.config/labwc/environment`
+accordingly (for example `XCURSOR_THEME=Adwaita`).  `labwc` handles missing
+cursor themes by falling back on builtin old X11 cursors, but some applications
+do not resulting in the wrong or no cursor being set.
 
 # 4. XML {#xml}
 
@@ -206,7 +224,7 @@ See [labwc-config(5)-syntax] for more details.
 
 # 5. Scripting {#scripting}
 
-## 5.2 Run or Raise {#run-or-raise}
+## 5.1 Run or Raise {#run-or-raise}
 
 The [wlr-foreign-toplevel-management] protocol provides clients with a list of
 opened applications and lets them request certain actions on them, like
@@ -277,5 +295,27 @@ DISPLAY=:55 dbus-run-session openbox-session
   
 ```
  
-  
+# 8. [Hardware]{#hardware}
+
+## 8.1 [Nvidia]{#nvidia}
+
+If Electron clients are glitchy or lagging try setting these environment
+variables:
+
+```
+GBM_BACKEND=nvidia-drm
+__GLX_VENDOR_LIBRARY_NAME=nvidia
+```
+
+## 8.2 [Laptop Lid]{#laptop-lid}
+
+When using a laptop with an external monitor and the built-in monitor is closed,
+the system may go into hibernation when disconnecting. To avoid this, edit the
+configuration file `etc/systemd/logind.conf' and set following to ignore (see
+logind.conf(5) manual for more info):
+
+```
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+```
 
