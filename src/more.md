@@ -3,5 +3,4 @@
 - [hidpi scaling](hidpi-scaling.html)
 - [links](links.html)
 - [obligatory screenshot](obligatory-screenshot.html)
-- [troubleshooting](troubleshooting.html)
 
