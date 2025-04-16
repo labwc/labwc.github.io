@@ -19,6 +19,8 @@
 8. [Hardware](#hardware)
     1. [Nvidia](#nvidia)
     2. [Laptop Lid](#laptop-lid)
+9. [Applications](#applications)
+    1. [gparted](#gparted)
 
 # 1. Keybinds {#keybinds}
 
@@ -318,4 +320,19 @@ logind.conf(5) manual for more info):
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 ```
+
+# 9. [Applications]{#applications}
+
+## 9.1 [gparted]{#gparted}
+
+### Q: I'm having some trouble starting gparted
+
+```
+$ pkexec --disable-internal-agent /usr/sbin/gparted
+Invalid MIT-MAGIC-COOKIE-1 key
+(gpartedbin:1286199): Gtk-WARNING **: 17:31:50.245: cannot open display: :0
+```
+
+Either install `xauth` or run `xhost +si:localuser:root` as the user who
+started labwc (not root) to fix this.
 
