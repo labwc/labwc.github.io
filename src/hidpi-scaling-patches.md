@@ -14,7 +14,7 @@ but compiling xorg-xwayland is pretty fast. The steps should be as follows:
 
 1. Find out what version of xorg-server you have installed.
 2. If it's 23.1.1 (or similar), [download the patch from
-AUR]([https://aur.archlinux.org/cgit/aur.git/tree/hidpi.patch?h=xorg-xwayland-hidpi-xprop]).
+AUR](https://aur.archlinux.org/cgit/aur.git/tree/hidpi.patch?h=xorg-xwayland-hidpi-xprop).
 3. Apply the patch - `patch -Np1 -i hidpi.patch`
 4. Build xorg-xwayland as you normally would.
 
