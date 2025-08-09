@@ -36,13 +36,6 @@ z-depth and also to be anchored to the edges/corners of a screen.
 with a list of opened applications and supports requests for certain actions
 such as maximizing, etc.
 
-At the time of writing some common toolkits do not have full support for
-[`wlr-layer-shell`], most notably `GTK4` and `Qt <6.5`. In order to integrate
-components written in these eco-systems in the short/medium term, window
-rules can be used to achieve a reasonable setup. Please note though that the
-use of window-rules is a sub-optimal solution which relies on user
-configuration and does not always support per-output configuration.
-
 [`wlr-layer-shell`]: https://wayland.app/protocols/wlr-layer-shell-unstable-v1
 [`wlr-foreign-toplevel-management`]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
 
