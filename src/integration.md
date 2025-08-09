@@ -72,6 +72,21 @@ protocol to the `~/.config/waybar/config` file:
     },
 ```
 
+From waybar `0.14.0` the ext-workspace protocol is supported and can be
+configured like this:
+
+```
+"modules-right": ["ext/workspaces"],
+```
+
+```
+"ext/workspaces": {
+    "format": "{name}",
+    "sort-by-number": true,
+    "on-click": "activate",
+},
+```
+
 See the [waybar documentation] for further information.
 
 ## 2.2 sfwbar {#sfwbar}
