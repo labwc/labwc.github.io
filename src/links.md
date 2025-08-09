@@ -1,5 +1,15 @@
 # Links
 
+## Desktops
+
+- [Opensuse with Xfce](https://news.opensuse.org/2025/08/04/leap-16-rc/)
+- [Raspberry Pi](https://www.raspberrypi.com/news/a-new-release-of-raspberry-pi-os/)
+- [LXQt](https://lxqt-project.org/screenshots/labwc/)
+- [LXQt on Arch Linux](https://archlinux.org/packages/?name=lxqt-wayland-session)
+- [Mabox](https://forum.maboxlinux.org/t/labwc-in-mabox-status/2138)
+- [Puppy Linux](https://vanilla-dpup.github.io/)
+- [TrixiePup64 Wayland 11.0.0 Beta-2](https://forum.puppylinux.com/viewtopic.php?t=14554)
+
 ## Openbox
 
 - [redtide-openbox-wiki] - A clone of the openbox wiki
@@ -44,4 +54,39 @@
 - [randfall]
 
 [randfall]: https://gitlab.freedesktop.org/vyivel/randfall/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
