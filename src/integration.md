@@ -135,21 +135,10 @@ Read the [yambar documentation] for further information.
 ## 2.5 lxqt-panel {#lxqt-panel}
 
 Since version `2.0.0`, `lxqt-panel` supports the [`wlr-layer-shell`] protocol
-and thus runs natively under Wayland without window rules. Should you have an
-older version, it can still be used with a window rule such as:
+and thus runs natively under Wayland.
 
-```
-<windowRules>
-  <windowRule identifier="lxqt-panel" matchOnce="true" fixedPosition="yes">
-    <skipTaskbar>yes</skipTaskbar>
-    <action name="MoveTo" x="0" y="0" />
-    <action name="ToggleAlwaysOnTop"/>
-  </windowRule>
-</windowRules>
-```
-
-Note: `lxqt-panel` does not support [`wlr-foreign-toplevel-management`] so the
-taskbar does not work.
+With version `>=2.1.0` the [`wlr-foreign-toplevel-management`] is supported
+enabling taskbar functionality and thereby making this an excellent choice.
 
 # 3. Menu Generators {#menu-generators}
 
