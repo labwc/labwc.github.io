@@ -5,8 +5,7 @@
     1. [waybar](#waybar)
     2. [sfwbar](#sfwbar)
     3. [xfce4-panel](#xfce4panel)
-    4. [yambar](#yambar)
-    5. [lxqt-panel](#lxqt-panel)
+    4. [lxqt-panel](#lxqt-panel)
 3. [Menu Generators](#menu-generators)
 4. [CSD](#csd)
 5. [Output Management](#output-management)
@@ -123,16 +122,7 @@ For the time being it is best to force all plugins to run as internal with:
 [MR103]: https://gitlab.xfce.org/xfce/xfce4-panel/-/merge_requests/103
 [xfce4-panel]: https://docs.xfce.org/xfce/xfce4-panel/start
 
-## 2.4 yambar {#yambar}
-
-[yambar repository]
-
-Configure yambar in the `~/.config/yambar/config.yml`. Yambar configuration
-uses the [`yaml` language].
-
-Read the [yambar documentation] for further information.
-
-## 2.5 lxqt-panel {#lxqt-panel}
+## 2.4 lxqt-panel {#lxqt-panel}
 
 Since version `2.0.0`, `lxqt-panel` supports the [`wlr-layer-shell`] protocol
 and thus runs natively under Wayland.
@@ -448,9 +438,6 @@ depending on your system setup. There are at least two ways to fallback to a
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
 [xfce4-panel repository]: https://gitlab.xfce.org/xfce/xfce4-panel
-[yambar repository]: https://codeberg.org/dnkl/yambar
-[`yaml` language]: https://yaml.org
-[yambar documentation]: https://codeberg.org/dnkl/yambar/src/branch/master/doc
 [labwc-menu-generator]: https://github.com/labwc/labwc-menu-generator
 [labwc-menu-gnome3]: https://github.com/labwc/labwc-menu-gnome3
 [obmenu-generator]: https://trizenx.blogspot.com/2012/02/obmenu-generator.html
