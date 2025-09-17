@@ -16,7 +16,7 @@
 9. [Qt](#qt)
 10. [Clipboard](#clipboard)
 11. [Input Method](#input-method)
-12. [GTK](#gtk)
+12. [Gtk](#gtk)
 
 # 1. Introduction {#introduction}
 
@@ -425,7 +425,9 @@ So if you want to use IME with Chromium under labwc, you have following options:
     or by applying its patch. Then, you can enable IME with [text-input-v1] by
     running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`.
 
-# 12. GTK {#gtk}
+# 12. Gtk {#gtk}
+
+## 12.1 File Chooser
 
 In some recent GTK (>=4.16) applications (e.g. Gnome's Simple-Scan and Clapper)
 the File Chooser defaults to using xdg-portal technology which may not work
@@ -439,6 +441,13 @@ depending on your system setup. There are at least two ways to fallback to a
    to it. The location of this file should typically be
    `$HOME/.config/xdg-desktop-portal/` but please see [portal-user-home] for
    further details.
+
+## 12.2 Compose
+
+From version `4.20.0`, accented characters cannot be typed in GTK4 applications
+without using the `ibus` package. See [#3068] for details.
+
+[#3068]: https://github.com/labwc/labwc/issues/3068
 
 [labwc-portals.conf]: https://github.com/labwc/labwc/blob/master/data/labwc-portals.conf
 [portal-user-home]: https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html
