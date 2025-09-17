@@ -237,9 +237,12 @@ example
 - [swappy](https://github.com/jtheoof/swappy)
 
 ```
+grim -g "$(slurp)"
 grim -g "$(slurp)" - | swappy -f -
 grim - | wl-copy
 ```
+
+> Note: Remember to use quotation marks around `$(slurp)`
 
 # 7. Session Lock {#session-lock}
 
