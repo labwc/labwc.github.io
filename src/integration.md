@@ -346,74 +346,19 @@ alive. See the documentation of the individual tools for further information.
 
 # 11. Input Method {#input-method}
 
-Input methods like Fcitx5 and IBus provide modules for GTK and Qt and an
-interface for xserver (xwayland) using D-Bus without wayland protocols.
+Input methods (e.g. Fcitx5, IBus) intercepts text inputs in applications and
+compose them to other forms, like Chinese/Japanese/Korean or accented characters.
 
-You can enable input method for those platforms by setting environment
-variables like this:
+## Fcitx5
 
-```
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-```
+Fcitx5 can be started with the command `fcitx5`. Use `fcitx5-configtool` to
+set up hotkeys and enable language-specific modules (e.g. fcitx5-mozc).
 
-<!-- TODO: remove "in the master branch" when labwc 0.7.2 is released -->
-For apps not running on those platforms (e.g. Alacritty), labwc supports
-the following wayland protocols in the master branch:
+## IBus
 
-- [text-input-v3]
-  - Used by winit apps (e.g. Alacritty) and GTK (without setting
-    `GTK_IM_MODULE` environment variable).
-- [input-method-v2]
-  - Supported by Fcitx5, but not by IBus yet
-    ([issue](https://github.com/ibus/ibus/issues/2182)).
-
-Here is a quick guide for using Fcitx5 in labwc:
-
-1. Install fcitx5, GTK/Qt modules, configtool and language-specific module.
-    - Arch Linux: `pacman -S fcitx5-im fcitx5-mozc`
-    - Ubuntu: `apt install fcitx5 fcitx5-mozc`
-
-    Replace `fcitx5-mozc` with a module for your language.
-
-2. Set `GTK_IM_MODULE`, `QT_IM_MODULE` and `XMODIFIERS` like described earlier.
-These are usually saved in files like `~/.config/labwc/environment`,
-`~/.profile` and `/etc/environment`.
-
-3. Start `fcitx5`. You can automatically start fcitx5 by adding `fcitx5 &` to
-`~/.config/labwc/autostart`.
-
-4. Configure Fcitx5 with configtool to enable the installed language-specific
-module and to set up hotkeys. See [Configtool (Fcitx 5) - Fcitx].
-
-5. Activate input method with hotkeys while typing in applications.
-
-<!--- TODO: remove this once Chromium supports text-input-v3 -->
-## Input method on Chromium
-
-Chromium (and Electron-based) apps don't support the [text-input-v3] protocol
-[at this point](https://chromium-review.googlesource.com/c/chromium/src/+/3750452).
-So if you want to use IME with Chromium under labwc, you have following options:
-
-1. Run Chromium under XWayland
-
-    This is the default option. However, some features like touchpad gesture
-    don't work.
-
-2. Use GTK IM Module
-
-    By running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4`,
-    you can enable IME with GTK IM Module (selected by `GTK_IM_MODULE`) under
-    wayland. However, IME popups might be incorrectly positioned.
-
-3. Patch labwc and use [text-input-v1] protocol
-
-    Since [text-input-v1] is an outdated protocol, labwc doesn't officially
-    support it. However, you can optionally add support for it by installing
-    labwc from the [unofficial AUR](https://aur.archlinux.org/packages/labwc-im)
-    or by applying its patch. Then, you can enable IME with [text-input-v1] by
-    running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`.
+IBus can be started with the command `ibus start --type=wayland`.
+Use `ibus-setup` to set up hotkeys and enable language-specific modules
+(e.g. ibus-anthy).
 
 # 12. Gtk {#gtk}
 
@@ -441,11 +386,6 @@ without using the `ibus` package. See [#3068] for details.
 
 [labwc-portals.conf]: https://github.com/labwc/labwc/blob/master/data/labwc-portals.conf
 [portal-user-home]: https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html
-
-[text-input-v3]: https://wayland.app/protocols/text-input-unstable-v3
-[input-method-v2]: https://wayland.app/protocols/input-method-unstable-v2
-[Configtool (Fcitx 5) - Fcitx]: https://fcitx-im.org/wiki/Configtool_(Fcitx_5)
-[text-input-v1]: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml
 
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
