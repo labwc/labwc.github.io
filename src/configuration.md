@@ -32,17 +32,6 @@ This document contains some popular settings that you may wish to adopt.
 
 ## Keybinds
 
-### Unbind alt + arrow
-
-...because they interfere with brower forward/backward binds
-
-```
-<keybind key="A-Right"/>
-<keybind key="A-Left"/>
-<keybind key="A-Up"/>
-<keybind key="A-Down"/>
-```
-
 ### Lock Session
 
 ```
@@ -58,6 +47,15 @@ Supported since `0.7.3`
   <action name="Execute" command="rofi -show drun"/>
 </keybind>
 ```
+
+or
+
+```
+<keybind key="Super_L" onRelease="yes">
+  <action name="ShowMenu" menu="root-menu"/>
+</keybind>
+```
+
 
 ### Take Screenshot
 
@@ -85,16 +83,16 @@ Supported since `0.7.3`
 ### MoveToEdge, ShrinkToEdge and GrowToEdge
 
 ```
-<keybind key="W-Left">
+<keybind key="C-W-Left">
   <action name="MoveToEdge" direction="left" snapWindows="true"/>
 </keybind>
-<keybind key="W-Right">
+<keybind key="C-W-Right">
   <action name="MoveToEdge" direction="right" snapWindows="true"/>
 </keybind>
-<keybind key="W-Up">
+<keybind key="C-W-Up">
   <action name="MoveToEdge" direction="up" snapWindows="true"/>
 </keybind>
-<keybind key="W-Down">
+<keybind key="C-W-Down">
   <action name="MoveToEdge" direction="down" snapWindows="true"/>
 </keybind>
 <keybind key="W-S-Left">
@@ -108,23 +106,6 @@ Supported since `0.7.3`
 </keybind>
 <keybind key="W-S-Down">
   <action name="GrowToEdge" direction="down"/>
-</keybind>
-```
-
-### SnapToEdge
-
-```
-<keybind key="C-W-Left">
-  <action name="SnapToEdge" direction="left"/>
-</keybind>
-<keybind key="C-W-Right">
-  <action name="SnapToEdge" direction="right"/>
-</keybind>
-<keybind key="C-W-Up">
-  <action name="SnapToEdge" direction="up"/>
-</keybind>
-<keybind key="C-W-Down">
-  <action name="SnapToEdge" direction="down"/>
 </keybind>
 ```
 
