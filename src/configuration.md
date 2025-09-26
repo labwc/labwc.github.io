@@ -32,17 +32,6 @@ This document contains some popular settings that you may wish to adopt.
 
 ## Keybinds
 
-### Unbind alt + arrow
-
-...because they interfere with brower forward/backward binds
-
-```
-<keybind key="A-Right"/>
-<keybind key="A-Left"/>
-<keybind key="A-Up"/>
-<keybind key="A-Down"/>
-```
-
 ### Lock Session
 
 ```
