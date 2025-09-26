@@ -48,6 +48,15 @@ Supported since `0.7.3`
 </keybind>
 ```
 
+or
+
+```
+<keybind key="Super_L" onRelease="yes">
+  <action name="ShowMenu" menu="root-menu"/>
+</keybind>
+```
+
+
 ### Take Screenshot
 
 ```
