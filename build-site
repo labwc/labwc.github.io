@@ -7,6 +7,10 @@ build_src_pages () {
 	for md in src/*.md; do
 		html=${md##*/}
 		html="${DEPLOY_DIR}/${html/%.md/.html}"
+
+		# only build files that have changed
+		[[ $html -ot $md ]] || continue
+
 		echo "Converting $md to $html"
 
 		cat src/template_pre.html > "$html"
@@ -21,6 +25,9 @@ build_man_pages () {
 	for scd in labwc/docs/*.scd; do
 		html=${scd##*/}
 		html="${DEPLOY_DIR}/${html/%.scd/.html}"
+
+		[[ $html -ot $scd ]] || continue
+
 		echo "Converting $scd to $html"
 
 		sed 's/sans-serif;/monospace;/' src/template_pre.html > "$html"
