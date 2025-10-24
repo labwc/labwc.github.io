@@ -50,6 +50,12 @@
 [sway-wiki]: https://github.com/swaywm/sway/wiki/Useful-add-ons-for-sway
 [river-wiki]: https://codeberg.org/river/wiki/src/branch/master/pages/Recommended-Software.md
 
+# Integration
+
+- [lxqt-wiki]
+
+[lxqt-wiki]: https://lxqt-project.org/wiki/Wayland-Session.html
+
 ## Testing
 
 - [randfall]
