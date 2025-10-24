@@ -12,12 +12,13 @@
 
 ## Openbox
 
+- [openbox]
 - [redtide-openbox-wiki] - A clone of the openbox wiki
   - [configuration]
 
+[openbox]: https://openbox.org/
 [redtide-openbox-wiki]: https://redtide.github.io/openbox-wiki/
 [configuration]: https://redtide.github.io/openbox-wiki/Help/Configuration/
-
 
 ## wlroots
 
