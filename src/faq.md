@@ -327,6 +327,8 @@ HandleLidSwitchExternalPower=ignore
 
 ### Q: I'm having some trouble starting gparted
 
+> Note: It is not recommended to run GUI clients as root.
+
 ```
 $ pkexec --disable-internal-agent /usr/sbin/gparted
 Invalid MIT-MAGIC-COOKIE-1 key
@@ -335,4 +337,7 @@ Invalid MIT-MAGIC-COOKIE-1 key
 
 Either install `xauth` or run `xhost +si:localuser:root` as the user who
 started labwc (not root) to fix this.
+
+If `xauth` and/or `xhost` are not installed, it is possible to run with
+`sudo -E gparted`.
 
