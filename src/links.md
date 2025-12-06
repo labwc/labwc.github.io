@@ -9,6 +9,7 @@
 - [Mabox](https://forum.maboxlinux.org/t/labwc-in-mabox-status/2138)
 - [Puppy Linux](https://vanilla-dpup.github.io/)
 - [TrixiePup64 Wayland 11.0.0 Beta-2](https://forum.puppylinux.com/viewtopic.php?t=14554)
+- [Dank Linux](https://danklinux.com/) [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) [#3206](https://github.com/labwc/labwc/discussions/3206)
 
 ## Openbox
 
