@@ -54,7 +54,11 @@ See [ToggleMaximize] action.
 
 ### Q: Is it possible to launch wofi with only the Super key?
 
-No. I'm afraid that is not yet implemented.
+```
+<keybind key="Super_L" onRelease="true">
+  <action name="Execute" command="wofi"/>
+</keybind>
+```
 
 ### Q: Is it possible to show gaps for maximized windows?
 
@@ -140,7 +144,13 @@ window.inactive.button.menu.unpressed.image.color: #000000 0
 
 ### Q: How to scroll with the right edge of the trackpad?
 
-Not yet implemented.
+```
+<libinput>
+  <device>
+    <scrollMethod>edge</scrollMethod>
+  </device>
+</libinput>
+```
 
 ## 3.2 Mousebinds {#mousebinds}
 
