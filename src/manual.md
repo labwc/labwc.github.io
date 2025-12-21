@@ -1,5 +1,10 @@
 # Documentation
 
+These man pages are automatically synchronized with the labwc repository and
+therefore reflect the very latest development changes (current `master`
+branch). If consistency with your installed version is important, please refer
+to the locally installed man pages to avoid confusion.
+
 ## Man Pages
 
 [labwc(1)](labwc.1.html)  
