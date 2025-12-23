@@ -21,6 +21,7 @@
     2. [Laptop Lid](#laptop-lid)
 9. [Applications](#applications)
     1. [gparted](#gparted)
+    2. [GTK4](#gtk4)
 
 # 1. Keybinds {#keybinds}
 
@@ -351,3 +352,11 @@ started labwc (not root) to fix this.
 If `xauth` and/or `xhost` are not installed, it is possible to run with
 `sudo -E gparted`.
 
+## 9.2 [GTK4]{#gtk4}
+
+### Q: My compose key stopped working
+
+This is due to a change in GTK4 which now requires input methods for compose.
+Either install a input method like ibus or fcitx5 or force GTK4 to use its
+built-in compose method by adding `GTK_IM_MODULE=simple` to
+`~/.config/labwc/environment`.
