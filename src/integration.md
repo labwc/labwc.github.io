@@ -380,7 +380,8 @@ depending on your system setup. There are at least two ways to fallback to a
 ## 12.2 Compose
 
 From version `4.20.0`, compose keys (e.g. typing "à" with "\`" + "a" in
-US-intl layout) do not work in GTK4 applications without using
+US-intl layout) do not work in GTK4 applications without manual configuration
+(`GTK_IM_MODULE=simple` in `~/.config/labwc/environment`) or using
 [input methods](#input-method) like Fcitx5 and IBus. See [#3068] for details.
 
 [#3068]: https://github.com/labwc/labwc/issues/3068
