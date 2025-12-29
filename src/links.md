@@ -1,6 +1,6 @@
 # Links
 
-## Desktops
+## Desktop Environment News
 
 - [Opensuse with Xfce](https://news.opensuse.org/2025/08/04/leap-16-rc/)
 - [Raspberry Pi](https://www.raspberrypi.com/news/a-new-release-of-raspberry-pi-os/)
@@ -9,7 +9,18 @@
 - [Mabox](https://forum.maboxlinux.org/t/labwc-in-mabox-status/2138)
 - [Puppy Linux](https://vanilla-dpup.github.io/)
 - [TrixiePup64 Wayland 11.0.0 Beta-2](https://forum.puppylinux.com/viewtopic.php?t=14554)
-- [Dank Linux](https://danklinux.com/) [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) [#3206](https://github.com/labwc/labwc/discussions/3206)
+
+## Shells
+
+- [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
+  - [Dank Linux](https://danklinux.com/)
+  - [#3206](https://github.com/labwc/labwc/discussions/3206)
+- [Quickshell](https://git.outfoxxed.me/quickshell/quickshell)
+  - [Noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)
+
+## Dotfile collections
+
+- [Harsh-bin](https://github.com/Harsh-bin/modern-labwc)
 
 ## Openbox
 
@@ -51,7 +62,7 @@
 [sway-wiki]: https://github.com/swaywm/sway/wiki/Useful-add-ons-for-sway
 [river-wiki]: https://codeberg.org/river/wiki/src/branch/master/pages/Recommended-Software.md
 
-# Integration
+## Integration
 
 - [lxqt-wiki]
 
