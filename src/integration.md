@@ -147,6 +147,7 @@ applications:
   implementation. Written in Perl.
 - [obamenu]\: Designed for pipemenus, but could easily be modified to produce
   a root-menu. Written in python3.
+- [menugen-for-labwc]\: python3 script written by Harsh-bin
 
 They are typically used like this:
 
@@ -398,6 +399,7 @@ US-intl layout) do not work in GTK4 applications without manual configuration
 [openbox-menu]: https://github.com/fabriceT/openbox-menu
 [arch-xdg-menu]: https://arch.p5n.pp.ru/~sergej/dl/2018/
 [obamenu]: https://github.com/onuronsekiz/obamenu
+[menugen-for-labwc]: https://github.com/Harsh-bin/menugen-for-labwc
 [wlr-randr]: https://sr.ht/~emersion/wlr-randr/
 [cliphist]: https://github.com/sentriz/cliphist
 [clapboard]: https://github.com/bjesus/clapboard
