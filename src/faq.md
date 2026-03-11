@@ -22,6 +22,7 @@
 9. [Applications](#applications)
     1. [gparted](#gparted)
     2. [GTK4](#gtk4)
+10. [Virtualization](#virtualization)
 
 # 1. Keybinds {#keybinds}
 
@@ -360,3 +361,15 @@ This is due to a change in GTK4 which now requires input methods for compose.
 Either install a input method like ibus or fcitx5 or force GTK4 to use its
 built-in compose method by adding `GTK_IM_MODULE=simple` to
 `~/.config/labwc/environment`.
+
+# 10. [Virtualization]{#virtualization}
+
+When running under Virtual Box and similar, it may be necessary to add the
+lines below to `~/.config/labwc/environment` to show the cursor and for some
+applications to run depending on GPU support.
+
+```
+WLR_NO_HARDWARE_CURSORS=1
+WLR_RENDERER=pixman
+```
+
