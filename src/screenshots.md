@@ -1,5 +1,13 @@
 # Screenshots
 
+### BunsenLabs
+
+Submitted-by: @hhhorb
+
+On Debian sid, using the following from the repos: `swaybg` `swaylock` `mako` `thunar` `lxpolkit` `xfce4-terminal` `xfce4-panel` `gedit` `nwg-look` `conky`
+
+<a href="img/scrot9-bunsenlabs.png"><img src="img/scrot9-bunsenlabs-small.png"></a>
+
 ### LXQt
 
 - labwc theme: `Colloid-Light`
