@@ -13,17 +13,17 @@ On Debian sid, using the following from the repos: `swaybg` `swaylock` `mako` `t
 - labwc theme: `Colloid-Light`
 - kvantum theme: [Colloid](https://github.com/vinceliuice/Colloid-kde)
 
-<a href="img/scrot4-lxqt.png"><img src="img/scrot4-lxqt.png"></a>
+<a href="img/scrot4-lxqt.png"><img src="img/scrot4-lxqt-small.png"></a>
 
 ### Xfce4 on OpenSUSE
 
 - labwc theme: [labGreybird-geeko](https://github.com/labwc/labwc-themes)
 
-<a href="img/scrot3-opensuse.png"><img src="img/scrot3-opensuse.png"></a>
+<a href="img/scrot3-opensuse.png"><img src="img/scrot3-opensuse-small.png"></a>
 
 ### Raspberry Pi
 
-<a href="img/scrot5-rpi.png"><img src="img/scrot5-rpi.png"></a><br />
+<a href="img/scrot5-rpi.png"><img src="img/scrot5-rpi-small.png"></a><br />
 
 ### Cairo Dock
 
@@ -31,15 +31,15 @@ On Debian sid, using the following from the repos: `swaybg` `swaylock` `mako` `t
 - icon theme: breeze-dark
 - kvantum theme: [WhiteSur-opaqueDark](https://github.com/vinceliuice/WhiteSur-kde)
 
-<a href="img/scrot6-cairodock.png"><img src="img/scrot6-cairodock.png"></a>
+<a href="img/scrot6-cairodock.png"><img src="img/scrot6-cairodock-small.png"></a>
 
 ### Noctalia
 
-<a href="img/scrot7-noctalia.png"><img src="img/scrot7-noctalia.png"></a>
+<a href="img/scrot7-noctalia.png"><img src="img/scrot7-noctalia-small.png"></a>
 
 ### Dank Material Shell
 
-<a href="img/scrot8-dms.png"><img src="img/scrot8-dms.png"></a>
+<a href="img/scrot8-dms.png"><img src="img/scrot8-dms-small.png"></a>
 
 ### sfwbar
 
