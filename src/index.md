@@ -9,7 +9,7 @@ screenshots, wallpapers, and so on to create a full desktop environment.
 [<a href="videos.html">videos</a>]
 
 <a href="obligatory-screenshot2.html">
-  <img src="img/scrot0-landing-page-small.png" width="640" height="360" />
+  <img src="img/scrot0-landing-page-small.png"/>
 </a>
 
 [Wayland]: https://wayland.freedesktop.org/
