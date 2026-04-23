@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
-
 : ${DEPLOY_DIR:=deploy}
+: ${ONLY_BUILD_FILES_THAT_CHANGED:=f}
 
 build_src_pages () {
 	for md in src/*.md; do
 		html=${md##*/}
 		html="${DEPLOY_DIR}/${html/%.md/.html}"
 
-		# only build files that have changed
-		[[ $html -ot $md ]] || continue
+		if [[ $ONLY_BUILD_FILES_THAT_CHANGED = "t" ]]; then
+			[[ $html -ot $md ]] || continue
+		fi
 
 		echo "Converting $md to $html"
 
@@ -26,7 +27,9 @@ build_man_pages () {
 		html=${scd##*/}
 		html="${DEPLOY_DIR}/${html/%.scd/.html}"
 
-		[[ $html -ot $scd ]] || continue
+		if [[ $ONLY_BUILD_FILES_THAT_CHANGED = "t" ]]; then
+			[[ $html -ot $scd ]] || continue
+		fi
 
 		echo "Converting $scd to $html"
 
