@@ -15,7 +15,9 @@
 5. [Scripting](#scripting)
     1. [Run or Raise](#run-or-raise)
 6. [Environment Variables](#environment-variables)
-7. [Nested XWayland](#nested-xwayland)
+7. [XWayland](#xwayland)
+    1. [Run Openbox Nested](#run-openbox-nested)
+    2. [Troubleshooting](#troubleshooting)
 8. [Hardware](#hardware)
     1. [Nvidia](#nvidia)
     2. [Laptop Lid](#laptop-lid)
@@ -299,16 +301,41 @@ See the wlroots repo [env_vars.md] file for details.
 
 [env_vars.md]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md
 
-# 7. Nested XWayland {#nested-xwayland}
+# 7. XWayland {#xwayland}
 
-To run a nested instance of openbox on labwc:
+## 7.1 Run Openbox nested {#run-openbox-nested}
+
+To run a nested instance of Openbox on labwc:
  
 ```
 Xwayland -decorate -noreset :55
 DISPLAY=:55 dbus-run-session openbox-session
-  
 ```
  
+## 7.2 Troubleshooting {#troubleshooting}
+
+To confirm if the compositor was built with XWayland support, run `labwc -v`.
+
+If the compositor was built with XWayland support, but XWayland clients cannot
+be run - typically with a message like `Error: Can't open display: :0` - then
+consider the following:
+
+1. Is the XWayland package installed on your system?
+2. Some programs may also require xdg-portal packages to be installed
+
+To determine which shell (`xdg` or `XWayland`) a particular client uses, add
+the configuration below in your `rc.xml` and then use alt-tab:
+
+```
+<windowSwitcher>
+  <fields>
+    <field content="type" width="20%" />
+    <field content="desktop_entry_name" width="30%" />
+    <field content="title" width="50%" />
+  </fields>
+</windowSwitcher>
+```
+
 # 8. [Hardware]{#hardware}
 
 ## 8.1 [Nvidia]{#nvidia}
