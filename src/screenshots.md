@@ -1,5 +1,9 @@
 # Screenshots
 
+### Waybar
+
+<a href="img/scrot10-waybar.png"><img src="img/scrot10-waybar-small.png"></a>
+
 ### BunsenLabs
 
 Submitted-by: @hhhorb
