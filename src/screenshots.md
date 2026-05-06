@@ -2,6 +2,9 @@
 
 ### Waybar
 
+Submitted-by: @danielfrrrr
+Dotfiles at [#97](https://github.com/labwc/labwc.github.io/pull/97)
+
 <a href="img/scrot10-waybar.png"><img src="img/scrot10-waybar-small.png"></a>
 
 ### BunsenLabs
