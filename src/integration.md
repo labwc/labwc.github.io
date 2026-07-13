@@ -5,8 +5,7 @@
     1. [waybar](#waybar)
     2. [sfwbar](#sfwbar)
     3. [xfce4-panel](#xfce4panel)
-    4. [yambar](#yambar)
-    5. [lxqt-panel](#lxqt-panel)
+    4. [lxqt-panel](#lxqt-panel)
 3. [Menu Generators](#menu-generators)
 4. [CSD](#csd)
 5. [Output Management](#output-management)
@@ -16,7 +15,7 @@
 9. [Qt](#qt)
 10. [Clipboard](#clipboard)
 11. [Input Method](#input-method)
-12. [GTK](#gtk)
+12. [Gtk](#gtk)
 
 # 1. Introduction {#introduction}
 
@@ -35,13 +34,6 @@ z-depth and also to be anchored to the edges/corners of a screen.
 [`wlr-foreign-toplevel-management`] provides clients such as taskbars and docks
 with a list of opened applications and supports requests for certain actions
 such as maximizing, etc.
-
-At the time of writing some common toolkits do not have full support for
-[`wlr-layer-shell`], most notably `GTK4` and `Qt <6.5`. In order to integrate
-components written in these eco-systems in the short/medium term, window
-rules can be used to achieve a reasonable setup. Please note though that the
-use of window-rules is a sub-optimal solution which relies on user
-configuration and does not always support per-output configuration.
 
 [`wlr-layer-shell`]: https://wayland.app/protocols/wlr-layer-shell-unstable-v1
 [`wlr-foreign-toplevel-management`]: https://wayland.app/protocols/wlr-foreign-toplevel-management-unstable-v1
@@ -79,6 +71,21 @@ protocol to the `~/.config/waybar/config` file:
     },
 ```
 
+From waybar `0.14.0` the ext-workspace protocol is supported and can be
+configured like this:
+
+```
+"modules-right": ["ext/workspaces"],
+```
+
+```
+"ext/workspaces": {
+    "format": "{name}",
+    "sort-by-number": true,
+    "on-click": "activate",
+},
+```
+
 See the [waybar documentation] for further information.
 
 ## 2.2 sfwbar {#sfwbar}
@@ -101,64 +108,27 @@ See example configuration [here](obligatory-screenshot.html#panel).
 
 ## 2.3 xfce4-panel {#xfce4panel}
 
-[xfce4-panel repository]
+- [xfce4-panel repository]
+- [MR103]
+- [xfce4-panel]
 
-Just after the release of Xfce 4.18 in Dec 2022, Wayland support was added
-([MR103]) to [xfce4-panel] including the layer-shell and
-foreign-toplevel-management protocols.
+Since Xfce 4.20, Wayland support has included wlr-layer-shell and
+wlr-foreign-toplevel-management protocols.
 
-For the time being it is best to force all plugins to run as internal:
+For the time being it is best to force all plugins to run as internal with:
 
 `xfconf-query -c xfce4-panel -p /force-all-internal -t bool -s true --create`
-
-Until the next release, you can get it going by cloning the master branch and
-building with the following (adjusting prefix to suit your system of course):
-
-```
-./autogen --prefix=/usr
-make
-make install
-```
-
-On Arch Linux you can simply install the following packages: [xfce4-dev-tools],
-[libxfce4util], [libxfce4ui], [libxfce4windowing-devel] and [xfce4-panel-git].
 
 [MR103]: https://gitlab.xfce.org/xfce/xfce4-panel/-/merge_requests/103
 [xfce4-panel]: https://docs.xfce.org/xfce/xfce4-panel/start
 
-[xfce4-dev-tools]: https://archlinux.org/packages/extra/x86_64/xfce4-dev-tools/
-[libxfce4util]: https://archlinux.org/packages/extra/x86_64/libxfce4util/
-[libxfce4ui]: https://archlinux.org/packages/extra/x86_64/libxfce4ui/
-[libxfce4windowing-devel]: https://aur.archlinux.org/packages/libxfce4windowing-devel
-[xfce4-panel-git]: https://aur.archlinux.org/packages/xfce4-panel-git
-
-## 2.4 yambar {#yambar}
-
-[yambar repository]
-
-Configure yambar in the `~/.config/yambar/config.yml`. Yambar configuration
-uses the [`yaml` language].
-
-Read the [yambar documentation] for further information.
-
-## 2.5 lxqt-panel {#lxqt-panel}
+## 2.4 lxqt-panel {#lxqt-panel}
 
 Since version `2.0.0`, `lxqt-panel` supports the [`wlr-layer-shell`] protocol
-and thus runs natively under Wayland without window rules. Should you have an
-older version, it can still be used with a window rule such as:
+and thus runs natively under Wayland.
 
-```
-<windowRules>
-  <windowRule identifier="lxqt-panel" matchOnce="true" fixedPosition="yes">
-    <skipTaskbar>yes</skipTaskbar>
-    <action name="MoveTo" x="0" y="0" />
-    <action name="ToggleAlwaysOnTop"/>
-  </windowRule>
-</windowRules>
-```
-
-Note: `lxqt-panel` does not support [`wlr-foreign-toplevel-management`] so the
-taskbar does not work.
+With version `>=2.1.0` the [`wlr-foreign-toplevel-management`] is supported
+enabling taskbar functionality and thereby making this an excellent choice.
 
 # 3. Menu Generators {#menu-generators}
 
@@ -177,6 +147,7 @@ applications:
   implementation. Written in Perl.
 - [obamenu]\: Designed for pipemenus, but could easily be modified to produce
   a root-menu. Written in python3.
+- [menugen-for-labwc]\: python3 script written by Harsh-bin
 
 They are typically used like this:
 
@@ -267,9 +238,12 @@ example
 - [swappy](https://github.com/jtheoof/swappy)
 
 ```
+grim -g "$(slurp)"
 grim -g "$(slurp)" - | swappy -f -
 grim - | wl-copy
 ```
+
+> Note: Remember to use quotation marks around `$(slurp)`
 
 # 7. Session Lock {#session-lock}
 
@@ -373,80 +347,28 @@ alive. See the documentation of the individual tools for further information.
 
 # 11. Input Method {#input-method}
 
-Input methods like Fcitx5 and IBus provide modules for GTK and Qt and an
-interface for xserver (xwayland) using D-Bus without wayland protocols.
+Input methods (e.g. Fcitx5, IBus) intercepts text inputs in applications and
+compose them to other forms, like Chinese/Japanese/Korean or accented characters.
 
-You can enable input method for those platforms by setting environment
-variables like this:
+## Fcitx5
 
-```
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-```
+Fcitx5 can be started with the command `fcitx5`. Use `fcitx5-configtool` to
+set up hotkeys and enable language-specific modules (e.g. fcitx5-mozc).
 
-<!-- TODO: remove "in the master branch" when labwc 0.7.2 is released -->
-For apps not running on those platforms (e.g. Alacritty), labwc supports
-the following wayland protocols in the master branch:
+## IBus
 
-- [text-input-v3]
-  - Used by winit apps (e.g. Alacritty) and GTK (without setting
-    `GTK_IM_MODULE` environment variable).
-- [input-method-v2]
-  - Supported by Fcitx5, but not by IBus yet
-    ([issue](https://github.com/ibus/ibus/issues/2182)).
+IBus can be started with the command `ibus start --type=wayland`.
+Use `ibus-setup` to set up hotkeys and enable language-specific modules
+(e.g. ibus-anthy).
 
-Here is a quick guide for using Fcitx5 in labwc:
+# 12. Gtk {#gtk}
 
-1. Install fcitx5, GTK/Qt modules, configtool and language-specific module.
-    - Arch Linux: `pacman -S fcitx5-im fcitx5-mozc`
-    - Ubuntu: `apt install fcitx5 fcitx5-mozc`
+## 12.1 File Chooser
 
-    Replace `fcitx5-mozc` with a module for your language.
-
-2. Set `GTK_IM_MODULE`, `QT_IM_MODULE` and `XMODIFIERS` like described earlier.
-These are usually saved in files like `~/.config/labwc/environment`,
-`~/.profile` and `/etc/environment`.
-
-3. Start `fcitx5`. You can automatically start fcitx5 by adding `fcitx5 &` to
-`~/.config/labwc/autostart`.
-
-4. Configure Fcitx5 with configtool to enable the installed language-specific
-module and to set up hotkeys. See [Configtool (Fcitx 5) - Fcitx].
-
-5. Activate input method with hotkeys while typing in applications.
-
-<!--- TODO: remove this once Chromium supports text-input-v3 -->
-## Input method on Chromium
-
-Chromium (and Electron-based) apps don't support the [text-input-v3] protocol
-[at this point](https://chromium-review.googlesource.com/c/chromium/src/+/3750452).
-So if you want to use IME with Chromium under labwc, you have following options:
-
-1. Run Chromium under XWayland
-
-    This is the default option. However, some features like touchpad gesture
-    don't work.
-
-2. Use GTK IM Module
-
-    By running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4`,
-    you can enable IME with GTK IM Module (selected by `GTK_IM_MODULE`) under
-    wayland. However, IME popups might be incorrectly positioned.
-
-3. Patch labwc and use [text-input-v1] protocol
-
-    Since [text-input-v1] is an outdated protocol, labwc doesn't officially
-    support it. However, you can optionally add support for it by installing
-    labwc from the [unofficial AUR](https://aur.archlinux.org/packages/labwc-im)
-    or by applying its patch. Then, you can enable IME with [text-input-v1] by
-    running Chromium with `--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime`.
-
-# 12. GTK {#gtk}
-
-In some recent GTK (>=4.16) applications the File Chooser defaults to using
-xdg-portal technology which may not work depending on your system setup. There
-are at least two ways to fallback to a 'normal' File Chooser:
+In some recent GTK (>=4.16) applications (e.g. Gnome's Simple-Scan and Clapper)
+the File Chooser defaults to using xdg-portal technology which may not work
+depending on your system setup. There are at least two ways to fallback to a
+'normal' File Chooser:
 
 1. Set the environment variable `GDK_DEBUG=no-portals` (in for example
    `$HOME/.config/labwc/environment`)
@@ -456,26 +378,28 @@ are at least two ways to fallback to a 'normal' File Chooser:
    `$HOME/.config/xdg-desktop-portal/` but please see [portal-user-home] for
    further details.
 
+## 12.2 Compose
+
+From version `4.20.0`, compose keys (e.g. typing "à" with "\`" + "a" in
+US-intl layout) do not work in GTK4 applications without manual configuration
+(`GTK_IM_MODULE=simple` in `~/.config/labwc/environment`) or using
+[input methods](#input-method) like Fcitx5 and IBus. See [#3068] for details.
+
+[#3068]: https://github.com/labwc/labwc/issues/3068
+
 [labwc-portals.conf]: https://github.com/labwc/labwc/blob/master/data/labwc-portals.conf
 [portal-user-home]: https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html
-
-[text-input-v3]: https://wayland.app/protocols/text-input-unstable-v3
-[input-method-v2]: https://wayland.app/protocols/input-method-unstable-v2
-[Configtool (Fcitx 5) - Fcitx]: https://fcitx-im.org/wiki/Configtool_(Fcitx_5)
-[text-input-v1]: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/unstable/text-input/text-input-unstable-v1.xml
 
 [waybar repository]: https://github.com/Alexays/Waybar
 [waybar documentation]: https://github.com/Alexays/Waybar/tree/master/man
 [xfce4-panel repository]: https://gitlab.xfce.org/xfce/xfce4-panel
-[yambar repository]: https://codeberg.org/dnkl/yambar
-[`yaml` language]: https://yaml.org
-[yambar documentation]: https://codeberg.org/dnkl/yambar/src/branch/master/doc
 [labwc-menu-generator]: https://github.com/labwc/labwc-menu-generator
 [labwc-menu-gnome3]: https://github.com/labwc/labwc-menu-gnome3
 [obmenu-generator]: https://trizenx.blogspot.com/2012/02/obmenu-generator.html
 [openbox-menu]: https://github.com/fabriceT/openbox-menu
 [arch-xdg-menu]: https://arch.p5n.pp.ru/~sergej/dl/2018/
 [obamenu]: https://github.com/onuronsekiz/obamenu
+[menugen-for-labwc]: https://github.com/Harsh-bin/menugen-for-labwc
 [wlr-randr]: https://sr.ht/~emersion/wlr-randr/
 [cliphist]: https://github.com/sentriz/cliphist
 [clapboard]: https://github.com/bjesus/clapboard
