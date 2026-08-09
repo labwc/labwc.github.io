@@ -40,9 +40,13 @@ On Debian sid, using the following from the repos: `swaybg` `swaylock` `mako` `t
 
 <a href="img/scrot6-cairodock.png"><img src="img/scrot6-cairodock-small.png"></a>
 
-### Noctalia
+### Noctalia v4
 
 <a href="img/scrot7-noctalia.png"><img src="img/scrot7-noctalia-small.png"></a>
+
+### Noctalia v5
+
+<a href="img/scrot11-noctalia-v5.png"><img src="img/scrot11-noctalia-v5-small.png"></a>
 
 ### Dank Material Shell
 
