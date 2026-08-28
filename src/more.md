@@ -1,4 +1,5 @@
 - [configuration](configuration.html)
+- [dev](dev.html)
 - [faq](faq.html)
 - [hidpi scaling](hidpi-scaling.html)
 - [links](links.html)
