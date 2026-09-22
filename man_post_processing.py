@@ -48,7 +48,7 @@ def add_item_ids(buf):
 def fix_bullet_formatting(buf):
 	# Really ought to try to understand+fix this upstream,
 	# but for now, let's just get it working
-	return buf.replace("·</p>\n<p>", "· ")
+	return buf.replace("·</p>\n<p>", "· ").replace("<li><p>", "<li>").replace("</p></li>", "</li>")
 
 def main(argv):
 	with open(argv[0], 'r') as file:
