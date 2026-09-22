@@ -30,17 +30,16 @@
 
 ## 1.1 Unset keybinds {#unset-keybinds}
 
-### Q: How do I get `Alt+Left/Right` to not move windows? I want these to navigate forward/backwards in File Managers and Firefox.
+### Q: How do I prevent the default `Alt+F4` from closing the focused window?
 
-You could either copy `rc.xml.all` and just remove the entries you do not want, such as `<keybind key="A-Left">`
+You could either copy `rc.xml.all` and just remove the entries you do not want, such as `<keybind key="A-F4">`
 
 Or you could use the `None` action or simply define a keybind with no action (which does the same). For example:
 
 ```
   <keyboard>
     <default/>
-    <keybind key="A-Left"/>
-    <keybind key="A-Right"/>
+    <keybind key="A-F4"/>
   </keyboard>
 ```
 
