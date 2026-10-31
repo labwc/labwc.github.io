@@ -4,7 +4,7 @@
 2. [Scaling](#scaling)
 3. [Wayland Applications](#wayland-applications)
 4. [XWayland Applications](#xwayland-applications)
-5. [Troubleshooting](troubleshooting)
+5. [Troubleshooting](#troubleshooting)
 
 ## Introduction
 
